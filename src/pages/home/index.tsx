@@ -9,6 +9,7 @@ const HomePage = () => {
   return (
     <Container>
       <Title>This is the Home Page</Title>
+      <h1 className="text-9xl text-cyan-500 underline">Kontol</h1>
     </Container>
   )
 }
