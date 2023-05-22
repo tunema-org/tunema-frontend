@@ -1,9 +1,23 @@
 import { ShoppingBag } from 'iconsax-react'
-import ButtonPrimary from '../Button/button_primary'
+import { useState, useEffect, useRef } from 'react'
+import React from 'react'
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const imgRef = React.useRef<HTMLImageElement>(null)
+  const menuRef = React.useRef<HTMLInputElement>(null)
+
+  window.addEventListener('click', (e) => {
+    if (e.target !== menuRef.current && e.target !== imgRef.current) {
+      setIsOpen(false)
+    }
+  })
+
+  const isLogin = true
+
   return (
-    <div className="font-body sticky top-0 z-50" id="navbar m-0">
+    <div className="font-body sticky top-0 z-50" id="navbar">
       <nav className="flex flex-row list-none h-16 items-center justify-between p-4 border-b-2 gray-4 bg-white item-center">
         <div className="flex flex-row gap-12 mx-8">
           <li>
@@ -26,12 +40,13 @@ function Navbar() {
         <a href="" className="align-middle">
           <img
             className="object-contain h-9 w-44"
-            src="/src/pic/LOGO TUNEMA BLACK 2.png"
+            src={'/src/pic/LOGO TUNEMA BLACK 2.png'}
             id="1"
             title="images"
+            alt="Profile"
           />
         </a>
-        <div className="flex flex-row items-center gap-12 mx-8">
+        <div className="flex flex-row items-center gap-10 mx-8">
           <li>
             <a
               href="#_"
@@ -47,14 +62,54 @@ function Navbar() {
             <ShoppingBag size="32" color="black" />
           </a>
 
-          <li>
-            <a
-              href="#"
-              className="hover:underline hover:text-dark-green hover:font-medium"
-            >
-              Login
-            </a>
-          </li>
+          {isLogin && (
+            <div className="relative flex flex-col align-middle ">
+              <button
+                onClick={() => setIsOpen((prev) => !prev)}
+                className="w-11 align-middle flex items-centerjustify-between"
+              >
+                <img
+                  ref={imgRef}
+                  className="rounded-full"
+                  src={'/src/pic/navbar/dummy_profile.jpg'}
+                  alt=""
+                />
+              </button>
+              {isOpen && (
+                <div
+                  ref={menuRef}
+                  className="bg-white absolute flex flex-col top-16 right-2 rounded-xl px-6 py-4 gap-5 justify-between"
+                >
+                  <a
+                    href="#"
+                    className="p-2 font-bold w-32 hover:bg-light-green hover:rounded-lg text-center"
+                  >
+                    {'Account'}
+                  </a>
+                  <div className="border-b border-gray-3"></div>
+                  <a
+                    href="#"
+                    className="p-2 hover:bg-light-green hover:rounded-lg"
+                  >
+                    Settings
+                  </a>
+                  <a href="#" className="p-2 hover:bg-red-300 hover:rounded-lg">
+                    Log Out
+                  </a>
+                </div>
+              )}
+            </div>
+          )}
+          {!isLogin && (
+            <li>
+              <a
+                href="#"
+                className="hover:underline hover:text-dark-green hover:font-medium"
+              >
+                Login
+              </a>
+            </li>
+          )}
         </div>
       </nav>
     </div>
