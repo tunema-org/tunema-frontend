@@ -8,7 +8,7 @@ const LandingPage = () => (
   <>
     <body className="">
       <Navbar />
-      <section className="h-auto overflow-clip flex bg-[url('/src/pic/landing/landing_1.png')] bg-cover bg-center">
+      <section className="h-screen overflow-clip flex bg-[url('/src/pic/landing/landing_1.png')] bg-cover bg-center">
         <Container>
           <div className="h-screen max-w-[50%] flex flex-col justify-center text-white font-body gap-5 md:p-0 p-5">
             <h1 className="text-display min-w-[17rem]">
@@ -22,6 +22,11 @@ const LandingPage = () => (
             </p>
           </div>
         </Container>
+        <img
+          className="max-w-[10%] min-w-[10rem] absolute -bottom-14 right-5 p-5"
+          src="/src/pic/Logo White.svg"
+          alt=""
+        />
       </section>
 
       <Container>
