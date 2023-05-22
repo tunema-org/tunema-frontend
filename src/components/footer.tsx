@@ -30,7 +30,7 @@ function Footer() {
                 </button>
               </div>
               <h3 className="font-medium pt-10">Find Us: </h3>
-              <div className="flex flex-row gap-5 py-7 items-center">
+              <div className="flex flex-row gap-5 py-6 items-center">
                 <a href="">
                   <img src="/src/pic/footer/facebook.svg" alt="" />
                 </a>

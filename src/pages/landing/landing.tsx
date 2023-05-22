@@ -10,31 +10,22 @@ const LandingPage = () => (
       <Navbar />
       <section className="h-auto overflow-clip flex bg-[url('/src/pic/landing/landing_1.png')] bg-cover bg-center">
         <Container>
-          <div className="px-10 flex flex-col justify-center font-body h-screen  text-white overflow-clip">
-            <h1 className="flex relative z-10 text-display">
+          <div className="h-screen max-w-[50%] flex flex-col justify-center text-white font-body gap-5">
+            <h1 className="text-display min-w-[17rem]">
               <span className="text-primary-green">D</span>iscover and
-            </h1>
-            <h1 className="flex relative z-10 text-display">
+              <br />
               <span className="text-primary-green">P</span>roduce
             </h1>
-            <div className="flex relative z-10 flex-col gap-12">
-              <p className="text-body max-w-[50vh]">
-                Explore a vast array of musical content and take your music
-                <br />
-                production to the next level.{' '}
-              </p>
-            </div>
-            {/* <img
-              className="top-0 left-0 absolute w-auto min-h-screen h-auto object-cover -z-40"
-              src="/src/pic/landing/landing_1.png"
-              alt=""
-            /> */}
+            <p className="max-w-[50%] min-w-[17rem]">
+              Explore a vast array of musical content and take your music
+              production to the next level.{' '}
+            </p>
           </div>
         </Container>
       </section>
 
       <Container>
-        <section className="min-h-[31rem] flex justify-center font-body content-center lg:flex-row flex-col gap-10 lg:py-0 my-36">
+        <section className="min-h-[31rem] flex justify-between font-body content-center lg:flex-row flex-col gap-10 lg:py-0 my-36">
           <div className="flex flex-col gap-5 justify-center md:p-0 p-5 max-w-[43.75rem]">
             <h1 className="text-heading-03">Explore various samples.</h1>
             <p className=" ">
@@ -58,7 +49,7 @@ const LandingPage = () => (
       </Container>
 
       <Container>
-        <section className="min-h-[31rem] flex justify-center font-body content-center lg:flex-row-reverse flex-col gap-10 lg:py-0 py-12 my-36">
+        <section className="min-h-[31rem] flex justify-between font-body content-center lg:flex-row-reverse flex-col gap-10 lg:py-0 py-12 my-36">
           <div className="flex flex-col items-end gap-5 justify-center md:p-0 p-5 max-w-[43.75rem]">
             <h1 className="text-heading-03">Everyone can be the artist!</h1>
             <p className="text-right">
@@ -85,12 +76,12 @@ const LandingPage = () => (
 
       <Container>
         <section className="min-h-[40rem] flex font-body content-center flex-col gap-10 md:py-0 my-5">
-          <h1 className="text-heading-03 px-5">They Said</h1>
+          <h1 className="text-heading-03">They Said</h1>
           <div className="flex lg:flex-row flex-col justify-center gap-12 items-center">
-            <div className="flex lg:w-[23%] lg:h-[419px] w-[95%] h-[250px] lg:flex-col lg:gap-0 gap-10 flex-row items-center rounded-xl shadow-xl px-10">
+            <div className="flex lg:w-[23%] lg:h-[419px] w-[95%] h-[290px] lg:flex-col lg:gap-0 gap-10 flex-row items-center rounded-xl shadow-xl px-10">
               <div className="flex items-center flex-col py-10 gap-2 max-w-[40%] lg:max-w-full">
                 <img
-                  className="lg:max-w-[50%] max-w-[85%]"
+                  className="lg:max-w-[50%] max-w-[70%]"
                   src="/src/pic/landing/Reviews/HotPotato.png"
                   alt=""
                 />
@@ -102,10 +93,10 @@ const LandingPage = () => (
               <p>I'm bout to blow.🔥</p>
             </div>
 
-            <div className="flex lg:w-[23%] lg:h-[419px] w-[95%] h-[250px] lg:flex-col lg:gap-0 gap-10 flex-row items-center rounded-xl shadow-xl px-10">
+            <div className="flex lg:w-[23%] lg:h-[419px] w-[95%] h-[290px] lg:flex-col lg:gap-0 gap-10 flex-row items-center rounded-xl shadow-xl px-10">
               <div className="flex items-center flex-col py-10 gap-2 max-w-[40%] lg:max-w-full">
                 <img
-                  className="lg:max-w-[50%] max-w-[85%]"
+                  className="lg:max-w-[50%] max-w-[70%]"
                   src="/src/pic/landing/Reviews/KanyeEast.png"
                   alt=""
                 />
@@ -120,10 +111,10 @@ const LandingPage = () => (
               </p>
             </div>
 
-            <div className="flex lg:w-[23%] lg:h-[419px] w-[95%] h-[250px] lg:flex-col lg:gap-0 gap-10 flex-row items-center rounded-xl shadow-xl px-10">
+            <div className="flex lg:w-[23%] lg:h-[419px] w-[95%] h-[290px] lg:flex-col lg:gap-0 gap-10 flex-row items-center rounded-xl shadow-xl px-10">
               <div className="flex items-center flex-col py-10 gap-2 max-w-[40%] lg:max-w-full">
                 <img
-                  className="lg:max-w-[50%] max-w-[85%]"
+                  className="lg:max-w-[50%] max-w-[70%]"
                   src="/src/pic/landing/Reviews/DjYoshi.png"
                   alt=""
                 />
@@ -156,3 +147,24 @@ const LandingPage = () => (
 )
 
 export default LandingPage
+
+// <div className="flex flex-col justify-center font-body h-screen  text-white overflow-clip">
+// <h1 className="flex relative z-10 text-display">
+//   <span className="text-primary-green">D</span>iscover and <br />
+// </h1>
+// <h1 className="flex relative z-10 text-display">
+//   <span className="text-primary-green">P</span>roduce
+// </h1>
+// <div className="flex relative z-10 flex-col gap-12">
+//   <p className="text-body max-w-[50vh]">
+//     Explore a vast array of musical content and take your music
+//     <br />
+//     production to the next level.{' '}
+//   </p>
+// </div>
+// {/* <img
+//   className="top-0 left-0 absolute w-auto min-h-screen h-auto object-cover -z-40"
+//   src="/src/pic/landing/landing_1.png"
+//   alt=""
+// /> */}
+// </div>

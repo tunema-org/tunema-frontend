@@ -18,8 +18,8 @@ function Navbar() {
 
   return (
     <div className="font-body sticky top-0 z-50" id="navbar">
-      <nav className="flex flex-row list-none h-16 items-center justify-between p-4 border-b-2 gray-4 bg-white item-center">
-        <div className="flex flex-row gap-12 mx-8">
+      <nav className="flex flex-row list-none h-16 items-center justify-between p-4 border-b-2 gray-4 bg-white item-center px-10">
+        <div className="flex flex-row gap-12">
           <li>
             <a
               href="#"
@@ -46,7 +46,7 @@ function Navbar() {
             alt="Profile"
           />
         </a>
-        <div className="flex flex-row items-center gap-10 mx-8">
+        <div className="flex flex-row items-center gap-10">
           <li>
             <a
               href="#_"
