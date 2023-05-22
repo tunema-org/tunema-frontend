@@ -46,7 +46,7 @@ function Footer() {
               </div>
             </div>
 
-            <div className="flex flex-col text-gray-4 gap-2 justify-center text-right">
+            <div className="flex flex-col text-gray-4 gap-2 justify-center text-right md:visible invisible">
               <a className="hover:underline" href="">
                 Home
               </a>
