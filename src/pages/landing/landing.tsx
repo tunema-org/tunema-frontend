@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import Container from '../../components/container'
 import Footer from '../../components/footer'
 
-const LandingPage = () => (
-  <>
+function LandingPage() {
+  ;<>
     <body className="">
       <Navbar />
       <section className="h-screen overflow-clip flex bg-[url('/src/pic/landing/landing_1.png')] bg-cover bg-center">
@@ -149,6 +149,6 @@ const LandingPage = () => (
       <Footer />
     </body>
   </>
-)
+}
 
 export default LandingPage

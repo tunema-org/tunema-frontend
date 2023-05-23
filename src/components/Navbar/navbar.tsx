@@ -2,7 +2,7 @@ import { ShoppingBag } from 'iconsax-react'
 import { useState, useEffect, useRef } from 'react'
 import React from 'react'
 
-function Navbar() {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const imgRef = React.useRef<HTMLImageElement>(null)
