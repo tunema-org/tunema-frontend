@@ -1,15 +1,16 @@
 import { createBrowserRouter } from 'react-router-dom'
-import HomePage from './pages/home'
+import Home from './pages/home/home'
 import LandingPage from './pages/landing/landing'
+import Sample from './components/sample'
 
 export const router = createBrowserRouter([
   {
-    path: '/',
-    element: <HomePage />,
+    path: '',
+    element: <LandingPage />,
   },
   {
-    path: '/landing',
-    element: <LandingPage />,
+    path: '/home',
+    element: <Home />,
   },
 ])
 
