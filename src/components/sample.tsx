@@ -1,1 +1,3 @@
-const Sample = () => <></>
+const Sample = () => {
+  return <></>
+}
