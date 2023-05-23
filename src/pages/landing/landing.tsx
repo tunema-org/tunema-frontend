@@ -23,7 +23,7 @@ const LandingPage = () => (
           </div>
         </Container>
         <img
-          className="max-w-[10%] min-w-[10rem] absolute -bottom-14 right-5 p-5"
+          className="max-w-[10%] min-w-[10rem] absolute -bottom-0 right-5 p-5"
           src="/src/pic/Logo White.svg"
           alt=""
         />

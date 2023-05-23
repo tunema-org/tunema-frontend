@@ -17,7 +17,7 @@ function Navbar() {
   const isLogin = true
 
   return (
-    <div className="font-body sticky top-0 z-50" id="navbar">
+    <div className="font-body fixed w-full top-0 z-50" id="navbar">
       <nav className="flex flex-row list-none h-16 items-center justify-between p-4 border-b-2 gray-4 bg-white item-center px-10">
         <div className="flex flex-row gap-12">
           <li>
