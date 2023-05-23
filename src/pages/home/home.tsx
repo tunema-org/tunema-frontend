@@ -1,11 +1,12 @@
 import Navbar from '../../components/Navbar/navbar'
 import Button from '../../components/Button/button'
-import styled from 'styled-components'
 import Container from '../../components/container'
 import Footer from '../../components/footer'
-import Sample from '../../components/sample'
 import { useState } from 'react'
 import SearchBar from '../../components/search'
+import MyDropdown from '../../components/dropdown'
+import SampleTest from '../../components/sample'
+import IconPlay from '../../components/icons/icon-play'
 
 enum GenreEnum {
   ALL = 'Mixed',
@@ -99,12 +100,58 @@ function Home() {
           </div>
           <div className="flex items-start border-b-[1px] border-gray-3"></div>
         </section>
-        <section className="my-10">
+        <section className="my-6 flex flex-col gap-6 font-body">
           <SearchBar></SearchBar>
+          <MyDropdown />
+          <div className="flex justify-between items-center">
+            <p>500.350 Results</p>
+            <MyDropdown />
+          </div>
+        </section>
+        <section>
+          <div className="flex items-start border-b-[1px] border-gray-3"></div>
+          <div className="grid md:grid-cols-12 grid-cols-9 items-center gap-10 pr-2 font-medium py-5 text-gray-4">
+            <p>Cover</p>
+            <button className="group-hover:visible invisible">
+              <IconPlay />
+            </button>
+            <div className="md:col-span-2 col-auto min-w-[100px]">
+              <p>Title</p>
+            </div>
+            <div className="lg:col-span-3 col-auto max-w-[22rem] lg:visible invisible">
+              <p>AudioWave</p>
+            </div>
+            <p className="md:visible invisible">Time</p>
+            <p className="md:visible invisible">BPM</p>
+            <p>Price</p>
+            <div className="flex items-center justify-end gap-5 col-span-2 md:visible invisible"></div>
+          </div>
+          <div className="flex items-start border-b-[1px] border-gray-3"></div>
+        </section>
+        <section>
+          {' '}
+          <SampleTest />
+          <SampleTest />
+          <SampleTest />
+          <SampleTest />
+          <SampleTest />
+          <SampleTest />
+          <SampleTest />
         </section>
       </Container>
 
-      <Sample />
+      <section className="h-auto overflow-clip flex bg-[url('/src/pic/home/home-footer.png')] bg-cover bg-center font-body mt-10">
+        <Container>
+          <div className="flex flex-col h-[531px] justify-center items-center gap-3">
+            <h1 className="text-heading-01 text-white mx-2">
+              Explore Your Music Library
+            </h1>
+            <Button type="primary">Library</Button>
+          </div>
+        </Container>
+      </section>
+
+      <Footer />
     </>
   )
 }
@@ -112,39 +159,25 @@ function Home() {
 export default Home
 
 {
-  /* <button className="flex flex-col max-w-[13rem] min-w-[11rem] filter grayscale hover:grayscale-0 hover:drop-shadow-[20px_20px_0px_#D1F812]">
-              <img
-                src="/src/pic/home/genres/hiphop.png"
-                className="border-4 border-black rounded-[15px]"
-                alt=""
-              />
-              <h3 className="self-start text-heading-06">Hip Hop</h3>
-            </button>
-
-            <button className="flex flex-col max-w-[13rem] min-w-[11rem] filter grayscale hover:grayscale-0 hover:drop-shadow-[20px_20px_0px_#D1F812]">
-              <img
-                src="/src/pic/home/genres/housetechno.png"
-                className="border-4 border-black rounded-[15px]"
-                alt=""
-              />
-              <h3 className="self-start text-heading-06">House / Techno</h3>
-            </button>
-
-            <button className="flex flex-col max-w-[13rem] min-w-[11rem] filter grayscale hover:grayscale-0 hover:drop-shadow-[20px_20px_0px_#D1F812]">
-              <img
-                src="/src/pic/home/genres/hiphop.png"
-                className="border-4 border-black rounded-[15px]"
-                alt=""
-              />
-              <h3 className="self-start text-heading-06">Pop / EDM</h3>
-            </button>
-
-            <button className="flex flex-col max-w-[13rem] min-w-[11rem] filter grayscale hover:grayscale-0 hover:drop-shadow-[20px_20px_0px_#D1F812]">
-              <img
-                src="/src/pic/home/genres/hiphop.png"
-                className="border-4 border-black rounded-[15px]"
-                alt=""
-              />
-              <h3 className="self-start text-heading-06">Hip Hop</h3>
-            </button> */
+  /* <section className="flex flex-col gap-7">
+<div className="flex flex-col gap-5">
+  <div className="flex items-start border-b-[1px] border-gray-3"></div>
+  <div className="md:flex flex-none md:flex-row gap-15 justify-between w-full px-10 font-medium text-[#8e8e8c]">
+    <div className="grid grid-cols-6 gap-10 font-body items-center">
+      <p className="w-[4rem]">Cover</p>
+      <p className="col-span-2 w-[300px]">Title</p>
+      <p className="col-span-3 max-w-[22rem] md:visible invisible">
+        AudioWave
+      </p>
+    </div>
+    <div className="grid grid-cols-5 gap-11 font-body items-center justify-end text-gray-500 md:visible invisible">
+      <p className="w-[43px]">Time</p>
+      <p className="w-[43px]">BPM</p>
+      <p className="w-[43px]">Price</p>
+    </div>
+  </div>
+  <div className="flex items-start border-b-[1px] border-gray-3"></div>
+</div>
+<Sample />
+</section> */
 }
