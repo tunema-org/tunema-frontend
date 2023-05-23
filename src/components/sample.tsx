@@ -6,7 +6,7 @@ const Sample = () => {
   return (
     <>
       <Container>
-        <div className="flex flex-row gap-15 my-5 justify-between">
+        <div className="flex flex-row gap-15 my-5 justify-between px-5">
           <div className="grid grid-cols-6 gap-10 font-body items-center">
             <div className="max-w-xs">
               <img
