@@ -26,15 +26,15 @@ const SampleTest = () => {
             <button className="hover:underline">Synth</button>
           </div>
         </div>
-        <div className="lg:col-span-3 col-auto max-w-[22rem] lg:visible invisible">
+        <div className="lg:col-span-3 col-auto max-w-[22rem] lg:block hidden">
           <img src="/src/pic/components/player/soundwavetest.svg" alt="" />
         </div>
-        <p className="md:visible invisible">3:45</p>
+        <p className="md:visible invisible ">3:45</p>
         <p className="md:visible invisible">125</p>
         <button className="font-medium text-dark-green hover:underline flex justify-start">
           $3.45
         </button>
-        <div className="flex items-center justify-end gap-5 col-span-2 md:visible invisible">
+        <div className="grid grid-cols-3 items-center justify-end gap-5 col-span-2">
           <button>
             {' '}
             <IconHeart></IconHeart>{' '}

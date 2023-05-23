@@ -1,6 +1,7 @@
 import { ShoppingBag } from 'iconsax-react'
 import { useState, useEffect, useRef } from 'react'
 import React from 'react'
+import { Pivot as Hamburger } from 'hamburger-react'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -18,8 +19,11 @@ const Navbar = () => {
 
   return (
     <div className="font-body fixed w-full top-0 z-50" id="navbar">
-      <nav className="flex flex-row list-none h-16 items-center justify-between p-4 border-b-2 gray-4 bg-white item-center px-10">
-        <div className="flex flex-row gap-12">
+      <nav className="flex flex-row list-none h-16 items-center justify-between p-4 border-b-2 gray-4 bg-white item-center sm:px-10 px-2">
+        <div className="sm:hidden visible">
+          <Hamburger color="#000000" />
+        </div>
+        <div className="flex-row gap-12 sm:flex hidden">
           <li>
             <a
               href="#"
@@ -37,7 +41,7 @@ const Navbar = () => {
             </a>
           </li>
         </div>
-        <a href="" className="align-middle">
+        <a href="" className="items-center min-w-44">
           <img
             className="object-contain h-9 w-44"
             src={'/src/pic/LOGO TUNEMA BLACK 2.png'}
@@ -46,7 +50,10 @@ const Navbar = () => {
             alt="Profile"
           />
         </a>
-        <div className="flex flex-row items-center gap-10">
+        <a href="" className="sm:hidden block">
+          <ShoppingBag size="32" color="black" />
+        </a>
+        <div className="flex-row items-center gap-10 sm:flex hidden sm:w-auto w-0">
           <li>
             <a
               href="#_"
@@ -58,9 +65,6 @@ const Navbar = () => {
               </span>
             </a>
           </li>
-          <a href="" className="hidden">
-            <ShoppingBag size="32" color="black" />
-          </a>
 
           {isLogin && (
             <div className="relative flex flex-col align-middle ">
