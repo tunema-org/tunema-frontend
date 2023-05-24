@@ -42,18 +42,12 @@ const Navbar = () => {
         </div>
         <div className="flex-row gap-12 sm:flex hidden">
           <li>
-            <a
-              href="#"
-              className="hover:underline hover:text-dark-green hover:font-medium"
-            >
+            <a href="#" className="hover:underline hover:text-dark-green">
               Search
             </a>
           </li>
           <li>
-            <a
-              href="#"
-              className="hover:underline hover:text-dark-green hover:font-medium"
-            >
+            <a href="#" className="hover:underline hover:text-dark-green">
               Library
             </a>
           </li>

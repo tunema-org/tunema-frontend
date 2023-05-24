@@ -2,20 +2,20 @@ import { Menu } from '@headlessui/react'
 import { useState } from 'react'
 
 enum TypeEnum {
-  DEFAULT = 'Instruments',
+  DEFAULT = 'Date Added',
   TYPE1 = 'Type1',
   TYPE2 = 'Type2',
   TYPE3 = 'Type3',
 }
 
-function MyDropdown() {
+function DropdownSort() {
   const [selectedType, setSelectedType] = useState(TypeEnum.DEFAULT)
   const setClick = () => {}
   return (
     <Menu as="div" className="relative inline-block text-left font-body">
       <Menu.Button
         as="button"
-        className="md:text-heading-06 text-small font-medium flex items-center w-[120px] md:w-[157px] h-[36px] bg-[#eaf89b] rounded-[10px] justify-center gap-3"
+        className="md:text-heading-06 text-small font-medium flex items-center w-auto md:w-auto px-5 h-[36px] bg-[#eaf89b] rounded-[10px] justify-center gap-3"
       >
         {selectedType}
         <svg
@@ -58,4 +58,4 @@ function MyDropdown() {
   )
 }
 
-export default MyDropdown
+export default DropdownSort

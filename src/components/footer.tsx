@@ -13,18 +13,20 @@ const Footer = () => {
             />
           </div>
 
-          <section className="flex font-body px-10 justify-between">
+          <section className="flex font-body px-10 md:justify-between justify-center md:flex-row flex-col-reverse">
             <div className="flex flex-col justify-center">
-              <h3 className="font-medium py-6">Stay Updated with TUNEMA</h3>
-              <div className="flex flex-row gap-5 max-w-[22rem]">
-                <input
-                  type="text"
-                  name="email"
-                  id="email-update"
-                  autoComplete="given-email"
-                  placeholder="   Enter Email to get updates and newsletters"
-                  className="flex w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-4 placeholder:text-gray-400 focus:ring-2 focus:ring-dark-green focus:ring-offset-dark-green sm:text-sm sm:leading-6"
-                />
+              <h3 className="md:flex hidden font-medium py-6">
+                Stay Updated with TUNEMA
+              </h3>
+              <div className="flex-row gap-5 max-w-[50rem] md:flex hidden">
+                <div className="bg-[#ededea] border rounded-[34px] h-auto pl-7 w-[25rem]">
+                  <input
+                    type="email"
+                    placeholder="Stay updated with TUNEMA"
+                    className="w-full h-[46px] bg-transparent rounded-[34px] focus:outline-none font-body pr-5"
+                  />
+                </div>
+
                 <button>
                   <img src="/src/pic/footer/send.svg" alt="" />
                 </button>
@@ -46,7 +48,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex flex-col text-gray-4 gap-2 justify-center text-right md:visible invisible">
+            <div className="flex flex-col text-gray-4 gap-2 justify-center md:text-right text-left  py-6">
               <a className="hover:underline" href="">
                 Home
               </a>

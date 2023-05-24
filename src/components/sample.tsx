@@ -4,10 +4,10 @@ import IconHeart from './icons/icon-heart'
 import IconPlus from './icons/icon-plus'
 import IconPlay from './icons/icon-play'
 
-const SampleTest = () => {
+const Sample = () => {
   return (
     <>
-      <div className="group grid md:grid-cols-12 grid-cols-9 items-center gap-10 hover:bg-slate-50 pr-2 font-body py-4">
+      <div className="group grid md:grid-cols-12 grid-cols-9 items-center gap-10 hover:bg-slate-50 pr-2 font-body p-4">
         <img
           className="w-[4rem] min-w-[3rem]"
           src="/src/pic/components/player/alblumcover.png"
@@ -52,4 +52,4 @@ const SampleTest = () => {
   )
 }
 
-export default SampleTest
+export default Sample

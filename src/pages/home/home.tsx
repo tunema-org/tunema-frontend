@@ -4,9 +4,10 @@ import Container from '../../components/container'
 import Footer from '../../components/footer'
 import { useState } from 'react'
 import SearchBar from '../../components/search'
-import MyDropdown from '../../components/dropdown'
-import SampleTest from '../../components/sample'
+import DropdownType from '../../components/dropdown/dropdown-type'
+import Sample from '../../components/sample'
 import IconPlay from '../../components/icons/icon-play'
+import DropdownSort from '../../components/dropdown/dropdown-sort'
 
 enum GenreEnum {
   ALL = 'Mixed',
@@ -102,15 +103,15 @@ function Home() {
         </section>
         <section className="my-6 flex flex-col gap-6 font-body">
           <SearchBar></SearchBar>
-          <MyDropdown />
+          <DropdownType />
           <div className="flex justify-between items-center">
             <p>500.350 Results</p>
-            <MyDropdown />
+            <DropdownSort />
           </div>
         </section>
         <section>
           <div className="flex items-start border-b-[1px] border-gray-3"></div>
-          <div className="grid md:grid-cols-12 grid-cols-9 items-center gap-10 pr-2 font-medium py-5 text-gray-4">
+          <div className="grid md:grid-cols-12 grid-cols-9 items-center gap-10 pr-2 font-medium py-5 text-gray-4 px-4">
             <p>Cover</p>
             <button className="group-hover:visible invisible">
               <IconPlay />
@@ -130,13 +131,13 @@ function Home() {
         </section>
         <section>
           {' '}
-          <SampleTest />
-          <SampleTest />
-          <SampleTest />
-          <SampleTest />
-          <SampleTest />
-          <SampleTest />
-          <SampleTest />
+          <Sample />
+          <Sample />
+          <Sample />
+          <Sample />
+          <Sample />
+          <Sample />
+          <Sample />
         </section>
       </Container>
 

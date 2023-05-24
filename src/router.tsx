@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import Home from './pages/home/home'
 import LandingPage from './pages/landing/landing'
-import Sample from './components/sample'
+import Library from './pages/library/library'
 
 export const router = createBrowserRouter([
   {
@@ -11,6 +11,10 @@ export const router = createBrowserRouter([
   {
     path: '/home',
     element: <Home />,
+  },
+  {
+    path: '/library',
+    element: <Library />,
   },
 ])
 
