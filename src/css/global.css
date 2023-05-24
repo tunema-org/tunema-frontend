@@ -18,3 +18,10 @@
     }
   }
 }
+
+input:checked + div {
+  @apply border-primary-green;
+}
+input:checked + div svg {
+  @apply block;
+}
