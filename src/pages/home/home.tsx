@@ -2,12 +2,13 @@ import Navbar from '../../components/Navbar/navbar'
 import Button from '../../components/Button/button'
 import Container from '../../components/container'
 import Footer from '../../components/footer'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import SearchBar from '../../components/search'
 import DropdownType from '../../components/dropdown/dropdown-type'
 import Sample from '../../components/sample'
 import IconPlay from '../../components/icons/icon-play'
 import DropdownSort from '../../components/dropdown/dropdown-sort'
+import { useDraggable } from 'react-use-draggable-scroll'
 
 enum GenreEnum {
   ALL = 'Mixed',
@@ -45,6 +46,9 @@ const Genre = (props: GenreProps) => {
 
 function Home() {
   const [selectedGenre, setSelectedGenre] = useState(GenreEnum.ALL)
+  const ref =
+    useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>
+  const { events } = useDraggable(ref)
   return (
     <>
       <Navbar />
@@ -61,7 +65,11 @@ function Home() {
             </p>
           </div>
 
-          <div className="overflow-x-auto my-10 flex gap-16 pb-10 pr-8">
+          <div
+            ref={ref}
+            {...events}
+            className="overflow-x-scroll no-scrollbar my-10 flex gap-16 pb-10 pr-8"
+          >
             <Genre
               img="/src/pic/home/genres/mixed.png"
               label={GenreEnum.ALL}

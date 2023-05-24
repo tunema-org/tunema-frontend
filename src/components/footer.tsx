@@ -23,7 +23,7 @@ const Footer = () => {
                   <input
                     type="email"
                     placeholder="Stay updated with TUNEMA"
-                    className="w-full h-[46px] bg-transparent rounded-[34px] focus:outline-none font-body pr-5"
+                    className="w-full h-[46px] bg-transparent focus:outline-none font-body pr-5"
                   />
                 </div>
 
