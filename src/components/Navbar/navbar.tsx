@@ -3,10 +3,12 @@ import { useState, useEffect, useRef } from 'react'
 import React from 'react'
 import { Pivot as Hamburger } from 'hamburger-react'
 import Sidebar from './sidebar'
+import Upload from '../../pages/upload/upload'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [isUpload, setIsUpload] = useState(false)
 
   const imgRef = React.useRef<HTMLImageElement>(null)
   const menuRef = React.useRef<HTMLInputElement>(null)
@@ -18,6 +20,7 @@ const Navbar = () => {
     }
     if (e.target === ref.current) {
       setIsSidebarOpen(false)
+      setIsUpload(false)
     }
   })
 
@@ -66,15 +69,15 @@ const Navbar = () => {
         </a>
         <div className="flex-row items-center gap-10 sm:flex hidden sm:w-auto w-0">
           <li>
-            <a
-              href="#_"
+            <button
+              onClick={() => setIsUpload((prev) => !prev)}
               className="relative items-center justify-start flex py-2 px-5 overflow-hidden font-medium transition-all bg-primary-green rounded-full hover:bg-dark-green hover:text-white group"
             >
               <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-dark-green rounded-full"></span>
               <span className="relative w-full text-left text-black transition-colors duration-200 ease-in-out group-hover:text-white">
                 Upload
               </span>
-            </a>
+            </button>
           </li>
 
           {isLogin && (
@@ -133,6 +136,15 @@ const Navbar = () => {
           <div
             ref={ref}
             className="h-screen absolute sm:hidden flex top-16 w-full bg-black -z-30 bg-opacity-75"
+          ></div>
+        </div>
+      )}
+      {isUpload && (
+        <div>
+          <Upload />
+          <div
+            ref={ref}
+            className="h-screen absolute flex top-16 w-full bg-black -z-30 bg-opacity-75"
           ></div>
         </div>
       )}

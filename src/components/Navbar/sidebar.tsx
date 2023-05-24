@@ -1,22 +1,18 @@
 import { useState, useEffect, useRef } from 'react'
 import React from 'react'
+import { useDraggable } from 'react-use-draggable-scroll'
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const ref =
+    useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>
+  const { events } = useDraggable(ref)
 
-  const imgRef = React.useRef<HTMLImageElement>(null)
-  const menuRef = React.useRef<HTMLInputElement>(null)
-
-  window.addEventListener('click', (e) => {
-    if (e.target !== menuRef.current && e.target !== imgRef.current) {
-      setIsOpen(false)
-    }
-  })
   return (
     <>
       <div
-        className="bg-white w-[60%] h-screen absolute flex-col top-16 px-6 py-7 gap-5 justify-between sm:hidden flex font-body overflow-y-scroll z-0"
-        ref={imgRef}
+        className="bg-white w-[60%] h-screen absolute flex-col top-16 px-6 py-7 gap-5 justify-between sm:hidden flex font-body overflow-y-scroll no-scrollbar z-0"
+        ref={ref}
+        {...events}
       >
         <div className="flex flex-col gap-7">
           {' '}
