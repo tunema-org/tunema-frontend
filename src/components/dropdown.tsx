@@ -15,7 +15,7 @@ function MyDropdown() {
     <Menu as="div" className="relative inline-block text-left font-body">
       <Menu.Button
         as="button"
-        className="md:text-heading-06 text-small font-medium flex items-center w-[157px] h-[36px] bg-[#eaf89b] rounded-[10px] justify-center gap-3"
+        className="md:text-heading-06 text-small font-medium flex items-center w-[120px] md:w-[157px] h-[36px] bg-[#eaf89b] rounded-[10px] justify-center gap-3"
       >
         {selectedType}
         <svg

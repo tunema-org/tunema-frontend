@@ -1,17 +1,23 @@
-import { ShoppingBag } from 'iconsax-react'
+import { ShoppingBag, ToggleOn } from 'iconsax-react'
 import { useState, useEffect, useRef } from 'react'
 import React from 'react'
 import { Pivot as Hamburger } from 'hamburger-react'
+import Sidebar from './sidebar'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   const imgRef = React.useRef<HTMLImageElement>(null)
   const menuRef = React.useRef<HTMLInputElement>(null)
+  const ref = React.useRef<HTMLDivElement>(null)
 
   window.addEventListener('click', (e) => {
     if (e.target !== menuRef.current && e.target !== imgRef.current) {
       setIsOpen(false)
+    }
+    if (e.target === ref.current) {
+      setIsSidebarOpen(false)
     }
   })
 
@@ -21,7 +27,18 @@ const Navbar = () => {
     <div className="font-body fixed w-full top-0 z-50" id="navbar">
       <nav className="flex flex-row list-none h-16 items-center justify-between p-4 border-b-2 gray-4 bg-white item-center sm:px-10 px-2">
         <div className="sm:hidden visible">
-          <Hamburger color="#000000" />
+          <Hamburger
+            color="#000000"
+            size={20}
+            toggled={isSidebarOpen}
+            onToggle={(toggled) => {
+              if (toggled) {
+                setIsSidebarOpen(true)
+              } else {
+                setIsSidebarOpen(false)
+              }
+            }}
+          />
         </div>
         <div className="flex-row gap-12 sm:flex hidden">
           <li>
@@ -50,8 +67,8 @@ const Navbar = () => {
             alt="Profile"
           />
         </a>
-        <a href="" className="sm:hidden block">
-          <ShoppingBag size="32" color="black" />
+        <a href="" className="sm:hidden block px-3">
+          <ShoppingBag size="28" color="black" />
         </a>
         <div className="flex-row items-center gap-10 sm:flex hidden sm:w-auto w-0">
           <li>
@@ -116,6 +133,15 @@ const Navbar = () => {
           )}
         </div>
       </nav>
+      {isSidebarOpen && (
+        <div>
+          <Sidebar />
+          <div
+            ref={ref}
+            className="h-screen absolute sm:hidden flex top-16 w-full bg-black -z-30 bg-opacity-75"
+          ></div>
+        </div>
+      )}
     </div>
   )
 }

@@ -143,7 +143,7 @@ function Home() {
       <section className="h-auto overflow-clip flex bg-[url('/src/pic/home/home-footer.png')] bg-cover bg-center font-body mt-10">
         <Container>
           <div className="flex flex-col h-[531px] justify-center items-center gap-3">
-            <h1 className="text-heading-01 text-white mx-2">
+            <h1 className="text-heading-01 text-white mx-2 text-center">
               Explore Your Music Library
             </h1>
             <Button type="primary">Library</Button>
