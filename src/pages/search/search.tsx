@@ -1,5 +1,5 @@
 import Navbar from '../../components/Navbar/navbar'
-import Button from '../../components/Button/button'
+import Button from '../../components/button'
 import Container from '../../components/container'
 import Footer from '../../components/footer'
 import { useState } from 'react'
@@ -9,6 +9,7 @@ import Sample from '../../components/sample'
 import IconPlay from '../../components/icons/icon-play'
 import DropdownSort from '../../components/dropdown/dropdown-sort'
 import FooterMobile from '../../components/footer-mobile'
+import Type from '../../components/type'
 
 function Search() {
   return (
@@ -24,8 +25,19 @@ function Search() {
           </div>
         </section>
         <section className="my-6 flex flex-col gap-6 font-body">
-          <SearchBar></SearchBar>
+          <SearchBar />
           <DropdownType />
+
+          <div className="flex gap-3 overflow-x-scroll no-scrollbar">
+            <Type>Drums</Type>
+            <Type>Synth</Type>
+            <Type>Keys</Type>
+            <Type>Bass</Type>
+            <Type>Percussion</Type>
+            <Type>Vocals</Type>
+            <Type>Guitar</Type>
+          </div>
+
           <div className="flex justify-between items-center">
             <p>500.350 Results</p>
             <DropdownSort />

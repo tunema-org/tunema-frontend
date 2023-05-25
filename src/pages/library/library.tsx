@@ -1,5 +1,5 @@
 import Navbar from '../../components/Navbar/navbar'
-import Button from '../../components/Button/button'
+import Button from '../../components/button'
 import Container from '../../components/container'
 import Footer from '../../components/footer'
 import { useState } from 'react'

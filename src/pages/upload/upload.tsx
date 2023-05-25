@@ -1,6 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
-import Button from '../../components/Button/button'
+import Button from '../../components/button'
 import Input from '../../components/input/input'
 import BigInput from '../../components/input/big-input'
 import Container from '../../components/container'
@@ -53,7 +53,7 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
               >
                 <Dialog.Panel className="w-full flex flex-col justify-center max-w-[200vh] md:max-h-[85vh] transform overflow-y-scroll rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <button
-                    className="fixed top-0 right-0 m-6"
+                    className="self-end sticky top-0 right-1 m-2"
                     onClick={closeModal}
                   >
                     <svg
