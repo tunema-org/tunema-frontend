@@ -6,6 +6,7 @@ import Login from './pages/login/login'
 import Register from './pages/register/register'
 import Profile from './pages/profile/profile'
 import Search from './pages/search/search'
+import Favorites from './pages/favorites/favorites'
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
   {
     path: '/search',
     element: <Search />,
+  },
+  {
+    path: '/favorites',
+    element: <Favorites />,
   },
 ])
 
