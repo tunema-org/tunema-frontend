@@ -3,6 +3,8 @@ import IconDropdown from './icons/icon-dropdown'
 import IconHeart from './icons/icon-heart'
 import IconPlus from './icons/icon-plus'
 import IconPlay from './icons/icon-play'
+import Dropdown from './dropdown/dropdown-test'
+import DropdownSort from './dropdown/dropdown-sort'
 
 const Sample = () => {
   return (
@@ -35,15 +37,15 @@ const Sample = () => {
           $3.45
         </button>
         <div className="grid grid-cols-3 items-center justify-end gap-5 col-span-2">
-          <button>
+          <button className="sm:block hidden">
             {' '}
             <IconHeart></IconHeart>{' '}
           </button>
-          <button>
+          <button className="sm:block hidden">
             <IconPlus></IconPlus>{' '}
           </button>
-          <button className="invisible group-hover:visible">
-            <IconDropdown></IconDropdown>
+          <button className="md:invisible md:group-hover:visible">
+            <Dropdown />
           </button>
         </div>
       </div>

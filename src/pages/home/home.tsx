@@ -3,7 +3,7 @@ import Button from '../../components/Button/button'
 import Container from '../../components/container'
 import Footer from '../../components/footer'
 import { useState, useRef } from 'react'
-import SearchBar from '../../components/search'
+import SearchBar from '../../components/searchbar'
 import DropdownType from '../../components/dropdown/dropdown-type'
 import Sample from '../../components/sample'
 import IconPlay from '../../components/icons/icon-play'
@@ -140,12 +140,6 @@ function Home() {
         </section>
         <section>
           {' '}
-          <Sample />
-          <Sample />
-          <Sample />
-          <Sample />
-          <Sample />
-          <Sample />
           <Sample />
         </section>
       </Container>

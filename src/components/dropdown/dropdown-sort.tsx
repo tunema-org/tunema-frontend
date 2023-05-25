@@ -1,15 +1,13 @@
 import { Menu } from '@headlessui/react'
 import { useState } from 'react'
 
-enum TypeEnum {
+enum OrderByEnum {
   DEFAULT = 'Date Added',
-  TYPE1 = 'Type1',
-  TYPE2 = 'Type2',
-  TYPE3 = 'Type3',
+  POPULAR = 'Popular',
 }
 
 function DropdownSort() {
-  const [selectedType, setSelectedType] = useState(TypeEnum.DEFAULT)
+  const [selectedType, setSelectedType] = useState(OrderByEnum.DEFAULT)
   const setClick = () => {}
   return (
     <Menu as="div" className="relative inline-block text-left font-body">
@@ -36,26 +34,33 @@ function DropdownSort() {
         </svg>
       </Menu.Button>
 
-      <Menu.Items as="div" className="absolute left-0 flex flex-col bg-red-400">
+      <Menu.Items
+        as="div"
+        className="absolute mt-2 w-full drop-shadow-md flex flex-col bg-white p-4 font-medium rounded-[10px]"
+      >
         <Menu.Item>
           {({ active }) => (
-            <button className={`${active && 'bg-blue-500'}`}>
-              Account settings
+            <button
+              className={`${
+                active && 'bg-light-green'
+              } p-3 rounded-[10px] text-center flex items-center gap-3 justify-center`}
+              onClick={() => setSelectedType(OrderByEnum.DEFAULT)}
+            >
+              Date Added
             </button>
           )}
         </Menu.Item>
         <Menu.Item>
           {({ active }) => (
-            <a
-              className={`${active && 'bg-blue-500'}`}
-              href="/account-settings"
+            <button
+              className={`${
+                active && 'bg-light-green'
+              } p-3 rounded-[10px] text-center flex items-center gap-3 justify-center`}
+              onClick={() => setSelectedType(OrderByEnum.POPULAR)}
             >
-              Documentation
-            </a>
+              Popular
+            </button>
           )}
-        </Menu.Item>
-        <Menu.Item disabled>
-          <span className="opacity-75">Invite a friend (coming soon!)</span>
         </Menu.Item>
       </Menu.Items>
     </Menu>
