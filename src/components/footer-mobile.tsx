@@ -9,7 +9,7 @@ function FooterMobile() {
 
   return (
     <>
-      <footer className="flex md:invisible visible">
+      <footer className="fixed md:invisible visible bottom-0 bg-white">
         <section className="flex flex-col h-[70px] w-screen py-3">
           <div className="flex justify-center items-center content-center font-medium text-small text-center">
             <div className="flex flex-col items-center justify-center">
