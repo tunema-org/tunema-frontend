@@ -4,6 +4,7 @@ import LandingPage from './pages/landing/landing'
 import Library from './pages/library/library'
 import Login from './pages/login/login'
 import Register from './pages/register/register'
+import Profile from './pages/profile/profile'
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
   {
     path: '/register',
     element: <Register />,
+  },
+  {
+    path: '/profile',
+    element: <Profile />,
   },
 ])
 

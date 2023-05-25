@@ -9,6 +9,7 @@ import Sample from '../../components/sample'
 import IconPlay from '../../components/icons/icon-play'
 import DropdownSort from '../../components/dropdown/dropdown-sort'
 import { useDraggable } from 'react-use-draggable-scroll'
+import FooterMobile from '../../components/footer-mobile'
 
 enum GenreEnum {
   ALL = 'Mixed',
@@ -159,8 +160,10 @@ function Home() {
           </div>
         </Container>
       </section>
-
-      <Footer />
+      <FooterMobile />
+      <div className="md:block hidden">
+        <Footer />
+      </div>
     </>
   )
 }

@@ -9,24 +9,32 @@ function FooterMobile() {
 
   return (
     <>
-      <footer className="md:invisible visible">
-        <section className="flex flex-col h-[70px] py-4 w-auto">
+      <footer className="flex md:invisible visible">
+        <section className="flex flex-col h-[70px] w-screen py-3">
           <div className="flex justify-center items-center content-center font-medium text-small text-center">
-            <div className="flex flex-col items-center justify-center px-14">
-              <IconHome isActive={pathname === '/'} />
-              {pathname === '/' ? (
-                <div className="text-primary-green">Home</div>
+            <div className="flex flex-col items-center justify-center">
+              <IconHome isActive={pathname === '/home'} />
+              {pathname === '/home' ? (
+                <div className="text-dark-green">Home</div>
               ) : (
                 <div>Home</div>
               )}
             </div>
-            <div className="flex flex-col items-center justify-center px-14">
-              <IconSearch isActive={pathname === ''} />
-              Search
+            <div className="flex flex-col items-center justify-center px-16">
+              <IconSearch isActive={pathname === '/search'} />
+              {pathname === '/search' ? (
+                <div className="text-dark-green">Search</div>
+              ) : (
+                <div>Search</div>
+              )}
             </div>
-            <div className="flex flex-col items-center justify-center px-14">
-              <IconLibrary isActive={pathname === ''} />
-              Library
+            <div className="flex flex-col items-center justify-center">
+              <IconLibrary isActive={pathname === '/library'} />
+              {pathname === '/library' ? (
+                <div className="text-dark-green">Library</div>
+              ) : (
+                <div>Library</div>
+              )}
             </div>
           </div>
         </section>
