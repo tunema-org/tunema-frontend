@@ -5,6 +5,7 @@ import Library from './pages/library/library'
 import Login from './pages/login/login'
 import Register from './pages/register/register'
 import Profile from './pages/profile/profile'
+import Search from './pages/search/search'
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
   {
     path: '/profile',
     element: <Profile />,
+  },
+  {
+    path: '/search',
+    element: <Search />,
   },
 ])
 
