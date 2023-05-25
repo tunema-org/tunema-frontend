@@ -5,19 +5,11 @@ import Button from '../../components/Button/button'
 import { Transition } from '@headlessui/react'
 
 const Upload = () => {
-  const ref =
-    useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>
-  const { events } = useDraggable(ref)
-
   const isUpload = true
 
   return (
     <>
-      <div
-        className="bg-white w-auto max-w-[95%] h-[80vh] rounded-[20px] absolute flex-col right-0 left-0 top-[51vh] bottom-0 m-auto px-6 py-7 flex font-body overflow-y-scroll z-0 justify-center items-center"
-        ref={ref}
-        {...events}
-      >
+      <div className="bg-white w-auto max-w-[95%] h-[80vh] rounded-[20px] absolute flex-col right-0 left-0 top-[51vh] bottom-0 m-auto px-6 py-7 flex font-body overflow-y-scroll z-0 justify-center items-center">
         <button className="absolute top-0 right-0 m-6">
           <svg
             width="22"
@@ -69,7 +61,42 @@ const Upload = () => {
         )}
         {isUpload && (
           <div>
-            <h1>Sudah diupload yh</h1>
+            <section className="flex justify-between gap-10 w-auto">
+              <div className="flex w-full items-center justify-center bg-grey-lighter">
+                <label className="w-full flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue">
+                  <svg
+                    className="w-8 h-8"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+                  </svg>
+                  <span className="mt-2 text-base leading-normal">
+                    Select a file
+                  </span>
+                  <input type="file" className="hidden" />
+                </label>
+              </div>
+              <div className="flex flex-col max-w-auto w-[50rem] justify-center items-center font-medium text-small">
+                <label className="flex text-gray-3 text-small self-start font-medium mb-2">
+                  Title <span className="text-red-400"> *</span>
+                </label>
+                <input
+                  className="flex bg-gray-2 rounded w-full h-9 pl-3"
+                  type="email"
+                  placeholder=""
+                />
+                <label className="flex text-gray-3 text-small self-start font-medium mb-2">
+                  Genre <span className="text-red-400"> *</span>
+                </label>
+                <input
+                  className="flex bg-gray-2 rounded w-full h-9 pl-3"
+                  type="email"
+                  placeholder=""
+                />
+              </div>
+            </section>
             <section className="absolute bottom-0 w-full left-0 right-0 flex flex-col justify-center font-medium m-auto">
               <div className="flex items-start border-b-[1px] border-gray-3"></div>
               <div className="my-5 md:px-[10rem] flex justify-between items-center px-5">
