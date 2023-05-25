@@ -26,13 +26,13 @@ function Login() {
               </a>
             </div>
             <div className="pt-10 flex justify-center text-center">
-              <button className="w-full h-8 shadow-md rounded-md font-medium content-center items-center text-small text-center hover:bg-primary-green">
+              <button className="p-5 flex justify-center gap-2 w-full h-8 shadow-md rounded-md font-medium content-center items-center text-small text-center hover:bg-primary-green">
                 <IconGoogle className="mb-0.5 inline" />
                 <b> Login with Google</b>
               </button>
             </div>
             <div className="pt-5 flex justify-center text-center">
-              <button className="w-full h-8 shadow-md rounded-md font-medium content-center items-center justify-center text-small text-center hover:bg-primary-green">
+              <button className="p-5 flex gap-2 w-full h-8 shadow-md rounded-md font-medium content-center items-center justify-center text-small text-center hover:bg-primary-green">
                 <IconSoundcloud className="mb-1 inline" />
                 <b> Login with Soundcloud</b>
               </button>
