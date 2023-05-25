@@ -19,14 +19,18 @@ function DropdownSort() {
       >
         {selectedType}
         <svg
-          width="20"
-          height="12"
-          viewBox="0 0 20 12"
+          width="15"
+          height="22"
+          viewBox="0 0 15 22"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M0 1.88745L10 11.8875L20 1.88745L18.225 0.112452L10 8.33745L1.775 0.112452L0 1.88745Z"
+            d="M0 13.8566L7.5 21.4999L15 13.8566L13.6687 12.4999L7.5 18.7865L1.33125 12.4999L0 13.8566Z"
+            fill="black"
+          />
+          <path
+            d="M0 8.14331L7.5 0.5L15 8.14331L13.6687 9.5L7.5 3.21338L1.33125 9.5L0 8.14331Z"
             fill="black"
           />
         </svg>
