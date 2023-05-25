@@ -35,7 +35,7 @@ const Sample = () => {
         <div className="flex-col justify-center gap-5 md:col-span-1 col-span-3 sm:block hidden">
           3 days ago
         </div>
-        <div className="text-gray-500">
+        <div className="text-gray-500 group-hover:visible invisible">
           <Dropdown />
         </div>
       </div>

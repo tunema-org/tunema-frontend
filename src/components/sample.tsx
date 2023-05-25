@@ -37,15 +37,13 @@ const Sample = () => {
           $3.45
         </button>
         <div className="grid grid-cols-3 items-center justify-start gap-5 col-span-2">
-          <button className="flex-col sm:block hidden">
-            {' '}
-            <IconHeart></IconHeart>{' '}
+          <button className="sm:block hidden">
+            <IconHeart></IconHeart>
           </button>
-          <button className="flex-col sm:block hidden">
-            {' '}
-            <IconPlus></IconPlus>{' '}
+          <button className="sm:block hidden">
+            <IconPlus></IconPlus>
           </button>
-          <button className="md:invisible md:group-hover:visible">
+          <button className="md:group-hover:visible">
             <Dropdown />
           </button>
         </div>
