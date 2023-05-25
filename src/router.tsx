@@ -10,7 +10,7 @@ import Favorites from './pages/favorites/favorites'
 
 export const router = createBrowserRouter([
   {
-    path: '/landing',
+    path: '',
     element: <LandingPage />,
   },
   {

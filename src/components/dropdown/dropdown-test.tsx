@@ -26,7 +26,7 @@ function DropdownSort() {
 
       <Menu.Items
         as="div"
-        className="absolute sm-right-0 w-auto    drop-shadow-md right-2 flex flex-col bg-white p-4 font-medium rounded-[10px]"
+        className="absolute sm-right-0 w-auto drop-shadow-md right-2 flex flex-col backdrop-blur-md bg-white/80 p-4 font-medium rounded-[10px]"
       >
         <Menu.Item>
           {({ active }) => (
@@ -50,7 +50,7 @@ function DropdownSort() {
             </button>
           )}
         </Menu.Item>
-        <div className="flex items-start border-b-[1px] my-3 border-gray-2"></div>
+        <div className="flex items-start border-b-[1px] my-3 border-gray-4"></div>
         <Menu.Item>
           {({ active }) => (
             <button
@@ -73,7 +73,7 @@ function DropdownSort() {
             </button>
           )}
         </Menu.Item>
-        <div className="flex items-start border-b-[1px] my-3 border-gray-2"></div>
+        <div className="flex items-start border-b-[1px] my-3 border-gray-4"></div>
         <Menu.Item>
           {({ active }) => (
             <button

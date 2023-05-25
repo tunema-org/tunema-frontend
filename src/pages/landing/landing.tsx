@@ -41,7 +41,9 @@ function LandingPage() {
                 perfect sound to take your music to the next level.
               </p>
               <div>
-                <Button type="landing">Browse Samples</Button>
+                <a href="/home">
+                  <Button type="landing">Browse Samples</Button>
+                </a>
               </div>
             </div>
             <div className="flex">
@@ -142,7 +144,9 @@ function LandingPage() {
                 <h1 className="text-heading-01 text-white mx-2">Join</h1>
                 <img src="/src/pic/Logo White.svg" alt="" />
               </div>
-              <Button type="primary">JOIN</Button>
+              <a href="/home">
+                <Button type="primary">JOIN</Button>
+              </a>
             </div>
           </Container>
         </section>

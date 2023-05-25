@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 enum TypeEnum {
   DEFAULT = 'Instruments',
-  TYPE1 = 'Type1',
+  VOCAL = 'Vocal',
   TYPE2 = 'Type2',
   TYPE3 = 'Type3',
 }
@@ -19,39 +19,50 @@ function DropdownType() {
       >
         {selectedType}
         <svg
-          width="20"
-          height="12"
-          viewBox="0 0 20 12"
+          width="15"
+          height="22"
+          viewBox="0 0 15 22"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M0 1.88745L10 11.8875L20 1.88745L18.225 0.112452L10 8.33745L1.775 0.112452L0 1.88745Z"
+            d="M0 13.8566L7.5 21.4999L15 13.8566L13.6687 12.4999L7.5 18.7865L1.33125 12.4999L0 13.8566Z"
+            fill="black"
+          />
+          <path
+            d="M0 8.14331L7.5 0.5L15 8.14331L13.6687 9.5L7.5 3.21338L1.33125 9.5L0 8.14331Z"
             fill="black"
           />
         </svg>
       </Menu.Button>
 
-      <Menu.Items as="div" className="absolute left-0 flex flex-col bg-red-400">
+      <Menu.Items
+        as="div"
+        className="absolute mt-2 w-full max-w-[10rem] drop-shadow-md flex flex-col backdrop-blur-md bg-white/80 p-4 font-medium rounded-[10px]"
+      >
         <Menu.Item>
           {({ active }) => (
-            <button className={`${active && 'bg-blue-500'}`}>
-              Account settings
+            <button
+              className={`${
+                active && 'bg-light-green'
+              } p-3 rounded-[10px] text-center flex items-center gap-3 justify-center`}
+              onClick={() => setSelectedType(TypeEnum.DEFAULT)}
+            >
+              Instruments
             </button>
           )}
         </Menu.Item>
         <Menu.Item>
           {({ active }) => (
-            <a
-              className={`${active && 'bg-blue-500'}`}
-              href="/account-settings"
+            <button
+              className={`${
+                active && 'bg-light-green'
+              } p-3 rounded-[10px] text-center flex items-center gap-3 justify-center`}
+              onClick={() => setSelectedType(TypeEnum.VOCAL)}
             >
-              Documentation
-            </a>
+              Vocal
+            </button>
           )}
-        </Menu.Item>
-        <Menu.Item disabled>
-          <span className="opacity-75">Invite a friend (coming soon!)</span>
         </Menu.Item>
       </Menu.Items>
     </Menu>

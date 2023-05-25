@@ -55,7 +55,7 @@ function Profile() {
               <div className="md:col-span-2 col-auto min-w-[100px]">
                 <p>Title</p>
               </div>
-              <div className="lg:col-span-3 col-auto max-w-[22rem] lg:visible invisible">
+              <div className="lg:col-span-3 col-auto max-w-[22rem] lg:block hidden">
                 <p>AudioWave</p>
               </div>
               <p className="md:visible invisible">Time</p>

@@ -48,17 +48,23 @@ const Navbar = () => {
           </div>
           <div className="flex-row gap-12 sm:flex hidden">
             <li>
-              <a href="#" className="hover:underline hover:text-dark-green">
+              <a
+                href="/search"
+                className="hover:underline hover:text-dark-green"
+              >
                 Search
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline hover:text-dark-green">
+              <a
+                href="/library"
+                className="hover:underline hover:text-dark-green"
+              >
                 Library
               </a>
             </li>
           </div>
-          <a href="" className="items-center min-w-44">
+          <a href="/home" className="items-center min-w-44">
             <img
               className="object-contain h-9 w-44"
               src={'/src/pic/LOGO TUNEMA BLACK 2.png'}
@@ -127,7 +133,7 @@ const Navbar = () => {
             {!isLogin && (
               <li>
                 <a
-                  href="#"
+                  href="/login"
                   className="hover:underline hover:text-dark-green hover:font-medium"
                 >
                   Login

@@ -36,7 +36,7 @@ function DropdownSort() {
 
       <Menu.Items
         as="div"
-        className="absolute mt-2 w-full drop-shadow-md flex flex-col bg-white p-4 font-medium rounded-[10px]"
+        className="absolute mt-2 w-full drop-shadow-md flex flex-col backdrop-blur-sm bg-white/30 p-4 font-medium rounded-[10px]"
       >
         <Menu.Item>
           {({ active }) => (
