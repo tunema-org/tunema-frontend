@@ -7,6 +7,7 @@ import Register from './pages/register/register'
 import Profile from './pages/profile/profile'
 import Search from './pages/search/search'
 import Favorites from './pages/favorites/favorites'
+import ArtistDashboard from './pages/artist-dashboard/artist-dashboard'
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
   {
     path: '/favorites',
     element: <Favorites />,
+  },
+  {
+    path: '/artist-dashboard',
+    element: <ArtistDashboard />,
   },
 ])
 
