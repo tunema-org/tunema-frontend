@@ -8,6 +8,7 @@ import DropdownType from '../../components/dropdown/dropdown-type'
 import Sample from '../../components/sample'
 import IconPlay from '../../components/icons/icon-play'
 import DropdownSort from '../../components/dropdown/dropdown-sort'
+import FooterMobile from '../../components/footer-mobile'
 
 function Library() {
   return (
@@ -68,8 +69,10 @@ function Library() {
           </div>
         </Container>
       </section>
-
-      <Footer />
+      <FooterMobile />
+      <div className="md:block hidden">
+        <Footer />
+      </div>
     </>
   )
 }
