@@ -9,7 +9,7 @@ function LandingPage() {
     <>
       <main className="">
         <Navbar />
-        <section className="h-screen overflow-clip flex bg-[url('/src/pic/landing/landing_1.png')] bg-cover bg-center">
+        <section className="bg-fixed h-screen overflow-clip flex bg-[url('/src/pic/landing/landing_1.png')] bg-cover bg-center">
           <Container>
             <div className="h-screen max-w-[50%] flex flex-col justify-center text-white font-body gap-5 md:p-0 p-5">
               <h1 className="text-display min-w-[17rem]">

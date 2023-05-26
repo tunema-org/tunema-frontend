@@ -8,6 +8,8 @@ import Profile from './pages/profile/profile'
 import Search from './pages/search/search'
 import Favorites from './pages/favorites/favorites'
 import ArtistDashboard from './pages/artist-dashboard/artist-dashboard'
+import SampleCart from './pages/sample-cart/sample-cart'
+import Checkout from './pages/checkout/checkout'
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +47,14 @@ export const router = createBrowserRouter([
   {
     path: '/artist-dashboard',
     element: <ArtistDashboard />,
+  },
+  {
+    path: '/sample-cart',
+    element: <SampleCart />,
+  },
+  {
+    path: '/checkout',
+    element: <Checkout />,
   },
 ])
 
