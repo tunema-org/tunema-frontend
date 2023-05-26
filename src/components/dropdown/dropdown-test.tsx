@@ -3,7 +3,6 @@ import { useState } from 'react'
 import IconDropdown from '../icons/icon-dropdown'
 import IconHeart from '../icons/icon-heart'
 import IconPlus from '../icons/icon-plus'
-import IconProfile from '../icons/icon-profile'
 
 enum TypeEnum {
   DEFAULT = 'Date Added',
@@ -19,14 +18,14 @@ function DropdownSort() {
     <Menu as="div" className="relative inline-block text-left font-body">
       <Menu.Button
         as="button"
-        className="md:text-heading-06 text-small font-medium flex items-center md:w-auto px-5 h-[36px] rounded-[10px] justify-center gap-3"
+        className="z-0 md:text-heading-06 text-small font-medium flex items-center md:w-auto px-5 h-[36px] rounded-[10px] justify-center gap-3"
       >
         <IconDropdown></IconDropdown>
       </Menu.Button>
 
       <Menu.Items
         as="div"
-        className="absolute sm-right-0 w-auto drop-shadow-md right-2 flex flex-col backdrop-blur-md bg-white/80 p-4 font-medium rounded-[10px]"
+        className="z-10 absolute sm-right-0 w-auto drop-shadow-md right-2 flex flex-col backdrop-blur-md bg-white/80 p-4 font-medium rounded-[10px]"
       >
         <Menu.Item>
           {({ active }) => (

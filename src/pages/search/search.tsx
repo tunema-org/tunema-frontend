@@ -1,14 +1,12 @@
-import Navbar from '../../components/Navbar/navbar'
-import Button from '../../components/button'
 import Container from '../../components/container'
-import Footer from '../../components/footer'
-import { useState } from 'react'
-import SearchBar from '../../components/searchbar'
-import DropdownType from '../../components/dropdown/dropdown-type'
-import Sample from '../../components/sample'
-import IconPlay from '../../components/icons/icon-play'
 import DropdownSort from '../../components/dropdown/dropdown-sort'
+import DropdownType from '../../components/dropdown/dropdown-type'
+import Footer from '../../components/footer'
 import FooterMobile from '../../components/footer-mobile'
+import IconPlay from '../../components/icons/icon-play'
+import Navbar from '../../components/Navbar/navbar'
+import Sample from '../../components/sample'
+import SearchBar from '../../components/searchbar'
 import Type from '../../components/type'
 
 function Search() {
@@ -64,7 +62,11 @@ function Search() {
           <div className="flex items-start border-b-[1px] border-gray-3"></div>
         </section>
         <section>
-          <Sample />
+          <Sample src="/src/samples/acimalaka2.mp3" />
+          <Sample src="/src/samples/1.wav" />
+          <Sample src="/src/samples/2.wav" />
+          <Sample src="/src/samples/3.wav" />
+          <Sample src="/src/samples/4.wav" />
         </section>
       </Container>
       <div className="md:block hidden">
