@@ -1,11 +1,27 @@
+import React from 'react'
+import { useState } from 'react'
 import Container from './container'
 import IconDropdown from './icons/icon-dropdown'
 import IconHeart from './icons/icon-heart'
 import IconPlus from './icons/icon-plus'
 import IconPlay from './icons/icon-play'
 import Dropdown from './dropdown/dropdown-test'
+import Waveform from './waveform'
 
-const Sample = () => {
+type SampleProps = {
+  src: string
+}
+
+const ArtistSample = (props: SampleProps) => {
+  const [playing, setPlaying] = useState(false)
+
+  const handlePlay = () => {
+    setPlaying(!playing)
+  }
+
+  const handleFinish = () => {
+    setPlaying(false)
+  }
   return (
     <>
       <div className="group grid sm:grid-cols-12 grid-cols-9 items-center gap-10 hover:bg-slate-50 pr-2 font-body p-4">
@@ -23,16 +39,20 @@ const Sample = () => {
             Gh0st_wave_Surround_Sound_125BPM_Am.wav
           </a>
           <div className="flex gap-5 text-gray-500 text-small">
-            <button className="hover:underline">Electornic</button>
+            <button className="hover:underline">Electronic</button>
             <button className="hover:underline">Synth</button>
           </div>
         </div>
-        <div className="md:col-span-3 max-w-[22rem] md:visible invisible">
-          <img src="/src/pic/components/player/soundwavetest.svg" alt="" />
+        <div className="md:col-span-3 col-auto max-w-[22rem] md:visible invisible">
+          <Waveform
+            src={props.src}
+            playing={playing}
+            onFinished={handleFinish}
+          />
         </div>
-        <p className="sm:visible invisible">3:45</p>
-        <p className="">125</p>
-        <div className="flex-col justify-center gap-5 md:col-span-1 col-span-3 sm:block hidden">
+        <p className="sm:block hidden">3:45</p>
+        <p className="sm:block hidden">125</p>
+        <div className="flex-col justify-center gap-5 lg:col-span-2 md:col-span-1 col-span-3">
           3 days ago
         </div>
         <div className="text-gray-500 group-hover:visible invisible">
@@ -44,4 +64,4 @@ const Sample = () => {
   )
 }
 
-export default Sample
+export default ArtistSample

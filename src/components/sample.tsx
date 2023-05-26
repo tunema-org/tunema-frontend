@@ -53,7 +53,7 @@ const Sample = (props: SampleProps) => {
             Gh0st_wave_Surround_Sound_125BPM_Am.wav
           </a>
           <div className="flex gap-3 text-gray-500 text-small">
-            <button className="hover:underline">Electornic</button>
+            <button className="hover:underline">Electronic</button>
             <button className="hover:underline">Synth</button>
           </div>
         </div>
@@ -64,16 +64,16 @@ const Sample = (props: SampleProps) => {
             onFinished={handleFinish}
           />
         </div>
-        <p className="sm:visible invisible">3:45</p>
-        <p className="sm:block hidden">125</p>
+        <p className="text-left sm:visible invisible">3:45</p>
+        <p className="text-left sm:block hidden">125</p>
         <button className="flex flex-col font-medium text-dark-green hover:underline justify-start">
           $3.45
         </button>
         <div className="grid grid-cols-3 items-center justify-start gap-5 col-span-2">
-          <button className="sm:block hidden">
+          <button className="lg:block hidden">
             <IconHeart></IconHeart>
           </button>
-          <button className="sm:block hidden">
+          <button className="lg:block hidden">
             <IconPlus></IconPlus>
           </button>
           <button className="visible sm:group-hover:visible">
