@@ -1,15 +1,15 @@
-import Navbar from '../../components/Navbar/navbar'
+import { useRef, useState } from 'react'
+import { useDraggable } from 'react-use-draggable-scroll'
 import Button from '../../components/button'
 import Container from '../../components/container'
-import Footer from '../../components/footer'
-import { useState, useRef } from 'react'
-import SearchBar from '../../components/searchbar'
-import DropdownType from '../../components/dropdown/dropdown-type'
-import Sample from '../../components/sample'
-import IconPlay from '../../components/icons/icon-play'
 import DropdownSort from '../../components/dropdown/dropdown-sort'
-import { useDraggable } from 'react-use-draggable-scroll'
+import DropdownType from '../../components/dropdown/dropdown-type'
+import Footer from '../../components/footer'
 import FooterMobile from '../../components/footer-mobile'
+import IconPlay from '../../components/icons/icon-play'
+import Navbar from '../../components/Navbar/navbar'
+import Sample from '../../components/sample'
+import SearchBar from '../../components/searchbar'
 
 enum GenreEnum {
   ALL = 'Mixed',
@@ -140,7 +140,7 @@ function Home() {
         </section>
         <section>
           {' '}
-          <Sample />
+          <Sample src="/src/samples/1.wav" />
         </section>
       </Container>
 
