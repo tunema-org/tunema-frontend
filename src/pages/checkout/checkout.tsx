@@ -13,13 +13,13 @@ function Checkout() {
   return (
     <>
       <Navbar />
-      <section className="h-[21rem] bg-[url('/src/pic/samplecart/samplecart-header.png')] bg-cover bg-center"></section>
+      <section className="h-[21rem] bg-[url('/src/pic/checkout/checkout-header.png')] bg-cover bg-center"></section>
       <Container>
         {' '}
         <section className="h-auto font-body flex items-center py-3">
           <div className="flex flex-col">
-            <h1 className="text-heading-01 ">Sample Cart</h1>
-            <p>Shopping cart.</p>
+            <h1 className="text-heading-01 ">Checkout</h1>
+            <p>Choose your payment methods.</p>
           </div>
         </section>
       </Container>

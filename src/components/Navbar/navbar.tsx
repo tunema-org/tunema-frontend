@@ -27,6 +27,12 @@ const Navbar = () => {
 
   const isLogin = true
 
+  const hoverVariant = {
+    left: 'duration-200 relative mt-auto mb-auto hover:text-dark-green hover:before:scale-x-100 before:absolute before:origin-top-left before:block before:transition-transform before:duration-[0.3s] before:ease-[ease] before:scale-x-0 before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-[#9CB719]',
+    right:
+      'duration-200 relative mt-auto mb-auto hover:text-dark-green hover:before:scale-x-100 before:absolute before:origin-top-right before:block before:transition-transform before:duration-[0.3s] before:ease-[ease] before:scale-x-0 before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-[#9CB719]',
+  }
+
   return (
     <>
       <MyModal isUpload={isUpload} setIsUpload={setIsUpload} />
@@ -48,18 +54,12 @@ const Navbar = () => {
           </div>
           <div className="flex-row gap-12 sm:flex hidden">
             <li>
-              <a
-                href="/search"
-                className="hover:underline hover:text-dark-green"
-              >
+              <a href="/search" className={hoverVariant.left}>
                 Search
               </a>
             </li>
             <li>
-              <a
-                href="/library"
-                className="hover:underline hover:text-dark-green"
-              >
+              <a href="/library" className={hoverVariant.left}>
                 Library
               </a>
             </li>
@@ -109,20 +109,20 @@ const Navbar = () => {
                   >
                     <a
                       href="#"
-                      className="p-2 font-bold w-32 hover:bg-light-green hover:rounded-lg text-center"
+                      className="duration-200 p-2 font-bold w-32 hover:bg-light-green hover:rounded-lg text-center"
                     >
                       {'Account'}
                     </a>
-                    <div className="border-b border-gray-3"></div>
+                    <div className="duration-200 border-b border-gray-3"></div>
                     <a
                       href="#"
-                      className="p-2 hover:bg-light-green hover:rounded-lg"
+                      className="duration-200 p-2 hover:bg-light-green hover:rounded-lg"
                     >
                       Settings
                     </a>
                     <a
                       href="#"
-                      className="p-2 hover:bg-red-300 hover:rounded-lg"
+                      className="duration-200 p-2 hover:bg-red-300 hover:rounded-lg"
                     >
                       Log Out
                     </a>
@@ -132,10 +132,7 @@ const Navbar = () => {
             )}
             {!isLogin && (
               <li>
-                <a
-                  href="/login"
-                  className="hover:underline hover:text-dark-green hover:font-medium"
-                >
+                <a href="/login" className={hoverVariant.right}>
                   Login
                 </a>
               </li>
