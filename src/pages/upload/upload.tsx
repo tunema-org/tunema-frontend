@@ -4,6 +4,7 @@ import Button from '../../components/button'
 import Input from '../../components/input/input'
 import BigInput from '../../components/input/big-input'
 import Container from '../../components/container'
+import Autocomplete from '../../components/dropdown/dropdown-autocomplete'
 
 type MyModalProps = {
   isUpload: boolean
@@ -11,7 +12,7 @@ type MyModalProps = {
 }
 
 export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
-  const isUploaded = true
+  const isUploaded = false
   function closeModal() {
     setIsUpload(false)
   }
@@ -40,7 +41,7 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
             <div className="fixed inset-0 bg-black bg-opacity-25" />
           </Transition.Child>
 
-          <div className="fixed inset-0 mt-16 overflow-y-scroll">
+          <div className="fixed inset-0 mt-16 overflow-auto">
             <div className="flex min-h-full items-center justify-center p-4 text-center">
               <Transition.Child
                 as={Fragment}
@@ -115,7 +116,7 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
                   )}
                   {!isUploaded && (
                     <>
-                      <div className="flex flex-col md:flex-row justify-around md:mt-[40vh] gap-4">
+                      <div className="flex flex-col md:flex-row justify-around md:mt-[37vh] gap-4">
                         <div className="flex w-[25vh] h-auto items-center justify-center bg-grey-lighter">
                           <label className="w-full flex h-[25vh] items-center justify-center p-6 rounded-lg border-dashed border-2 border-dark-green tracking-wide cursor-pointer hover:bg-blue">
                             <span className="mt-2 text-gray-400">
@@ -126,7 +127,7 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
                         </div>
                         <div className="flex flex-col gap-3">
                           <Input type="required" label="Title"></Input>
-                          <Input type="required" label="Genre"></Input>
+                          <Autocomplete />
                           <Input type="required" label="Price"></Input>
                           <Input type="required" label="BPM"></Input>
                           <Input type="required" label="Instrument"></Input>
