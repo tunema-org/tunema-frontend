@@ -64,7 +64,7 @@ const Sample = (props: SampleProps) => {
           />
         </div>
         <p className="sm:visible invisible">3:45</p>
-        <p className="sm:visible invisible">125</p>
+        <p className="sm:block hidden">125</p>
         <button className="flex flex-col font-medium text-dark-green hover:underline justify-start">
           $3.45
         </button>

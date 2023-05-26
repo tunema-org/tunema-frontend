@@ -125,7 +125,7 @@ function Home() {
             <button className="group-hover:visible invisible">
               <IconPlay />
             </button>
-            <div className="col-span-2 col-auto min-w-[100px]">
+            <div className="sm:col-span-2 col-auto min-w-[100px]">
               <p>Title</p>
             </div>
             <div className="md:col-span-3 col-auto max-w-[22rem] md:block hidden">
