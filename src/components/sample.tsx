@@ -16,6 +16,10 @@ const Sample = (props: SampleProps) => {
     setPlaying(!playing)
   }
 
+  const handleFinish = () => {
+    setPlaying(false)
+  }
+
   return (
     <button onClick={handlePlay}>
       <div className="group grid md:grid-cols-12 grid-cols-9 items-center gap-10 hover:bg-slate-50 pr-2 font-body p-4">
@@ -53,7 +57,11 @@ const Sample = (props: SampleProps) => {
           </div>
         </div>
         <div className="lg:col-span-3 col-auto max-w-[22rem] lg:block hidden">
-          <Waveform src={props.src} playing={playing} />
+          <Waveform
+            src={props.src}
+            playing={playing}
+            onFinished={handleFinish}
+          />
         </div>
         <p className="">3:45</p>
         <p className="">125</p>

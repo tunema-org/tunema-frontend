@@ -4,6 +4,7 @@ import WaveSurfer from 'wavesurfer.js'
 type WaveformProps = {
   src: string
   playing: boolean
+  onFinished: () => void
 }
 
 const Waveform = (props: WaveformProps) => {
@@ -24,9 +25,14 @@ const Waveform = (props: WaveformProps) => {
         cursorColor: '#9CB719',
         barWidth: 3,
         barRadius: 3,
+        cursorWidth: 1,
       })
 
       wavesurfer.current.load(props.src)
+
+      wavesurfer.current.on('finish', () => {
+        props.onFinished()
+      })
     }
 
     return () => {
@@ -37,7 +43,7 @@ const Waveform = (props: WaveformProps) => {
   }, [props.src])
 
   useEffect(() => {
-    if (wavesurfer.current) {
+    if (wavesurfer.current && props.playing) {
       wavesurfer.current.playPause()
     }
   }, [props.playing])
