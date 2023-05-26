@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react'
 import Dropdown from './dropdown/dropdown-test'
 import IconHeart from './icons/icon-heart'

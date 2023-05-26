@@ -1,3 +1,4 @@
+import React from 'react'
 import Container from '../../components/container'
 import DropdownSort from '../../components/dropdown/dropdown-sort'
 import DropdownType from '../../components/dropdown/dropdown-type'

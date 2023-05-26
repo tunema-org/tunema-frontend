@@ -1,3 +1,4 @@
+import React from 'react'
 import { useRef, useState } from 'react'
 import { useDraggable } from 'react-use-draggable-scroll'
 import Button from '../../components/button'
