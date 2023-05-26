@@ -5,6 +5,7 @@ import Sample from '../../components/sample'
 import IconPlay from '../../components/icons/icon-play'
 import Footer from '../../components/footer'
 import FooterMobile from '../../components/footer-mobile'
+import SampleTitle from '../../components/sample-title'
 
 function Favorites() {
   return (
@@ -45,31 +46,8 @@ function Favorites() {
               </div>
             </div>
           </section>
-          <section>
-            <div className="flex items-start border-b-[1px] border-gray-3"></div>
-            <div className="grid md:grid-cols-12 grid-cols-9 items-center gap-10 pr-2 font-medium py-5 text-gray-4 px-4">
-              <p>Cover</p>
-              <button className="group-hover:visible invisible">
-                <IconPlay />
-              </button>
-              <div className="md:col-span-2 col-auto min-w-[100px]">
-                <p>Title</p>
-              </div>
-              <div className="lg:col-span-3 col-auto max-w-[22rem] lg:visible invisible">
-                <p>AudioWave</p>
-              </div>
-              <p className="md:visible invisible">Time</p>
-              <p className="md:visible invisible">BPM</p>
-              <p>Price</p>
-              <div className="flex items-center justify-end gap-5 col-span-2 md:visible invisible"></div>
-            </div>
-            <div className="flex items-start border-b-[1px] border-gray-3"></div>
-          </section>
-          <section className="md:pb-16">
-            {' '}
-            <Sample />
-            <Sample />
-          </section>
+          <SampleTitle />
+          <section className="md:pb-16"> </section>
         </Container>
       </main>
       <FooterMobile />

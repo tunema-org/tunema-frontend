@@ -11,7 +11,7 @@ type MyModalProps = {
 }
 
 export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
-  const isUploaded = false
+  const isUploaded = true
   function closeModal() {
     setIsUpload(false)
   }
@@ -76,7 +76,7 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
                     </svg>
                   </button>
                   {isUploaded && (
-                    <div className="flex flex-col justify-center items-center gap-7">
+                    <div className="flex flex-col justify-center items-center gap-7 h-[50rem]">
                       <svg
                         width="237"
                         height="192"
@@ -102,7 +102,12 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
                       <h1 className="text-heading-04 text-center">
                         Drag and drop your samples here
                       </h1>
-                      <Button type="primary">Choose File To Upload</Button>
+                      <div className="flex h-auto items-center justify-center">
+                        <label className="cursor-pointer w-full duration-200 bg-primary-green hover:bg-dark-green font-bold py-3 px-8 rounded-full overflow-clip">
+                          <span className="">Choose File to Upload</span>
+                          <input type="file" className="hidden" />
+                        </label>
+                      </div>
                       <p className="text-gray-3">
                         Supported files : FLAC, WAV, ALAC, or AIFF{' '}
                       </p>

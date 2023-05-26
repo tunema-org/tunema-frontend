@@ -9,6 +9,7 @@ import Navbar from '../../components/Navbar/navbar'
 import Sample from '../../components/sample'
 import SearchBar from '../../components/searchbar'
 import Type from '../../components/type'
+import SampleTitle from '../../components/sample-title'
 
 function Search() {
   return (
@@ -42,26 +43,7 @@ function Search() {
             <DropdownSort />
           </div>
         </section>
-        <section>
-          <div className="flex items-start border-b-[1px] border-gray-3"></div>
-          <div className="grid md:grid-cols-12 grid-cols-9 items-center gap-10 pr-2 font-medium py-5 text-gray-4 px-4">
-            <p>Cover</p>
-            <button className="group-hover:visible invisible">
-              <IconPlay />
-            </button>
-            <div className="col-span-2 col-auto min-w-[100px]">
-              <p>Title</p>
-            </div>
-            <div className="md:col-span-3 col-auto max-w-[22rem] md:block hidden">
-              <p>AudioWave</p>
-            </div>
-            <p className="sm:visible invisible">Time</p>
-            <p className="sm:block hidden">BPM</p>
-            <p>Price</p>
-            <div className="flex items-center justify-end gap-5 col-span-2 md:visible invisible"></div>
-          </div>
-          <div className="flex items-start border-b-[1px] border-gray-3"></div>
-        </section>
+        <SampleTitle />
         <section>
           <Sample src="/src/samples/acimalaka2.mp3" />
           <Sample src="/src/samples/1.wav" />
