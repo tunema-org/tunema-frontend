@@ -28,7 +28,7 @@ const Sample = (props: SampleProps) => {
           src="/src/pic/components/player/alblumcover.png"
           alt=""
         />
-        <button className="group-hover:visible invisible">
+        <button className="sm:group-hover:visible invisible">
           {!playing && <IconPlay />}
           {playing && (
             <svg
@@ -47,7 +47,7 @@ const Sample = (props: SampleProps) => {
           <div className="flex-1" />
         </button>
 
-        <div className="col-span-2 flex flex-col gap-3">
+        <div className="col-span-2 flex flex-col">
           <a className="truncate font-medium hover:underline cursor-pointer">
             Gh0st_wave_Surround_Sound_125BPM_Am.wav
           </a>
@@ -56,15 +56,15 @@ const Sample = (props: SampleProps) => {
             <button className="hover:underline">Synth</button>
           </div>
         </div>
-        <div className="lg:col-span-3 col-auto max-w-[22rem] lg:block hidden">
+        <div className="md:col-span-3 col-auto max-w-[22rem] md:block hidden">
           <Waveform
             src={props.src}
             playing={playing}
             onFinished={handleFinish}
           />
         </div>
-        <p className="">3:45</p>
-        <p className="">125</p>
+        <p className="sm:visible invisible">3:45</p>
+        <p className="sm:visible invisible">125</p>
         <button className="flex flex-col font-medium text-dark-green hover:underline justify-start">
           $3.45
         </button>
@@ -75,7 +75,7 @@ const Sample = (props: SampleProps) => {
           <button className="sm:block hidden">
             <IconPlus></IconPlus>
           </button>
-          <button className="md:group-hover:visible">
+          <button className="visible sm:group-hover:visible">
             <Dropdown />
           </button>
         </div>
