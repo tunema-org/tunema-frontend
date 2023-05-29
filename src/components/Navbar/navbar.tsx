@@ -108,7 +108,7 @@ const Navbar = () => {
                     className="bg-white absolute flex flex-col top-16 right-2 rounded-xl px-6 py-4 gap-5 justify-between"
                   >
                     <a
-                      href="#"
+                      href="/artist-dashboard"
                       className="duration-200 p-2 font-bold w-32 hover:bg-light-green hover:rounded-lg text-center"
                     >
                       {'Account'}

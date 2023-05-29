@@ -49,19 +49,19 @@ const Footer = () => {
             </div>
 
             <div className="flex flex-col text-gray-4 gap-2 justify-center md:text-right text-left  py-6">
-              <a className="hover:underline" href="">
+              <a className="hover:underline" href="/home">
                 Home
               </a>
-              <a className="hover:underline" href="">
+              <a className="hover:underline" href="/search">
                 Search
               </a>
-              <a className="hover:underline" href="">
+              <a className="hover:underline" href="/library">
                 Library
               </a>
               <a className="hover:underline" href="">
                 Help
               </a>
-              <a className="hover:underline" href="">
+              <a className="hover:underline" href="/">
                 About TUNEMA
               </a>
             </div>

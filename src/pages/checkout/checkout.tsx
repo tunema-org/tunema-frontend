@@ -12,6 +12,7 @@ import Sample from '../../components/sample'
 import SearchBar from '../../components/searchbar'
 import Type from '../../components/type'
 import { Label } from '@headlessui/react/dist/components/label/label'
+import Button from '../../components/button'
 
 type PaymentProp = {
   img: string
@@ -22,8 +23,8 @@ type PaymentProp = {
 
 const Payment = ({ img, label, isSelected, onClick }: PaymentProp) => {
   const paymentVariant = isSelected
-    ? 'flex py-4 px-7 items-center gap-5 border border-black  rounded-md'
-    : 'flex py-4 px-7 items-center gap-5 border border-gray-3 rounded-md'
+    ? 'flex min-w-[300px] py-4 px-7 items-center gap-5 border border-black  rounded-md'
+    : 'flex min-w-[300px] py-4 px-7 items-center gap-5 border border-gray-3 rounded-md'
 
   return (
     <button className={paymentVariant} onClick={onClick}>
@@ -56,28 +57,77 @@ function Checkout() {
           </div>
           <div className="flex items-start border-b-[1px] border-gray-3"></div>
         </section>
-        <section className="flex flex-col font-body">
-          <div className="flex flex-col">
-            <h1 className="text-heading-06 text-black/50">Virtual Account</h1>
-            <div className="flex gap-5">
-              <Payment
-                isSelected={currentSelection === 'bca'}
-                img="/pic/checkout/logobca.png"
-                label="BCA Virtual Account"
-                onClick={() => setCurrentSelection('bca')}
-              />
-              <Payment
-                isSelected={currentSelection === 'mandiri'}
-                img="/pic/checkout/logobca.png"
-                label="BCA Virtual Account"
-                onClick={() => setCurrentSelection('mandiri')}
-              />
+        <section className="flex md:justify-between justify-normal gap-5 items-center font-body xl:flex-row flex-col my-5">
+          <section className="flex flex-col">
+            <div className="flex flex-col">
+              <h1 className="text-heading-06 text-black/50">Virtual Account</h1>
+              <div className="flex gap-5 py-5 sm:flex-row flex-col">
+                <Payment
+                  isSelected={currentSelection === 'bca'}
+                  img="/pic/checkout/logobca.png"
+                  label="BCA Virtual Account"
+                  onClick={() => setCurrentSelection('bca')}
+                />
+                <Payment
+                  isSelected={currentSelection === 'mandiri'}
+                  img="/pic/checkout/logomandiri.png"
+                  label="Mandiri Virtual Account"
+                  onClick={() => setCurrentSelection('mandiri')}
+                />
+              </div>
             </div>
-          </div>
-          <div className="flex flex-col">
-            <h1 className="text-heading-06 text-black/50">E-Wallet</h1>
-            <div className="flex"></div>
-          </div>
+            <div className="flex flex-col">
+              <h1 className="text-heading-06 text-black/50">E-Wallet</h1>
+              <div className="flex gap-5 py-5 sm:flex-row flex-col">
+                <Payment
+                  isSelected={currentSelection === 'gopay'}
+                  img="/pic/checkout/logogopay.png"
+                  label="Gopay"
+                  onClick={() => setCurrentSelection('gopay')}
+                />
+                <Payment
+                  isSelected={currentSelection === 'dana'}
+                  img="/pic/checkout/logodana.png"
+                  label="Dana"
+                  onClick={() => setCurrentSelection('dana')}
+                />
+              </div>
+            </div>
+          </section>
+
+          <section className="sm:shadow-[0px_4px_30px_rgba(0,0,0,0.08)] shadow-none rounded-[10px] w-[320px] sm:w-[430px] flex flex-col sm:p-8 p-0 items-center gap-5 font-body">
+            <div className="border-b-[1px] border-gray-3 w-full my-2 sm:hidden block"></div>
+            <div className="grid-cols-2 items-center min-w-auto grid w-full">
+              <p className="flex justify-start">Total Product</p>
+              <p className="flex justify-end text-dark-green font-medium">
+                $3.45
+              </p>
+            </div>
+            <div className="grid-cols-2 items-center min-w-auto grid w-full">
+              <p className="flex justify-start">Platform Fee</p>
+              <p className="flex justify-end text-dark-green font-medium">
+                $1.00
+              </p>
+            </div>
+            <div className="grid-cols-2 items-center min-w-auto grid w-full">
+              <p className="flex justify-start">License</p>
+              <p className="flex justify-end text-dark-green font-medium">
+                $0.50
+              </p>
+            </div>
+            <div className="border-b-[1px] border-gray-3 w-[98%]"></div>
+            <div className="grid-cols-2 items-center min-w-auto grid w-full">
+              <p className="flex justify-start text-heading-05">
+                Total Payment
+              </p>
+              <p className="flex justify-end text-dark-green font-medium">
+                $0.50
+              </p>
+            </div>
+            <button className="duration-200 bg-primary-green hover:bg-dark-green w-full font-bold py-2 px-8 rounded-full overflow-clip">
+              Procced
+            </button>
+          </section>
         </section>
       </Container>
     </>

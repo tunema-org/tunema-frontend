@@ -16,23 +16,25 @@ const Sidebar = () => {
       >
         <div className="flex flex-col gap-7">
           {' '}
-          <button className="cursor-pointer flex items-center gap-5 font-bold text-heading-04">
-            <img
-              className="rounded-full w-11"
-              src="/pic/navbar/dummy_profile.jpg"
-              alt=""
-            />
-            <h1>User</h1>
-          </button>
+          <a href="/artist-dashboard">
+            <button className="cursor-pointer flex items-center gap-5 font-bold text-heading-04">
+              <img
+                className="rounded-full w-11"
+                src="/pic/navbar/dummy_profile.jpg"
+                alt=""
+              />
+              <h1>User</h1>
+            </button>
+          </a>
           <div className="flex flex-col gap-3">
             <h3 className="font-medium text-[#ababa9]">Navigation</h3>
-            <a href="" className="hover:underline">
+            <a href="/home" className="hover:underline">
               Home
             </a>
-            <a href="" className="hover:underline">
+            <a href="/search" className="hover:underline">
               Search
             </a>
-            <a href="" className="hover:underline">
+            <a href="/library" className="hover:underline">
               Library
             </a>
           </div>
@@ -42,7 +44,7 @@ const Sidebar = () => {
           <a href="" className="hover:underline">
             Help
           </a>
-          <a href="" className="hover:underline">
+          <a href="/" className="hover:underline">
             About TUNEMA
           </a>
           <a href="" className="hover:underline text-red-400 font-medium">
