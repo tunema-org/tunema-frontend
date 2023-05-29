@@ -20,7 +20,9 @@ function Checkout() {
           <div className="flex flex-col">
             <h1 className="text-heading-01 ">Checkout</h1>
             <p>Choose your payment methods.</p>
+            <p>Test</p>
           </div>
+          <section></section>
         </section>
       </Container>
     </>

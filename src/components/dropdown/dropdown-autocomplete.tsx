@@ -1,7 +1,12 @@
 import { Fragment, useState } from 'react'
 import { Combobox, Transition } from '@headlessui/react'
 
-const genreMix = [
+type Genre = {
+  id: number
+  name: string
+}
+
+const genreMix: Genre[] = [
   { id: 1, name: 'Mixed' },
   { id: 2, name: 'Hip Hop' },
   { id: 3, name: 'House/Techno' },
@@ -34,7 +39,7 @@ export default function Example() {
           <div className="relative w-full cursor-default overflow-hidden rounded-[7px] bg-[#ededea] text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ededea] focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-green">
             <Combobox.Input
               className="w-full bg-[#ededea] border-none py-2 pl-3 pr-10 text-body focus:ring-0"
-              displayValue={(genre) => genre.name}
+              displayValue={(genre: Genre) => genre.name}
               onChange={(event) => setQuery(event.target.value)}
             />
             <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
@@ -59,7 +64,7 @@ export default function Example() {
             leaveTo="opacity-0"
             afterLeave={() => setQuery('')}
           >
-            <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-[7px] bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-[7px] backdrop-blur-md bg-white/ py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
               {filteredGenre.length === 0 && query !== '' ? (
                 <div className="relative cursor-default select-none py-2 px-4 text-black">
                   No genre found.
