@@ -27,7 +27,7 @@ const ArtistSample = (props: SampleProps) => {
       <div className="group grid sm:grid-cols-12 grid-cols-9 items-center gap-10 hover:bg-slate-50 pr-2 font-body p-4">
         <img
           className="w-[4rem] min-w-[3rem]"
-          src="/src/pic/components/player/alblumcover.png"
+          src="/pic/components/player/alblumcover.png"
           alt=""
         />
         <button className="group-hover:visible invisible">
