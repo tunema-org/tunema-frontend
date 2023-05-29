@@ -79,10 +79,10 @@ function ArtistDashboard() {
           </section>
           <section className="md:pb-16">
             {' '}
-            <ArtistSample src="/src/samples/acimalaka2.mp3" />
-            <ArtistSample src="/src/samples/1.wav" />
-            <ArtistSample src="/src/samples/2.wav" />
-            <ArtistSample src="/src/samples/3.wav" />
+            <ArtistSample src="/samples/acimalaka2.mp3" />
+            <ArtistSample src="/samples/1.wav" />
+            <ArtistSample src="/samples/2.wav" />
+            <ArtistSample src="/samples/3.wav" />
           </section>
         </Container>
       </main>

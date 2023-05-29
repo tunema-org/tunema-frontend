@@ -68,11 +68,11 @@ function Profile() {
           </section>
           <section className="md:pb-16">
             {' '}
-            <Sample src="/src/samples/acimalaka2.mp3" />
-            <Sample src="/src/samples/1.wav" />
-            <Sample src="/src/samples/2.wav" />
-            <Sample src="/src/samples/3.wav" />
-            <Sample src="/src/samples/4.wav" />
+            <Sample src="/samples/acimalaka2.mp3" />
+            <Sample src="/samples/1.wav" />
+            <Sample src="/samples/2.wav" />
+            <Sample src="/samples/3.wav" />
+            <Sample src="/samples/4.wav" />
           </section>
         </Container>
       </main>

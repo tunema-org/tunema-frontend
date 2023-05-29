@@ -123,7 +123,7 @@ function Home() {
         <SampleTitle />
         <section>
           {' '}
-          <Sample src="/src/samples/1.wav" />
+          <Sample src="/samples/1.wav" />
         </section>
       </Container>
 
