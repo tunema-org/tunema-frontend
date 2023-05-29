@@ -52,10 +52,10 @@ const ArtistSample = (props: SampleProps) => {
         </div>
         <p className="sm:block hidden">3:45</p>
         <p className="sm:block hidden">125</p>
-        <div className="flex-col justify-center gap-5 lg:col-span-2 md:col-span-1 col-span-3">
+        <div className="flex-col justify-center gap-5 lg:col-span-2 md:col-span-1 col-span-2">
           3 days ago
         </div>
-        <div className="text-gray-500 group-hover:visible invisible">
+        <div className="text-gray-500">
           <Dropdown />
         </div>
       </div>

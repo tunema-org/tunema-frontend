@@ -15,17 +15,17 @@ function ArtistDashboard() {
       <main>
         <section className="flex h-72 w-full bg-[url('/src/pic/home/home-footer.png')] bg-cover bg-center font-medium mt-16">
           <div className="flex w-full flex-col justify-center">
-            <div className="flex w-full justify-left py-28 pl-12 md:pl-32">
+            <div className="flex w-full justify-left py-28 pl-24 md:pl-44 lg:pl-48">
               <img
-                className="flex object-contain w-32 h-32 md:w-56 md:h-56 rounded-full"
-                src="/src/pic/navbar/dummy_profile.jpg"
+                className="flex object-contain w-32 h-32 md:w-40 md:h-40 lg:w-56 lg:h-56 rounded-full"
+                src="/src/pic/navbar/dummy_2.png"
                 alt="Profile image profile page"
               />
               <div className="flex flex-col font-medium pl-5 sm:pl-10 justify-end pb-2">
-                <div className="flex w-full text-white font-medium text-heading-04 md:text-heading-01">
+                <div className="flex w-full text-white font-medium text-heading-03 md:text-heading-02 lg:text-heading-01">
                   Mar Hansen
                 </div>
-                <div className="flex w-full text-white font-medium text-heading-06 md:text-heading-04">
+                <div className="flex w-full text-white font-medium text-heading-06 md:text-heading-05 lg:text-heading-04">
                   30 Samples
                 </div>
               </div>
@@ -33,15 +33,25 @@ function ArtistDashboard() {
           </div>
         </section>
         <Container>
-          <section className="flex flex-col w-full justify-left font-medium mt-16">
+          <section className="flex flex-col w-full text-small sm:text-heading-06 md:text-heading-05 mt-16">
             <div className="flex w-full">
-              <div className="flex pl-5 pr-10 font-body md:font-medium text-left text-heading-06 md:text-heading-04 border-solid text-dark-green border-b-primary-green">
-                <button className="flex w-auto h-auto border-b-4 border-b-dark-green content-left">
-                  All
+              <div className="flex h-auto sm:overflow-scroll border-solid text-dark-green border-b-primary-green">
+                <button className="flex w-auto font-medium overflow-x-auto h-auto border-b-4 px-2 border-b-dark-green">
+                  Your Samples
                 </button>
               </div>
-              <div className="flex w-full justify-start font-body md:font-medium text-heading-06 md:text-heading-04 border-solid border-b-primary-green hover:text-dark-green">
-                <button className="flex w-auto h-auto hover:border-b-4 border-b-dark-green content-left">
+              <div className="flex h-auto pl-5 sm:overflow-scroll border-solid border-b-primary-green hover:text-dark-green cursor-pointer">
+                <button className="flex h-auto font-medium overflow-x-auto hover:border-b-4 px-2 border-b-dark-green">
+                  Favorites
+                </button>
+              </div>
+              <div className="flex h-auto pl-5 sm:overflow-scroll border-solid border-b-primary-green hover:text-dark-green cursor-pointer">
+                <button className="flex h-auto font-medium overflow-x-auto hover:border-b-4 px-2 border-b-dark-green">
+                  Uploaded Samples
+                </button>
+              </div>
+              <div className="flex h-auto pl-5 sm:overflow-scroll border-solid border-b-primary-green hover:text-dark-green cursor-pointer">
+                <button className="flex h-auto font-medium overflow-x-auto hover:border-b-4 px-2 border-b-dark-green">
                   Overview
                 </button>
               </div>
@@ -60,10 +70,10 @@ function ArtistDashboard() {
               </div>
               <p className="sm:block hidden">Time</p>
               <p className="sm:block hidden">BPM</p>
-              <p className="flex-col gap-5 lg:col-span-2 md:col-span-1 col-span-3">
+              <p className="flex-col gap-5 lg:col-span-2 md:col-span-1 col-span-2">
                 Date Added
               </p>
-              <p className="sm:block hidden"></p>
+              <p className="md:block hidden"></p>
             </div>
             <div className="flex items-start border-b-[1px] border-gray-3"></div>
           </section>
