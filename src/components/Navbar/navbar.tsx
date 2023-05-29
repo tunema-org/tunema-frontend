@@ -67,7 +67,7 @@ const Navbar = () => {
           <a href="/home" className="items-center min-w-44">
             <img
               className="object-contain h-9 w-44"
-              src={'/src/pic/LOGO TUNEMA BLACK 2.png'}
+              src={'/pic/LOGO TUNEMA BLACK 2.png'}
               id="1"
               title="images"
               alt="Profile"
@@ -98,7 +98,7 @@ const Navbar = () => {
                   <img
                     ref={imgRef}
                     className="rounded-full"
-                    src={'/src/pic/navbar/dummy_profile.jpg'}
+                    src={'/pic/navbar/dummy_profile.jpg'}
                     alt=""
                   />
                 </button>

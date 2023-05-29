@@ -9,7 +9,7 @@ const SampleTest = () => {
       <section className="max-w-[50rem] w-[1000rem] flex px-2 group font-body justify-between items-center gap-4">
         <div className="flex gap-5 items-center">
           <img
-            src="/src/pic/components/player/alblumcover.png"
+            src="/pic/components/player/alblumcover.png"
             className="max-w-[58px]"
             alt=""
           />
@@ -26,7 +26,7 @@ const SampleTest = () => {
             </div>
           </div>
           <div className="max-w-[22rem] min-w-[10rem] lg:block hidden">
-            <img src="/src/pic/components/player/soundwavetest.svg" alt="" />
+            <img src="/pic/components/player/soundwavetest.svg" alt="" />
           </div>
         </div>
         <div className="flex gap-5">

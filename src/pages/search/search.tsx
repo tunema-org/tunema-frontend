@@ -15,7 +15,7 @@ function Search() {
   return (
     <>
       <Navbar />
-      <section className="h-[21rem] bg-[url('/src/pic/search/search_header.png')] bg-cover bg-center"></section>
+      <section className="h-[21rem] bg-[url('/pic/search/search_header.png')] bg-cover bg-center"></section>
       <Container>
         {' '}
         <section className="h-auto font-body flex items-center py-3">

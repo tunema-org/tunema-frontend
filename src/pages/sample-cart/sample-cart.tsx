@@ -13,7 +13,7 @@ function SampleCart() {
   return (
     <>
       <Navbar />
-      <section className="h-[21rem] bg-[url('/src/pic/samplecart/samplecart-header.png')] bg-cover bg-center"></section>
+      <section className="h-[21rem] bg-[url('/pic/samplecart/samplecart-header.png')] bg-cover bg-center"></section>
       <Container>
         {' '}
         <section className="h-auto font-body flex items-center py-3">

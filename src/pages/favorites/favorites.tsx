@@ -12,12 +12,12 @@ function Favorites() {
     <>
       <Navbar />
       <main className="justify-between">
-        <section className="flex h-72 w-full bg-[url('/src/pic/home/home-footer.png')] bg-cover bg-center font-medium mt-16">
+        <section className="flex h-72 w-full bg-[url('/pic/home/home-footer.png')] bg-cover bg-center font-medium mt-16">
           <div className="flex w-full flex-col justify-center">
             <div className="flex w-full justify-left py-28 pl-7 sm:pl-48">
               <img
                 className="flex object-contain w-32 h-32 sm:w-56 sm:h-56 rounded-full"
-                src="/src/pic/navbar/dummy_profile.jpg"
+                src="/pic/navbar/dummy_profile.jpg"
                 alt="Profile image profile page"
               />
               <div className="flex flex-col font-medium pl-5 sm:pl-10 justify-end pb-2">

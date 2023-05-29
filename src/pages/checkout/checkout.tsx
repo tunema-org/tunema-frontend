@@ -18,7 +18,7 @@ function Checkout() {
   return (
     <>
       <Navbar />
-      <section className="h-[21rem] bg-[url('/src/pic/checkout/checkout-header.png')] bg-cover bg-center"></section>
+      <section className="h-[21rem] bg-[url('/pic/checkout/checkout-header.png')] bg-cover bg-center"></section>
       <Container>
         {' '}
         <section className="h-auto font-body flex items-center py-3">
@@ -41,7 +41,7 @@ function Checkout() {
             <h1 className="text-heading-06 text-black/50">Virtual Account</h1>
             <div className="flex">
               <button className="flex py-10 px-20">
-                <img src="/src/pic/checkout/logobca.png" alt="" />
+                <img src="/pic/checkout/logobca.png" alt="" />
                 <p>Bca Virtual Account</p>{' '}
               </button>
             </div>

@@ -14,7 +14,7 @@ function Library() {
   return (
     <>
       <Navbar />
-      <section className="h-[21rem] bg-[url('/src/pic/library/library-header.png')] bg-cover bg-center"></section>
+      <section className="h-[21rem] bg-[url('/pic/library/library-header.png')] bg-cover bg-center"></section>
       <Container>
         {' '}
         <section className="h-auto font-body flex justify-between items-center py-3">
@@ -25,7 +25,7 @@ function Library() {
           <button className="h-auto items-center flex justify-center">
             <img
               className="rounded-full w-[4rem]"
-              src="/src/pic/navbar/dummy_profile.jpg"
+              src="/pic/navbar/dummy_profile.jpg"
               alt=""
             />
           </button>
@@ -59,7 +59,7 @@ function Library() {
         </section>
       </Container>
 
-      <section className="h-auto overflow-clip flex bg-[url('/src/pic/library/library-footer.png')] bg-cover bg-center font-body mt-10">
+      <section className="h-auto overflow-clip flex bg-[url('/pic/library/library-footer.png')] bg-cover bg-center font-body mt-10">
         <Container>
           <div className="flex flex-col h-[531px] justify-center items-center gap-3">
             <h1 className="text-heading-01 text-white mx-2 text-center">

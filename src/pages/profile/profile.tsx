@@ -12,12 +12,12 @@ function Profile() {
     <>
       <Navbar />
       <main>
-        <section className="flex h-72 w-full bg-[url('/src/pic/home/home-footer.png')] bg-cover bg-center font-medium mt-16">
+        <section className="flex h-72 w-full bg-[url('/pic/home/home-footer.png')] bg-cover bg-center font-medium mt-16">
           <div className="flex w-full flex-col justify-center">
             <div className="flex w-full justify-left py-28 pl-20 md:pl-30 lg:pl-48">
               <img
                 className="flex object-contain w-32 h-32 md:w-40 md:h-40 lg:w-56 lg:h-56 rounded-full"
-                src="/src/pic/navbar/dummy_profile.jpg"
+                src="/pic/navbar/dummy_profile.jpg"
                 alt="Profile image profile page"
               />
               <div className="flex flex-col font-medium pl-5 sm:pl-10 justify-end pb-2">

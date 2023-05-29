@@ -19,7 +19,7 @@ const Sidebar = () => {
           <button className="cursor-pointer flex items-center gap-5 font-bold text-heading-04">
             <img
               className="rounded-full w-11"
-              src="/src/pic/navbar/dummy_profile.jpg"
+              src="/pic/navbar/dummy_profile.jpg"
               alt=""
             />
             <h1>User</h1>

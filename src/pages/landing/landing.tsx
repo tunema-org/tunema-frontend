@@ -9,7 +9,7 @@ function LandingPage() {
     <>
       <main className="">
         <Navbar />
-        <section className="bg-fixed h-screen overflow-clip flex bg-[url('/src/pic/landing/landing_1.png')] bg-cover bg-center">
+        <section className="bg-fixed h-screen overflow-clip flex bg-[url('/pic/landing/landing_1.png')] bg-cover bg-center">
           <Container>
             <div className="h-screen max-w-[50%] flex flex-col justify-center text-white font-body gap-5 md:p-0 p-5">
               <h1 className="text-display min-w-[17rem]">
@@ -25,7 +25,7 @@ function LandingPage() {
           </Container>
           <img
             className="max-w-[10%] min-w-[10rem] absolute -bottom-0 right-5 p-5"
-            src="/src/pic/Logo White.svg"
+            src="/pic/Logo White.svg"
             alt=""
           />
         </section>
@@ -49,7 +49,7 @@ function LandingPage() {
             <div className="flex">
               <img
                 className="object-contain h-auto justify-center self-center lg:self-center"
-                src="/src/pic/landing/landing_2.png"
+                src="/pic/landing/landing_2.png"
                 alt=""
               />
             </div>
@@ -75,7 +75,7 @@ function LandingPage() {
             <div className="flex">
               <img
                 className="object-contain h-auto justify-center self-center lg:self-center"
-                src="/src/pic/landing/landing_3.png"
+                src="/pic/landing/landing_3.png"
                 alt=""
               />
             </div>
@@ -90,7 +90,7 @@ function LandingPage() {
                 <div className="flex items-center flex-col py-10 gap-2 max-w-[40%] lg:max-w-full">
                   <img
                     className="lg:max-w-[50%] max-w-[6rem]"
-                    src="/src/pic/landing/Reviews/HotPotato.png"
+                    src="/pic/landing/Reviews/HotPotato.png"
                     alt=""
                   />
                   <p className="text-gray-3">Hot Potato</p>
@@ -105,7 +105,7 @@ function LandingPage() {
                 <div className="flex items-center flex-col py-10 gap-2 max-w-[40%] lg:max-w-full">
                   <img
                     className="lg:max-w-[50%] max-w-[6rem]"
-                    src="/src/pic/landing/Reviews/KanyeEast.png"
+                    src="/pic/landing/Reviews/KanyeEast.png"
                     alt=""
                   />
                   <p className="text-gray-3">KanyeEast</p>
@@ -123,7 +123,7 @@ function LandingPage() {
                 <div className="flex items-center flex-col py-10 gap-2 max-w-[40%] lg:max-w-full">
                   <img
                     className="lg:max-w-[50%] max-w-[6rem]"
-                    src="/src/pic/landing/Reviews/DjYoshi.png"
+                    src="/pic/landing/Reviews/DjYoshi.png"
                     alt=""
                   />
                   <p className="text-gray-3">DjYoshi</p>
@@ -137,12 +137,12 @@ function LandingPage() {
           </section>
         </Container>
 
-        <section className="h-auto overflow-clip flex bg-[url('/src/pic/landing/landing_4.png')] bg-cover bg-center font-body">
+        <section className="h-auto overflow-clip flex bg-[url('/pic/landing/landing_4.png')] bg-cover bg-center font-body">
           <Container>
             <div className="flex flex-col h-[531px] justify-center items-center gap-3">
               <div className="flex flex-row max-w-[190px] justify-center items-center">
                 <h1 className="text-heading-01 text-white mx-2">Join</h1>
-                <img src="/src/pic/Logo White.svg" alt="" />
+                <img src="/pic/Logo White.svg" alt="" />
               </div>
               <a href="/home">
                 <Button type="primary">JOIN</Button>

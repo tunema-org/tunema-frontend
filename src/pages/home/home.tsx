@@ -55,7 +55,7 @@ function Home() {
   return (
     <>
       <Navbar />
-      <section className="h-[21rem] bg-[url('/src/pic/home/home-header.png')] bg-cover bg-center"></section>
+      <section className="h-[21rem] bg-[url('/pic/home/home-header.png')] bg-cover bg-center"></section>
       <Container>
         {' '}
         <section className="h-auto font-body">
@@ -74,37 +74,37 @@ function Home() {
             className="overflow-x-scroll no-scrollbar my-10 flex gap-16 pb-10 pr-8"
           >
             <Genre
-              img="/src/pic/home/genres/mixed.png"
+              img="/pic/home/genres/mixed.png"
               label={GenreEnum.ALL}
               isSelected={selectedGenre === GenreEnum.ALL}
               setSelectedGenre={setSelectedGenre}
             />
             <Genre
-              img="/src/pic/home/genres/hiphop.png"
+              img="/pic/home/genres/hiphop.png"
               label={GenreEnum.HIPHOP}
               isSelected={selectedGenre === GenreEnum.HIPHOP}
               setSelectedGenre={setSelectedGenre}
             />
             <Genre
-              img="/src/pic/home/genres/housetechno.png"
+              img="/pic/home/genres/housetechno.png"
               label={GenreEnum.HOUSETECHNO}
               isSelected={selectedGenre === GenreEnum.HOUSETECHNO}
               setSelectedGenre={setSelectedGenre}
             />
             <Genre
-              img="/src/pic/home/genres/edm.png"
+              img="/pic/home/genres/edm.png"
               label={GenreEnum.POPEDM}
               isSelected={selectedGenre === GenreEnum.POPEDM}
               setSelectedGenre={setSelectedGenre}
             />
             <Genre
-              img="/src/pic/home/genres/livesounds.png"
+              img="/pic/home/genres/livesounds.png"
               label={GenreEnum.LIVESOUNDS}
               isSelected={selectedGenre === GenreEnum.LIVESOUNDS}
               setSelectedGenre={setSelectedGenre}
             />
             <Genre
-              img="/src/pic/home/genres/electronic.png"
+              img="/pic/home/genres/electronic.png"
               label={GenreEnum.ELECTRONIC}
               isSelected={selectedGenre === GenreEnum.ELECTRONIC}
               setSelectedGenre={setSelectedGenre}
@@ -127,7 +127,7 @@ function Home() {
         </section>
       </Container>
 
-      <section className="h-auto overflow-clip flex bg-[url('/src/pic/home/home-footer.png')] bg-cover bg-center font-body mt-10">
+      <section className="h-auto overflow-clip flex bg-[url('/pic/home/home-footer.png')] bg-cover bg-center font-body mt-10">
         <Container>
           <div className="flex flex-col h-[531px] justify-center items-center gap-3">
             <h1 className="text-heading-01 text-white mx-2 text-center">

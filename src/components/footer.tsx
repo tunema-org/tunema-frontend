@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="flex items-start border-b-[1px] border-black">
             <img
               className="p-10 max-w-[15rem]"
-              src="/src/pic/Logo black.svg"
+              src="pic/Logo black.svg"
               alt=""
             />
           </div>
@@ -28,22 +28,22 @@ const Footer = () => {
                 </div>
 
                 <button>
-                  <img src="/src/pic/footer/send.svg" alt="" />
+                  <img src="/pic/footer/send.svg" alt="" />
                 </button>
               </div>
               <h3 className="font-medium pt-10">Find Us: </h3>
               <div className="flex flex-row gap-5 py-6 items-center">
                 <a href="">
-                  <img src="/src/pic/footer/facebook.svg" alt="" />
+                  <img src="/pic/footer/facebook.svg" alt="" />
                 </a>
                 <a href="">
-                  <img src="/src/pic/footer/twitter.svg" alt="" />
+                  <img src="/pic/footer/twitter.svg" alt="" />
                 </a>
                 <a href="">
-                  <img src="/src/pic/footer/instagram.svg" alt="" />
+                  <img src="/pic/footer/instagram.svg" alt="" />
                 </a>
                 <a href="">
-                  <img src="/src/pic/footer/youtube.svg" alt="" />
+                  <img src="/pic/footer/youtube.svg" alt="" />
                 </a>
               </div>
             </div>

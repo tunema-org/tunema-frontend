@@ -12,13 +12,13 @@ function Register() {
       <Navbar />
       <main>
         <section className="flex h-full w-full bg-white justify-center">
-          <div className="flex md:bg-[url('/src/pic/login/login.png')] md:w-full md:bg-cover"></div>
+          <div className="flex md:bg-[url('/pic/login/login.png')] md:w-full md:bg-cover"></div>
           <Container>
             <div className="flex flex-row bg-white h-72 pt-28 content-center items-center justify-center">
               <a href="" className="">
                 <img
                   className="object-contain h-12 w-40 items-center"
-                  src={'/src/pic/LOGO TUNEMA BLACK 2.png'}
+                  src={'/pic/LOGO TUNEMA BLACK 2.png'}
                   id="2"
                   title="logoBlack"
                   alt="logo"
