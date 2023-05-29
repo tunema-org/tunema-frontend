@@ -1,4 +1,6 @@
+import { Props } from '@headlessui/react/dist/types'
 import Container from '../../components/container'
+import { useRef, useState } from 'react'
 import DropdownSort from '../../components/dropdown/dropdown-sort'
 import DropdownType from '../../components/dropdown/dropdown-type'
 import Footer from '../../components/footer'
@@ -9,12 +11,30 @@ import Navbar from '../../components/Navbar/navbar'
 import Sample from '../../components/sample'
 import SearchBar from '../../components/searchbar'
 import Type from '../../components/type'
+import { Label } from '@headlessui/react/dist/components/label/label'
+
+type PaymentProp = {
+  img: string
+  label: string
+  isSelected: boolean
+  onClick: () => void
+}
+
+const Payment = ({ img, label, isSelected, onClick }: PaymentProp) => {
+  const paymentVariant = isSelected
+    ? 'flex py-4 px-7 items-center gap-5 border border-black  rounded-md'
+    : 'flex py-4 px-7 items-center gap-5 border border-gray-3 rounded-md'
+
+  return (
+    <button className={paymentVariant} onClick={onClick}>
+      <img src={img} className="max-w-[80px]" alt="" />
+      <p>{label}</p>{' '}
+    </button>
+  )
+}
 
 function Checkout() {
-  const paymentVariant = {
-    primary: '',
-    selected: '',
-  }
+  const [currentSelection, setCurrentSelection] = useState('bca')
   return (
     <>
       <Navbar />
@@ -39,11 +59,19 @@ function Checkout() {
         <section className="flex flex-col font-body">
           <div className="flex flex-col">
             <h1 className="text-heading-06 text-black/50">Virtual Account</h1>
-            <div className="flex">
-              <button className="flex py-10 px-20">
-                <img src="/pic/checkout/logobca.png" alt="" />
-                <p>Bca Virtual Account</p>{' '}
-              </button>
+            <div className="flex gap-5">
+              <Payment
+                isSelected={currentSelection === 'bca'}
+                img="/pic/checkout/logobca.png"
+                label="BCA Virtual Account"
+                onClick={() => setCurrentSelection('bca')}
+              />
+              <Payment
+                isSelected={currentSelection === 'mandiri'}
+                img="/pic/checkout/logobca.png"
+                label="BCA Virtual Account"
+                onClick={() => setCurrentSelection('mandiri')}
+              />
             </div>
           </div>
           <div className="flex flex-col">
