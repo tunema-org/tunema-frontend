@@ -10,7 +10,7 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className="bg-white w-[60%] h-screen absolute flex-col top-16 px-6 py-7 gap-5 justify-between sm:hidden flex font-body overflow-y-scroll no-scrollbar z-0"
+        className="bg-white w-[60%] h-screen absolute flex-col top-0 px-6 py-7 gap-5 justify-between sm:hidden flex font-body overflow-y-scroll no-scrollbar z-0"
         ref={ref}
         {...events}
       >

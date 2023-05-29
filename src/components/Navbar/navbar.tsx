@@ -1,10 +1,11 @@
 import { ShoppingBag, ToggleOn } from 'iconsax-react'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, Fragment } from 'react'
 import React from 'react'
 import { Pivot as Hamburger } from 'hamburger-react'
 import Sidebar from './sidebar'
 import Upload from '../../pages/upload/upload'
 import MyModal from '../../pages/upload/upload'
+import { Dialog, Transition } from '@headlessui/react'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -103,9 +104,15 @@ const Navbar = () => {
                   />
                 </button>
                 {isOpen && (
-                  <div
+                  <Transition
+                    appear={true}
+                    show={isOpen}
+                    enterFrom="transform scale-95 opacity-0 max-h-0"
+                    enterTo="transform scale-100 opacity-100 max-h-96"
+                    leaveFrom="transform scale-100 opacity-100 max-h-96"
+                    leaveTo="transform scale-95 opacity-0 max-h-0"
                     ref={menuRef}
-                    className="bg-white absolute flex flex-col top-16 right-2 rounded-xl px-6 py-4 gap-5 justify-between"
+                    className="bg-white absolute flex flex-col top-16 right-2 rounded-xl px-6 py-4 gap-5 justify-between overflow-hidden transition-all duration-300 "
                   >
                     <a
                       href="/artist-dashboard"
@@ -126,7 +133,7 @@ const Navbar = () => {
                     >
                       Log Out
                     </a>
-                  </div>
+                  </Transition>
                 )}
               </div>
             )}
@@ -140,13 +147,32 @@ const Navbar = () => {
           </div>
         </nav>
         {isSidebarOpen && (
-          <div>
-            <Sidebar />
-            <div
+          <>
+            <Transition
+              appear={true}
+              show={isSidebarOpen}
+              enter="transform transition ease-in-out duration-500 sm:duration-700"
+              enterFrom="-translate-x-full"
+              enterTo="translate-x-0"
+              leave="transform transition ease-in-out duration-500 sm:duration-700"
+              leaveFrom="translate-x-0"
+              leaveTo="-translate-x-full"
+            >
+              <Sidebar />
+            </Transition>
+            <Transition
+              appear
+              show={isSidebarOpen}
+              enter="transform ease-out duration-300 transition"
+              enterFrom="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
+              enterTo="translate-y-0 opacity-100 sm:translate-x-0"
+              leave="transition ease-in duration-100"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
               ref={ref}
-              className="h-screen absolute sm:hidden flex top-16 w-full bg-black -z-30 bg-opacity-75"
-            ></div>
-          </div>
+              className="h-screen absolute sm:hidden flex top-0 w-full bg-black -z-30 bg-opacity-75"
+            ></Transition>
+          </>
         )}
       </div>
     </>

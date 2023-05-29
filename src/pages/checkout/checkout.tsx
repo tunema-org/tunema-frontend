@@ -23,7 +23,7 @@ type PaymentProp = {
 
 const Payment = ({ img, label, isSelected, onClick }: PaymentProp) => {
   const paymentVariant = isSelected
-    ? 'flex min-w-[300px] py-4 px-7 items-center gap-5 border border-black  rounded-md'
+    ? 'flex min-w-[300px] py-4 px-7 items-center gap-5 border bg-light-green border-dark-green  rounded-md'
     : 'flex min-w-[300px] py-4 px-7 items-center gap-5 border border-gray-3 rounded-md'
 
   return (
@@ -57,7 +57,7 @@ function Checkout() {
           </div>
           <div className="flex items-start border-b-[1px] border-gray-3"></div>
         </section>
-        <section className="flex md:justify-between justify-normal gap-5 items-center font-body xl:flex-row flex-col my-5">
+        <section className="flex md:justify-between justify-normal gap-5 items-center font-body xl:flex-row flex-col my-5 px-0 sm:px-5">
           <section className="flex flex-col">
             <div className="flex flex-col">
               <h1 className="text-heading-06 text-black/50">Virtual Account</h1>
@@ -120,11 +120,11 @@ function Checkout() {
               <p className="flex justify-start text-heading-05">
                 Total Payment
               </p>
-              <p className="flex justify-end text-dark-green font-medium">
-                $0.50
+              <p className="flex justify-end text-dark-green text-heading-05">
+                $4.95
               </p>
             </div>
-            <button className="duration-200 bg-primary-green hover:bg-dark-green w-full font-bold py-2 px-8 rounded-full overflow-clip">
+            <button className="duration-200 bg-primary-green hover:bg-dark-green w-full font-medium py-2 px-8 rounded-full overflow-clip">
               Procced
             </button>
           </section>
