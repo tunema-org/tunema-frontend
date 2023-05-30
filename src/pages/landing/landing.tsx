@@ -3,8 +3,14 @@ import Button from '../../components/button'
 import styled from 'styled-components'
 import Container from '../../components/container'
 import Footer from '../../components/footer'
+import AOS from 'aos'
+import React, { useEffect } from 'react'
+import 'aos/dist/aos.css'
 
 function LandingPage() {
+  useEffect(() => {
+    AOS.init()
+  }, [])
   return (
     <>
       <main className="">
@@ -32,7 +38,10 @@ function LandingPage() {
 
         <Container>
           <section className="min-h-[31rem] flex justify-between font-body content-center lg:flex-row flex-col gap-10 lg:py-0 md:my-36 my-10">
-            <div className="flex flex-col gap-5 justify-center md:p-0 p-5 max-w-[43.75rem]">
+            <div
+              data-aos="fade-left"
+              className="flex flex-col gap-5 justify-center md:p-0 p-5 max-w-[43.75rem]"
+            >
               <h1 className="text-heading-03">Explore various samples.</h1>
               <p className=" ">
                 Our extensive collection of samples covers a wide range of
@@ -46,7 +55,7 @@ function LandingPage() {
                 </a>
               </div>
             </div>
-            <div className="flex">
+            <div data-aos="fade-right" className="flex">
               <img
                 className="object-contain h-auto justify-center self-center lg:self-center"
                 src="/pic/landing/landing_2.png"
@@ -58,7 +67,10 @@ function LandingPage() {
 
         <Container>
           <section className="min-h-[31rem] flex justify-between font-body content-center lg:flex-row-reverse flex-col gap-10 lg:py-0 py-12 md:my-36 my-10">
-            <div className="flex flex-col items-start lg:items-end gap-5 justify-center md:p-0 p-5 max-w-[43.75rem]">
+            <div
+              data-aos="fade-right"
+              className="flex flex-col items-start lg:items-end gap-5 justify-center md:p-0 p-5 max-w-[43.75rem]"
+            >
               <h1 className="text-heading-03">Everyone can be the artist!</h1>
               <p className="lg:text-right text-left">
                 At{' '}
@@ -72,7 +84,7 @@ function LandingPage() {
                 <Button type="landing">Upload Samples</Button>
               </div>
             </div>
-            <div className="flex">
+            <div data-aos="fade-left" className="flex">
               <img
                 className="object-contain h-auto justify-center self-center lg:self-center"
                 src="/pic/landing/landing_3.png"
@@ -84,9 +96,14 @@ function LandingPage() {
 
         <Container>
           <section className="min-h-[40rem] flex font-body content-center flex-col gap-10 md:p-0 p-5 ">
-            <h1 className="text-heading-03">They Said</h1>
+            <h1 data-aos="fade-right" className="text-heading-03">
+              They Said
+            </h1>
             <div className="flex lg:flex-row flex-col justify-center gap-12 items-center">
-              <div className="flex lg:w-[23%] lg:h-[419px] w-[95%] h-[290px] lg:flex-col lg:gap-0 gap-10 flex-row items-center rounded-xl shadow-xl px-10">
+              <div
+                data-aos="fade-right"
+                className="flex lg:w-[23%] lg:h-[419px] w-[95%] h-[290px] lg:flex-col lg:gap-0 gap-10 flex-row items-center rounded-xl shadow-xl px-10"
+              >
                 <div className="flex items-center flex-col py-10 gap-2 max-w-[40%] lg:max-w-full">
                   <img
                     className="lg:max-w-[50%] max-w-[6rem]"
@@ -101,7 +118,10 @@ function LandingPage() {
                 <p>I'm bout to blow.🔥</p>
               </div>
 
-              <div className="flex lg:w-[23%] lg:h-[419px] w-[95%] h-[290px] lg:flex-col lg:gap-0 gap-10 flex-row items-center rounded-xl shadow-xl px-10">
+              <div
+                data-aos="fade-up"
+                className="flex lg:w-[23%] lg:h-[419px] w-[95%] h-[290px] lg:flex-col lg:gap-0 gap-10 flex-row items-center rounded-xl shadow-xl px-10"
+              >
                 <div className="flex items-center flex-col py-10 gap-2 max-w-[40%] lg:max-w-full">
                   <img
                     className="lg:max-w-[50%] max-w-[6rem]"
@@ -119,7 +139,10 @@ function LandingPage() {
                 </p>
               </div>
 
-              <div className="flex lg:w-[23%] lg:h-[419px] w-[95%] h-[290px] lg:flex-col lg:gap-0 gap-10 flex-row items-center rounded-xl shadow-xl px-10">
+              <div
+                data-aos="fade-left"
+                className="flex lg:w-[23%] lg:h-[419px] w-[95%] h-[290px] lg:flex-col lg:gap-0 gap-10 flex-row items-center rounded-xl shadow-xl px-10"
+              >
                 <div className="flex items-center flex-col py-10 gap-2 max-w-[40%] lg:max-w-full">
                   <img
                     className="lg:max-w-[50%] max-w-[6rem]"
