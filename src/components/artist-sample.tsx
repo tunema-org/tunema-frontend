@@ -5,7 +5,7 @@ import IconDropdown from './icons/icon-dropdown'
 import IconHeart from './icons/icon-heart'
 import IconPlus from './icons/icon-plus'
 import IconPlay from './icons/icon-play'
-import Dropdown from './dropdown/dropdown-test'
+import Dropdown from './dropdown/dropdown-sample'
 import Waveform from './waveform'
 
 type SampleProps = {

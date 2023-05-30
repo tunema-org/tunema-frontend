@@ -3,7 +3,6 @@ import { useState, useEffect, useRef, Fragment } from 'react'
 import React from 'react'
 import { Pivot as Hamburger } from 'hamburger-react'
 import Sidebar from './sidebar'
-import Upload from '../../pages/upload/upload'
 import MyModal from '../../pages/upload/upload'
 import { Dialog, Transition } from '@headlessui/react'
 
@@ -22,7 +21,6 @@ const Navbar = () => {
     }
     if (e.target === ref.current) {
       setIsSidebarOpen(false)
-      setIsUpload(false)
     }
   })
 
@@ -112,24 +110,31 @@ const Navbar = () => {
                     leaveFrom="transform scale-100 opacity-100 max-h-96"
                     leaveTo="transform scale-95 opacity-0 max-h-0"
                     ref={menuRef}
-                    className="bg-white absolute flex flex-col top-16 right-2 rounded-xl px-6 py-4 gap-5 justify-between overflow-hidden transition-all duration-300 "
+                    className="bg-white/80 backdrop-blur-md shadow-lg absolute flex flex-col top-16 right-2 rounded-xl px-6 py-4 gap-5 justify-between overflow-hidden transition-all duration-300 "
                   >
                     <a
                       href="/artist-dashboard"
-                      className="duration-200 p-2 font-bold w-32 hover:bg-light-green hover:rounded-lg text-center"
+                      className="duration-200 px-4 py-2 font-bold w-32 hover:bg-light-green hover:rounded-lg text-center"
                     >
                       {'Account'}
                     </a>
                     <div className="duration-200 border-b border-gray-3"></div>
                     <a
                       href="#"
-                      className="duration-200 p-2 hover:bg-light-green hover:rounded-lg"
+                      className="duration-200 px-4 py-2 hover:bg-light-green hover:rounded-lg"
                     >
-                      Settings
+                      Help
                     </a>
                     <a
                       href="#"
-                      className="duration-200 p-2 hover:bg-red-300 hover:rounded-lg"
+                      className="duration-200 px-4 py-2 hover:bg-light-green hover:rounded-lg"
+                    >
+                      About
+                    </a>
+                    <div className="duration-200 border-b border-gray-3"></div>
+                    <a
+                      href="#"
+                      className="duration-200 px-4 py-2 hover:bg-red-300 hover:text-black hover:rounded-lg font-medium text-red-500"
                     >
                       Log Out
                     </a>

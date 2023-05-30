@@ -1,7 +1,7 @@
 import { Props } from '@headlessui/react/dist/types'
 import Container from '../../components/container'
 import { useRef, useState } from 'react'
-import DropdownSort from '../../components/dropdown/dropdown-sort'
+import DropdownSort from '../../components/dropdown/dropdown-sample'
 import DropdownType from '../../components/dropdown/dropdown-type'
 import Footer from '../../components/footer'
 import FooterMobile from '../../components/footer-mobile'

@@ -3,7 +3,6 @@ import { Fragment, useState } from 'react'
 import Button from '../../components/button'
 import Input from '../../components/input/input'
 import BigInput from '../../components/input/big-input'
-import Container from '../../components/container'
 import Autocomplete from '../../components/dropdown/dropdown-autocomplete'
 
 type MyModalProps = {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import Dropdown from './dropdown/dropdown-test'
+import Dropdown from './dropdown/dropdown-sample'
 import IconHeart from './icons/icon-heart'
 import IconPlay from './icons/icon-play'
 import IconPlus from './icons/icon-plus'
