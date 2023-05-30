@@ -49,7 +49,7 @@ const Sample = (props: SampleProps) => {
         </button>
 
         <div className="col-span-2 flex flex-col">
-          <a className="truncate font-medium hover:underline cursor-pointer">
+          <a className="font-medium hover:underline overflow-scroll cursor-pointer">
             Gh0st_wave_Surround_Sound_125BPM_Am.wav
           </a>
           <div className="flex gap-3 text-gray-500 text-small">
