@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
-import Container from './container'
-import IconDropdown from './icons/icon-dropdown'
-import IconHeart from './icons/icon-heart'
-import IconPlus from './icons/icon-plus'
-import IconPlay from './icons/icon-play'
-import Dropdown from './dropdown/dropdown-sample'
-import Waveform from './waveform'
+import Container from '../container'
+import IconDropdown from '../icons/icon-dropdown'
+import IconHeart from '../icons/icon-heart'
+import IconPlus from '../icons/icon-plus'
+import IconPlay from '../icons/icon-play'
+import Dropdown from '../dropdown/dropdown-sample'
+import Waveform from '../waveform'
 
 type SampleProps = {
   src: string

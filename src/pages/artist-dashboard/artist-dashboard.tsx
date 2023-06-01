@@ -2,11 +2,11 @@ import React from 'react'
 import Navbar from '../../components/Navbar/navbar'
 import styled from 'styled-components'
 import Container from '../../components/container'
-import Sample from '../../components/sample'
+import Sample from '../../components/samples/sample'
 import IconPlay from '../../components/icons/icon-play'
 import Footer from '../../components/footer'
 import FooterMobile from '../../components/footer-mobile'
-import ArtistSample from '../../components/artist-sample'
+import ArtistSample from '../../components/samples/sample-artist'
 
 function ArtistDashboard() {
   return (

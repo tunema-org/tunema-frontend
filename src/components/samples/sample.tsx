@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
-import Dropdown from './dropdown/dropdown-sample'
-import IconHeart from './icons/icon-heart'
-import IconPlay from './icons/icon-play'
-import IconPlus from './icons/icon-plus'
-import Waveform from './waveform'
+import Dropdown from '../dropdown/dropdown-sample'
+import IconHeart from '../icons/icon-heart'
+import IconPlay from '../icons/icon-play'
+import IconPlus from '../icons/icon-plus'
+import Waveform from '../waveform'
 
 type SampleProps = {
   src: string
@@ -49,7 +49,7 @@ const Sample = (props: SampleProps) => {
         </button>
 
         <div className="col-span-2 flex flex-col">
-          <a className="font-medium hover:underline overflow-scroll cursor-pointer">
+          <a className="font-medium hover:underline overflow-scroll no-scrollbar cursor-pointer">
             Gh0st_wave_Surround_Sound_125BPM_Am.wav
           </a>
           <div className="flex gap-3 text-gray-500 text-small">

@@ -1,11 +1,11 @@
 import Navbar from '../../components/Navbar/navbar'
 import styled from 'styled-components'
 import Container from '../../components/container'
-import Sample from '../../components/sample'
+import Sample from '../../components/samples/sample'
 import IconPlay from '../../components/icons/icon-play'
 import Footer from '../../components/footer'
 import FooterMobile from '../../components/footer-mobile'
-import SampleTitle from '../../components/sample-title'
+import SampleTitle from '../../components/samples/sample-title'
 
 function Favorites() {
   return (

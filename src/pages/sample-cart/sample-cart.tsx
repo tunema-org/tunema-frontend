@@ -5,7 +5,7 @@ import Footer from '../../components/footer'
 import FooterMobile from '../../components/footer-mobile'
 import IconPlay from '../../components/icons/icon-play'
 import Navbar from '../../components/Navbar/navbar'
-import Sample from '../../components/sample'
+import Sample from '../../components/samples/sample'
 import SearchBar from '../../components/searchbar'
 import Type from '../../components/type'
 

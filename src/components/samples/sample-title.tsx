@@ -1,4 +1,4 @@
-import IconPlay from './icons/icon-play'
+import IconPlay from '../icons/icon-play'
 
 const SampleTitle = () => {
   return (
