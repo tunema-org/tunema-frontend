@@ -78,7 +78,11 @@ export default function ProfileEdit({ isEdit, setIsEdit }: EditProps) {
                           <span className="mt-2 text-gray-400 text-center">
                             Upload Profile Picture
                           </span>
-                          <input type="file" className="hidden" />
+                          <input
+                            type="file"
+                            className="hidden"
+                            accept=".jepg, .jpg, .png, .webp"
+                          />
                         </label>
                       </div>
                       <div className="lg:w-[30rem] w-full place-self-center">

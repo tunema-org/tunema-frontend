@@ -105,7 +105,11 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
                       <div className="flex h-auto items-center justify-center">
                         <label className="cursor-pointer w-full duration-200 bg-primary-green hover:bg-dark-green font-bold py-3 px-8 rounded-full overflow-clip">
                           <span className="">Choose File to Upload</span>
-                          <input type="file" className="hidden" />
+                          <input
+                            type="file"
+                            className="hidden"
+                            accept=".mpeg, .wav, .wave, .aac, .ogg"
+                          />
                         </label>
                       </div>
                       <p className="text-gray-3">
@@ -121,7 +125,11 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
                             <span className="mt-2 text-gray-400">
                               Browse Cover
                             </span>
-                            <input type="file" className="hidden" />
+                            <input
+                              type="file"
+                              className="hidden"
+                              accept=".jepg, .jpg, .png, .webp"
+                            />
                           </label>
                         </div>
                         <div className="flex flex-col gap-3">
