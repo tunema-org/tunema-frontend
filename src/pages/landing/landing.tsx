@@ -11,6 +11,7 @@ function LandingPage() {
   useEffect(() => {
     AOS.init()
   }, [])
+
   return (
     <>
       <main className="">
