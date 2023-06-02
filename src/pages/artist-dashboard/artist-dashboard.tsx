@@ -8,6 +8,9 @@ import ArtistSample from '../../components/samples/sample-artist'
 import SampleArtistTitle from '../../components/samples/title-artist'
 import { Edit, ToggleOn } from 'iconsax-react'
 import ProfileEdit from './profile-edit'
+import { Tab } from '@headlessui/react'
+import Sample from '../../components/samples/sample'
+import SampleTitle from '../../components/samples/title-primary'
 
 function ArtistDashboard() {
   const [isEdit, setIsEdit] = useState(false)
@@ -46,39 +49,106 @@ function ArtistDashboard() {
           </Container>
         </section>
         <Container>
-          <section className="flex items-center overflow-auto no-scrollbar w-full text-small sm:text-heading-06 md:text-heading-05 mt-16">
-            <div className="flex items-end sm:gap-5 gap-2 w-full">
-              <div className="flex h-auto border-solid text-dark-green border-b-primary-green">
-                <button className="flex w-auto font-medium overflow-x-auto h-auto border-b-4 px-2 border-b-dark-green">
-                  Your Samples
-                </button>
-              </div>
-              <div className="flex h-auto pl-5 border-solid border-b-primary-green hover:text-dark-green cursor-pointer">
-                <button className="flex h-auto font-medium overflow-x-auto hover:border-b-4 px-2 border-b-dark-green">
-                  Favorites
-                </button>
-              </div>
-              <div className="flex h-auto pl-5 border-solid border-b-primary-green hover:text-dark-green cursor-pointer">
-                <button className="flex h-auto font-medium overflow-x-auto hover:border-b-4 px-2 border-b-dark-green">
-                  Uploaded Samples
-                </button>
-              </div>
-              <div className="flex h-auto pl-5 border-solid border-b-primary-green hover:text-dark-green cursor-pointer">
-                <button className="flex h-auto font-medium overflow-x-auto hover:border-b-4 px-2 border-b-dark-green">
-                  Overview
-                </button>
-              </div>
-            </div>
-          </section>
-          <div className="flex items-start border-b-[1px] border-gray-3 mb-10"></div>
-          <SampleArtistTitle />
-          <section className="md:pb-16">
-            {' '}
-            <ArtistSample src="/samples/acimalaka2.mp3" />
-            <ArtistSample src="/samples/1.wav" />
-            <ArtistSample src="/samples/2.wav" />
-            <ArtistSample src="/samples/3.wav" />
-          </section>
+          <Tab.Group as="div" className="font-body mt-10">
+            <Tab.List
+              as="div"
+              className="sm:text-heading-06 md:text-heading-05 flex sm:items-start items-end sm:gap-10 gap-2 w-full"
+            >
+              <Tab>
+                {({ selected }) => (
+                  <button
+                    className={
+                      selected
+                        ? 'flex h-auto font-medium overflow-x-auto text-dark-green border-b-4 px-2 border-b-dark-green'
+                        : 'flex h-auto font-medium overflow-x-auto hover:text-dark-green px-2 border-b-dark-green'
+                    }
+                  >
+                    Owned Samples
+                  </button>
+                )}
+              </Tab>
+              <Tab>
+                {({ selected }) => (
+                  <button
+                    className={
+                      selected
+                        ? 'flex h-auto font-medium overflow-x-auto text-dark-green border-b-4 px-2 border-b-dark-green'
+                        : 'flex h-auto font-medium overflow-x-auto hover:text-dark-green px-2 border-b-dark-green'
+                    }
+                  >
+                    Favorites
+                  </button>
+                )}
+              </Tab>
+              <Tab>
+                {({ selected }) => (
+                  <button
+                    className={
+                      selected
+                        ? 'flex h-auto font-medium overflow-x-auto text-dark-green border-b-4 px-2 border-b-dark-green'
+                        : 'flex h-auto font-medium overflow-x-auto hover:text-dark-green px-2 border-b-dark-green'
+                    }
+                  >
+                    Uploaded Samples
+                  </button>
+                )}
+              </Tab>
+              <Tab>
+                {({ selected }) => (
+                  <button
+                    className={
+                      selected
+                        ? 'flex h-auto font-medium overflow-x-auto text-dark-green border-b-4 px-2 border-b-dark-green'
+                        : 'flex h-auto font-medium overflow-x-auto hover:text-dark-green px-2 border-b-dark-green'
+                    }
+                  >
+                    Overview
+                  </button>
+                )}
+              </Tab>
+            </Tab.List>
+            <div className="flex items-start border-b-[1px] border-gray-3 mb-10"></div>
+
+            {/* Owned Samples */}
+            <Tab.Panels>
+              <Tab.Panel>
+                <SampleArtistTitle />
+                <section className="md:pb-16">
+                  {' '}
+                  <ArtistSample src="/samples/acimalaka2.mp3" />
+                  <ArtistSample src="/samples/1.wav" />
+                  <ArtistSample src="/samples/2.wav" />
+                  <ArtistSample src="/samples/3.wav" />
+                </section>
+              </Tab.Panel>
+
+              {/* Favorites */}
+              <Tab.Panel>
+                <SampleTitle />
+                <section className="md:pb-16">
+                  {' '}
+                  <Sample src="/samples/acimalaka2.mp3" />
+                </section>
+              </Tab.Panel>
+
+              {/* Uploaded Samples */}
+              <Tab.Panel>
+                <SampleArtistTitle />
+                <section className="md:pb-16">
+                  {' '}
+                  <ArtistSample src="/samples/acimalaka2.mp3" />
+                  <ArtistSample src="/samples/1.wav" />
+                </section>
+              </Tab.Panel>
+
+              {/* Overview */}
+              <Tab.Panel>
+                <div className="px-3">
+                  <h1 className="text-heading-01">Overview</h1>
+                </div>
+              </Tab.Panel>
+            </Tab.Panels>
+          </Tab.Group>
         </Container>
       </main>
       <FooterMobile />
