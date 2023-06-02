@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, ReactNode } from 'react'
 import Navbar from '../../components/Navbar/navbar'
 import Container from '../../components/container'
 import Footer from '../../components/footer'
@@ -11,6 +11,45 @@ import ProfileEdit from './profile-edit'
 import { Tab } from '@headlessui/react'
 import Sample from '../../components/samples/sample'
 import SampleTitle from '../../components/samples/title-primary'
+import { Transition } from '@headlessui/react'
+
+type Props = {
+  title: string
+  children: string
+}
+
+type TransitionProp = {
+  children: ReactNode
+}
+
+const Status = ({ title, children }: Props) => {
+  return (
+    <div className="bg-white min-w-[13rem] flex flex-col gap-3 px-10 py-5 rounded-md shadow-sm">
+      <p className="font-medium text-gray-400">{title}</p>
+      <h1 className="flex justify-center text-display-x-mobile truncate">
+        {children}
+      </h1>
+      <p className="flex justify-center font-medium text-body-mobile text-gray-400">
+        Samples
+      </p>
+    </div>
+  )
+}
+
+const TransitionFade = ({ children }: TransitionProp) => {
+  return (
+    <Transition.Child
+      enter="transition-all ease-in-out duration-700"
+      enterFrom="opacity-0 -translate-y-6"
+      enterTo="opacity-100 translate-y-0"
+      leave="transition-all ease-in-out duration-300"
+      leaveFrom="opacity-100"
+      leaveTo="opacity-0"
+    >
+      {children}
+    </Transition.Child>
+  )
+}
 
 function ArtistDashboard() {
   const [isEdit, setIsEdit] = useState(false)
@@ -18,7 +57,7 @@ function ArtistDashboard() {
     <>
       <Navbar />
       <ProfileEdit isEdit={isEdit} setIsEdit={setIsEdit} />
-      <main>
+      <main className="sm:min-h-0 min-h-screen">
         <section className="group relative flex h-72 w-full bg-[url('/pic/home/home-footer.png')] items-center justify-center bg-cover bg-center font-medium mt-16">
           <Container>
             <div className="flex w-full flex-col justify-center items-center">
@@ -28,11 +67,11 @@ function ArtistDashboard() {
                   src="/pic/navbar/dummy_2.png"
                   alt="Profile image profile page"
                 />
-                <div className="flex flex-col font-medium pl-5 sm:pl-10 justify-end pb-2">
+                <div className="flex flex-col font-medium sm:gap-0 gap-3 pl-5 sm:pl-10 justify-end pb-2">
                   <div className="flex w-full text-white font-medium text-heading-03 md:text-heading-02 lg:text-heading-01">
                     Mar Hansen
                   </div>
-                  <div className="flex w-full gap-3 sm:gap-10 text-white font-medium text-heading-06 md:text-heading-05 lg:text-heading-04">
+                  <div className="flex sm:flex-row flex-col w-full gap-0 sm:gap-10 text-white font-medium text-heading-06 md:text-heading-06 lg:text-heading-05">
                     <p>30 Owned Sample</p>
                     <p>30 Uploaded Sample</p>
                   </div>
@@ -41,7 +80,7 @@ function ArtistDashboard() {
             </div>
             <button
               onClick={() => setIsEdit((prev) => !prev)}
-              className="group-hover:visible sm:invisible visible absolute top-5 right-10 p-2 flex gap-3 items-center justify-center rounded-lg bg-black/80 text-white font-medium"
+              className="group-hover:visible sm:invisible backdrop-blur-md visible absolute top-5 sm:right-10 right-5 p-2 flex gap-3 items-center justify-center rounded-lg bg-black/80 text-white font-medium"
             >
               <Edit size="25" color="white" />
               <p>Edit</p>
@@ -52,9 +91,9 @@ function ArtistDashboard() {
           <Tab.Group as="div" className="font-body mt-10">
             <Tab.List
               as="div"
-              className="sm:text-heading-06 md:text-heading-05 flex sm:items-start items-end sm:gap-10 gap-2 w-full"
+              className="overflow-auto no-scrollbar sm:text-heading-06 md:text-heading-05 flex sm:items-start items-end sm:gap-10 gap-2 w-full"
             >
-              <Tab>
+              <Tab as="div" className="focus:outline-none">
                 {({ selected }) => (
                   <button
                     className={
@@ -67,7 +106,7 @@ function ArtistDashboard() {
                   </button>
                 )}
               </Tab>
-              <Tab>
+              <Tab as="div" className="focus:outline-none">
                 {({ selected }) => (
                   <button
                     className={
@@ -80,7 +119,7 @@ function ArtistDashboard() {
                   </button>
                 )}
               </Tab>
-              <Tab>
+              <Tab as="div" className="focus:outline-none">
                 {({ selected }) => (
                   <button
                     className={
@@ -93,7 +132,7 @@ function ArtistDashboard() {
                   </button>
                 )}
               </Tab>
-              <Tab>
+              <Tab as="div" className="focus:outline-none">
                 {({ selected }) => (
                   <button
                     className={
@@ -107,45 +146,68 @@ function ArtistDashboard() {
                 )}
               </Tab>
             </Tab.List>
-            <div className="flex items-start border-b-[1px] border-gray-3 mb-10"></div>
+            <div className="flex items-start border-b-[1px] border-gray-3 mb-10" />
 
-            {/* Owned Samples */}
             <Tab.Panels>
+              {/* Owned Samples */}
               <Tab.Panel>
-                <SampleArtistTitle />
-                <section className="md:pb-16">
-                  {' '}
-                  <ArtistSample src="/samples/acimalaka2.mp3" />
-                  <ArtistSample src="/samples/1.wav" />
-                  <ArtistSample src="/samples/2.wav" />
-                  <ArtistSample src="/samples/3.wav" />
-                </section>
+                <Transition.Root appear show={true}>
+                  <SampleArtistTitle />
+                  <TransitionFade>
+                    <section className="md:pb-16">
+                      {' '}
+                      <ArtistSample src="/samples/acimalaka2.mp3" />
+                      <ArtistSample src="/samples/1.wav" />
+                      <ArtistSample src="/samples/2.wav" />
+                      <ArtistSample src="/samples/3.wav" />
+                    </section>
+                  </TransitionFade>
+                </Transition.Root>
               </Tab.Panel>
 
               {/* Favorites */}
               <Tab.Panel>
-                <SampleTitle />
-                <section className="md:pb-16">
-                  {' '}
-                  <Sample src="/samples/acimalaka2.mp3" />
-                </section>
+                <Transition.Root appear show={true}>
+                  <SampleTitle />
+                  <TransitionFade>
+                    <section className="md:pb-16">
+                      {' '}
+                      <Sample src="/samples/acimalaka2.mp3" />
+                    </section>
+                  </TransitionFade>
+                </Transition.Root>
               </Tab.Panel>
 
               {/* Uploaded Samples */}
               <Tab.Panel>
-                <SampleArtistTitle />
-                <section className="md:pb-16">
-                  {' '}
-                  <ArtistSample src="/samples/acimalaka2.mp3" />
-                  <ArtistSample src="/samples/1.wav" />
-                </section>
+                <Transition.Root appear show={true}>
+                  <SampleArtistTitle />
+                  <TransitionFade>
+                    <section className="md:pb-16">
+                      <ArtistSample src="/samples/acimalaka2.mp3" />
+                      <ArtistSample src="/samples/1.wav" />
+                    </section>
+                  </TransitionFade>
+                </Transition.Root>
               </Tab.Panel>
 
               {/* Overview */}
               <Tab.Panel>
-                <div className="px-3">
-                  <h1 className="text-heading-01">Overview</h1>
-                </div>
+                <Transition.Root
+                  appear
+                  show={true}
+                  className="flex flex-col gap-3"
+                >
+                  <h1 className="px-3 text-heading-03">Sales Overview</h1>
+                  <div className="flex items-start border-b-[1px] border-gray-3 my-5" />
+                  <TransitionFade>
+                    <section className="flex lg:flex-row lg:gap-0 gap-5 mb-5 flex-col px-3 justify-around">
+                      <Status title="Uploaded">200</Status>
+                      <Status title="Profit">$50.00</Status>
+                      <Status title="Sold">50</Status>
+                    </section>
+                  </TransitionFade>
+                </Transition.Root>
               </Tab.Panel>
             </Tab.Panels>
           </Tab.Group>
