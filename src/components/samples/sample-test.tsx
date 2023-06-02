@@ -1,7 +1,7 @@
-import IconPlay from './icons/icon-play'
-import IconHeart from './icons/icon-heart'
-import IconPlus from './icons/icon-plus'
-import IconDropdown from './icons/icon-dropdown'
+import IconPlay from '../icons/icon-play'
+import IconHeart from '../icons/icon-heart'
+import IconPlus from '../icons/icon-plus'
+import IconDropdown from '../icons/icon-dropdown'
 
 const SampleTest = () => {
   return (
