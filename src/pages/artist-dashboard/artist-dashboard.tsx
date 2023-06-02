@@ -14,24 +14,26 @@ function ArtistDashboard() {
     <>
       <Navbar />
       <main>
-        <section className="flex h-72 w-full bg-[url('/pic/home/home-footer.png')] bg-cover bg-center font-medium mt-16">
-          <div className="flex w-full flex-col justify-center">
-            <div className="flex w-full justify-left py-28 pl-24 md:pl-44 lg:pl-48">
-              <img
-                className="flex object-contain w-32 h-32 md:w-40 md:h-40 lg:w-56 lg:h-56 rounded-full"
-                src="/pic/navbar/dummy_2.png"
-                alt="Profile image profile page"
-              />
-              <div className="flex flex-col font-medium pl-5 sm:pl-10 justify-end pb-2">
-                <div className="flex w-full text-white font-medium text-heading-03 md:text-heading-02 lg:text-heading-01">
-                  Mar Hansen
-                </div>
-                <div className="flex w-full text-white font-medium text-heading-06 md:text-heading-05 lg:text-heading-04">
-                  30 Samples
+        <section className="flex h-72 w-full bg-[url('/pic/home/home-footer.png')] items-center justify-center bg-cover bg-center font-medium mt-16">
+          <Container>
+            <div className="flex w-full flex-col justify-center items-center">
+              <div className="flex w-full justify-left">
+                <img
+                  className="flex object-contain w-32 h-32 md:w-40 md:h-40 lg:w-56 lg:h-56 rounded-full"
+                  src="/pic/navbar/dummy_2.png"
+                  alt="Profile image profile page"
+                />
+                <div className="flex flex-col font-medium pl-5 sm:pl-10 justify-end pb-2">
+                  <div className="flex w-full text-white font-medium text-heading-03 md:text-heading-02 lg:text-heading-01">
+                    Mar Hansen
+                  </div>
+                  <div className="flex w-full text-white font-medium text-heading-06 md:text-heading-05 lg:text-heading-04">
+                    30 Samples
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Container>
         </section>
         <Container>
           <section className="flex flex-col w-full text-small sm:text-heading-06 md:text-heading-05 mt-16">
