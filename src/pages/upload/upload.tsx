@@ -4,6 +4,7 @@ import Button from '../../components/button'
 import Input from '../../components/input/input'
 import BigInput from '../../components/input/big-input'
 import Autocomplete from '../../components/dropdown/dropdown-autocomplete'
+import DropdownKey from '../../components/dropdown/dropdown-keys'
 
 type MyModalProps = {
   isUpload: boolean
@@ -40,7 +41,7 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
             <div className="fixed inset-0 bg-black bg-opacity-25" />
           </Transition.Child>
 
-          <div className="fixed inset-0 mt-16 overflow-auto">
+          <div className="fixed inset-0 top-16 overflow-auto">
             <div className="flex min-h-full items-center justify-center p-4 text-center">
               <Transition.Child
                 as={Fragment}
@@ -119,7 +120,7 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
                   )}
                   {!isUploaded && (
                     <>
-                      <div className="flex flex-col md:flex-row justify-around md:mt-[37vh] gap-4">
+                      <div className="flex flex-col md:flex-row justify-around gap-4 overflow-auto">
                         <div className="flex w-[25vh] h-auto items-center justify-center bg-grey-lighter">
                           <label className="w-full flex h-[25vh] items-center justify-center p-6 rounded-lg border-dashed border-2 border-dark-green tracking-wide cursor-pointer hover:bg-blue">
                             <span className="mt-2 text-gray-400">
@@ -138,7 +139,7 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
                           <Input type="required" label="Price"></Input>
                           <Input type="required" label="BPM"></Input>
                           <Input type="required" label="Instrument"></Input>
-                          <Input type="required" label="Key"></Input>
+                          <DropdownKey />
                           <Input
                             type="required"
                             label="Additional Tags"
@@ -150,7 +151,7 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
                         </div>
                       </div>
                       <section className="bg-white w-full flex flex-col justify-center font-medium mt-3">
-                        <div className="my-5 md:px-[10rem] flex justify-between items-center px-5">
+                        <div className="my-1 md:px-[10rem] flex justify-between items-center px-5">
                           <p className="truncate">
                             <span className="text-red-400">*</span> Required
                             fields
