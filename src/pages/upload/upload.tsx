@@ -120,9 +120,12 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
                   )}
                   {!isUploaded && (
                     <>
-                      <div className="flex flex-col md:flex-row justify-around gap-4 overflow-auto">
+                      <div className="flex flex-col md:flex-row justify-around gap-4 overflow-visible md:overflow-auto">
+                        <h1 className="relative md:fixed left-0 ml-0 md:ml-[5rem] text-heading-03">
+                          Sample Upload
+                        </h1>
                         <div className="flex w-[25vh] h-auto items-center justify-center bg-grey-lighter">
-                          <label className="w-full flex h-[25vh] items-center justify-center p-6 rounded-lg border-dashed border-2 border-dark-green tracking-wide cursor-pointer hover:bg-blue">
+                          <label className="md:fixed relative w-[11rem] flex h-[11rem] items-center justify-center p-6 rounded-lg border-dashed border-2 border-dark-green tracking-wide cursor-pointer hover:bg-blue">
                             <span className="mt-2 text-gray-400">
                               Browse Cover
                             </span>
@@ -150,15 +153,15 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
                           ></BigInput>
                         </div>
                       </div>
-                      <section className="bg-white w-full flex flex-col justify-center font-medium mt-3">
-                        <div className="my-1 md:px-[10rem] flex justify-between items-center px-5">
+                      <section className="bg-white border-t-[1px] pt-5 border-gray-3 w-full flex flex-col justify-center font-medium">
+                        <div className="md:px-[10rem] flex justify-between items-center px-5">
                           <p className="truncate">
                             <span className="text-red-400">*</span> Required
                             fields
                           </p>
                           <div className="flex sm:gap-10 gap-3">
                             <button
-                              className="hover:underline"
+                              className="duration-200 relative mt-auto mb-auto hover:text-dark-green hover:before:scale-x-100 before:absolute before:origin-top-left before:block before:transition-transform before:duration-[0.3s] before:ease-[ease] before:scale-x-0 before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-[#9CB719]"
                               onClick={closeModal}
                             >
                               Cancel

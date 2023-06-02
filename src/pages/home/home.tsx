@@ -71,7 +71,7 @@ function Home() {
           <div
             ref={ref}
             {...events}
-            className="overflow-x-scroll no-scrollbar my-10 flex gap-16 pb-10 pr-8"
+            className="overflow-x-scroll no-scrollbar my-10 flex gap-16 pb-4 pr-8"
           >
             <Genre
               img="/pic/home/genres/mixed.png"
