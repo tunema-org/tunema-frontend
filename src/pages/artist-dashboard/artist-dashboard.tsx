@@ -7,6 +7,7 @@ import IconPlay from '../../components/icons/icon-play'
 import Footer from '../../components/footer'
 import FooterMobile from '../../components/footer-mobile'
 import ArtistSample from '../../components/samples/sample-artist'
+import SampleArtistTitle from '../../components/samples/title-artist'
 
 function ArtistDashboard() {
   return (
@@ -57,26 +58,7 @@ function ArtistDashboard() {
               </div>
             </div>
           </section>
-          <section>
-            <div className="flex items-start border-b-[1px] border-gray-3"></div>
-            <div className="grid sm:grid-cols-12 lg:grid-cols-12 grid-cols-9 items-center gap-10 pr-2 font-medium py-5 text-gray-4 px-4">
-              <p>Cover</p>
-              <div className=""></div>
-              <div className="col-span-2 flex-col">
-                <p>FileName</p>
-              </div>
-              <div className="md:col-span-3 max-w-[22rem] md:visible invisible">
-                <p>AudioWave</p>
-              </div>
-              <p className="sm:block hidden">Time</p>
-              <p className="sm:block hidden">BPM</p>
-              <p className="flex-col gap-5 lg:col-span-2 md:col-span-1 col-span-2">
-                Date Added
-              </p>
-              <p className="md:block hidden"></p>
-            </div>
-            <div className="flex items-start border-b-[1px] border-gray-3"></div>
-          </section>
+          <SampleArtistTitle />
           <section className="md:pb-16">
             {' '}
             <ArtistSample src="/samples/acimalaka2.mp3" />

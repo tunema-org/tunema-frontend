@@ -169,12 +169,12 @@ function Checkout() {
                     </div>
                     <p className="text-left">Time</p>
                     <p className="text-left md:block hidden">BPM</p>
-                    <p>License</p>
+                    <p className="truncate">License</p>
                   </div>
                   <div className="flex items-start border-b-[1px] border-gray-3"></div>
                 </section>
 
-                <section className="overflow-y-scroll max-h-[20rem]">
+                <section className="overflow-y-auto max-h-[20rem]">
                   <SampleCheckout></SampleCheckout>
                   <SampleCheckout></SampleCheckout>
                   <SampleCheckout></SampleCheckout>

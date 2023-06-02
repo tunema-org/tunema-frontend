@@ -9,7 +9,7 @@ import Navbar from '../../components/Navbar/navbar'
 import Sample from '../../components/samples/sample'
 import SearchBar from '../../components/searchbar'
 import Type from '../../components/type'
-import SampleTitle from '../../components/samples/sample-title'
+import SampleTitle from '../../components/samples/title-primary'
 
 function Search() {
   return (

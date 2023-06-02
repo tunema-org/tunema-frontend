@@ -11,7 +11,7 @@ import IconPlay from '../../components/icons/icon-play'
 import Navbar from '../../components/Navbar/navbar'
 import Sample from '../../components/samples/sample'
 import SearchBar from '../../components/searchbar'
-import SampleTitle from '../../components/samples/sample-title'
+import SampleTitle from '../../components/samples/title-primary'
 
 enum GenreEnum {
   ALL = 'Mixed',

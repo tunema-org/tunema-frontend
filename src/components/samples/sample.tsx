@@ -23,13 +23,13 @@ const Sample = (props: SampleProps) => {
 
   return (
     <button onClick={handlePlay}>
-      <div className="group grid md:grid-cols-12 grid-cols-9 items-center gap-10 hover:bg-slate-50 pr-2 font-body p-4">
+      <div className="group grid sm:grid-cols-10 md:grid-cols-13 lg:grid-cols-13 grid-cols-8 items-center gap-10 hover:bg-slate-50 pr-2 font-body p-4">
         <img
           className="w-[4rem] min-w-[3rem]"
           src="/pic/components/player/alblumcover.png"
           alt=""
         />
-        <button className="sm:group-hover:visible invisible">
+        <button className="sm:group-hover:visible invisible flex justify-center w-[26px]">
           {!playing && <IconPlay />}
           {playing && (
             <svg
@@ -45,11 +45,10 @@ const Sample = (props: SampleProps) => {
               />
             </svg>
           )}
-          <div className="flex-1" />
         </button>
 
         <div className="col-span-2 flex flex-col">
-          <a className="font-medium hover:underline overflow-scroll no-scrollbar cursor-pointer">
+          <a className="font-medium hover:underline overflow-auto no-scrollbar cursor-pointer">
             Gh0st_wave_Surround_Sound_125BPM_Am.wav
           </a>
           <div className="flex gap-3 text-gray-500 text-small">
@@ -57,7 +56,7 @@ const Sample = (props: SampleProps) => {
             <button className="hover:underline">Synth</button>
           </div>
         </div>
-        <div className="md:col-span-3 col-auto max-w-[22rem] md:block hidden">
+        <div className="md:col-span-3 max-w-[22rem] md:block hidden">
           <Waveform
             src={props.src}
             playing={playing}
@@ -66,14 +65,15 @@ const Sample = (props: SampleProps) => {
         </div>
         <p className="text-left sm:visible invisible">3:45</p>
         <p className="text-left sm:block hidden">125</p>
+        <p className="text-left sm:block hidden">C#</p>
         <button className="flex flex-col font-medium text-dark-green hover:underline justify-start items-start">
           $3.45
         </button>
         <div className="grid grid-cols-3 items-center justify-start gap-5 col-span-2">
-          <button className="lg:block hidden">
+          <button className="lg:flex justify-center w-[26px] hidden">
             <IconHeart></IconHeart>
           </button>
-          <button className="lg:block hidden">
+          <button className="lg:flex justify-center w-[26px] hidden">
             <IconPlus></IconPlus>
           </button>
           <button className="visible sm:group-hover:visible">

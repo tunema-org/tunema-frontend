@@ -5,7 +5,7 @@ const SampleTitle = () => {
     <>
       <section>
         <div className="flex items-start border-b-[1px] border-gray-3"></div>
-        <div className="grid md:grid-cols-12 grid-cols-9 items-center gap-10 pr-2 font-medium py-5 text-gray-4 px-4">
+        <div className="grid sm:grid-cols-10 md:grid-cols-13 lg:grid-cols-13 grid-cols-8 items-center gap-10 pr-2 font-medium py-5 text-gray-4 px-4">
           <p>Cover</p>
           <button className="group-hover:visible invisible">
             <IconPlay />
@@ -18,6 +18,7 @@ const SampleTitle = () => {
           </div>
           <p className="sm:visible invisible">Time</p>
           <p className="sm:visible invisible">BPM</p>
+          <p className="text-left sm:block hidden">Key</p>
           <p className="flex flex-col font-medium justify-start">Price</p>
           <div className="items-center justify-end gap-5 col-span-2 md:block hidden"></div>
         </div>

@@ -5,7 +5,7 @@ import Sample from '../../components/samples/sample'
 import IconPlay from '../../components/icons/icon-play'
 import Footer from '../../components/footer'
 import FooterMobile from '../../components/footer-mobile'
-import SampleTitle from '../../components/samples/sample-title'
+import SampleTitle from '../../components/samples/title-primary'
 
 function Favorites() {
   return (
