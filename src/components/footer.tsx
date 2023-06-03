@@ -1,12 +1,6 @@
 import React from 'react'
 
 const Footer = () => {
-  const hoverVariant = {
-    left: 'w-max duration-200 relative mt-auto mb-auto hover:text-dark-green hover:before:scale-x-100 before:absolute before:origin-top-left before:block before:transition-transform before:duration-[0.3s] before:ease-[ease] before:scale-x-0 before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-[#9CB719]',
-    right:
-      'w-max duration-200 relative mt-auto mb-auto hover:text-dark-green hover:before:scale-x-100 before:absolute before:origin-top-right before:block before:transition-transform before:duration-[0.3s] before:ease-[ease] before:scale-x-0 before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-[#9CB719]',
-  }
-
   return (
     <>
       <footer>
@@ -54,8 +48,8 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex flex-col text-gray-4 gap-2 justify-center align-bottom md:text-right text-left  py-6">
-              <a className={hoverVariant.right} href="/home">
+            <div className="flex flex-col text-gray-4 gap-2 justify-center md:text-right text-left  py-6">
+              <a className="hover:underline" href="/home">
                 Home
               </a>
               <a className="hover:underline" href="/search">
