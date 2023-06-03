@@ -1,37 +1,23 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 
-type Information = {
-  title: string
-  children: string
+type DeleteProps = {
+  isDelete: boolean
+  setIsDelete: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-type InfoProps = {
-  isInfo: boolean
-  setIsInfo: React.Dispatch<React.SetStateAction<boolean>>
-}
-
-const InfoList = ({ title, children }: Information) => {
-  return (
-    <div className="grid-cols-1 sm:gap-0 gap-1 sm:grid-cols-2 items-center min-w-auto grid w-full">
-      <p className="flex justify-start font-medium">{title}</p>
-      <p className="flex justify-start sm:justify-end truncate">{children}</p>
-    </div>
-  )
-}
-
-export default function Info({ isInfo, setIsInfo }: InfoProps) {
+export default function Delete({ isDelete, setIsDelete }: DeleteProps) {
   function closeModal() {
-    setIsInfo(false)
+    setIsDelete(false)
   }
 
   function openModal() {
-    setIsInfo(true)
+    setIsDelete(true)
   }
 
   return (
     <>
-      <Transition appear show={isInfo} as={Fragment}>
+      <Transition appear show={isDelete} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
@@ -56,9 +42,9 @@ export default function Info({ isInfo, setIsInfo }: InfoProps) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full flex flex-col justify-center max-w-[100vh] md:max-h-[85vh] transform rounded-2xl bg-white p-6 text-left align-middle transition-all">
+                <Dialog.Panel className="w-full flex flex-col justify-center max-w-[70vh] md:max-h-[85vh] transform rounded-2xl bg-white p-6 text-left align-middle transition-all">
                   <button
-                    className="self-end sticky top-0 right-1 m-2"
+                    className="self-end fixed top-5 right-3 m-2"
                     onClick={closeModal}
                   >
                     <svg
@@ -82,18 +68,22 @@ export default function Info({ isInfo, setIsInfo }: InfoProps) {
                   </button>
 
                   <div className="flex flex-col font-body gap-6 sm:gap-4">
-                    <h1 className="text-heading-03">Sample Info</h1>
-                    <div className="border-b-[1px] border-gray-3 w-full my-2" />
-                    <InfoList title="Title">
-                      Gh0st_wave_Surround_Sound_125BPM_Am.wav
-                    </InfoList>
-                    <InfoList title="Artist">William</InfoList>
-                    <InfoList title="Genre">Hip-Hop</InfoList>
-                    <InfoList title="Type">Instrumental</InfoList>
-                    <InfoList title="Model">Electronic | Synth</InfoList>
-                    <InfoList title="Time">3:43</InfoList>
-                    <InfoList title="BPM">150</InfoList>
-                    <InfoList title="Sold">1947</InfoList>
+                    <h1 className="text-heading-05">Warning</h1>
+                    <p>Are you sure want to delete this sample?</p>
+                    <p className="text-red-500 font-medium">
+                      This Cannot Be Undone!
+                    </p>
+                    <div className="flex sm:flex-row flex-col gap-3">
+                      <button className="px-5 py-2 font-medium bg-red-500/30 rounded-md hover:bg-red-500 duration-200">
+                        I've made my decision
+                      </button>
+                      <button
+                        onClick={closeModal}
+                        className="px-5 py-2 font-medium bg-primary-green/30 rounded-md hover:bg-primary-green duration-200"
+                      >
+                        Cancel
+                      </button>
+                    </div>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>

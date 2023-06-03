@@ -1,10 +1,11 @@
-import { ShoppingBag, ToggleOn } from 'iconsax-react'
+import { ShoppingBag, InfoCircle, Logout } from 'iconsax-react'
 import { useState, useEffect, useRef, Fragment } from 'react'
 import React from 'react'
 import { Pivot as Hamburger } from 'hamburger-react'
 import Sidebar from './sidebar'
 import MyModal from '../../pages/upload/upload'
 import { Dialog, Transition } from '@headlessui/react'
+import IconHeart from '../icons/icon-heart'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -110,32 +111,43 @@ const Navbar = () => {
                     leaveFrom="transform scale-100 opacity-100 max-h-96"
                     leaveTo="transform scale-95 opacity-0 max-h-0"
                     ref={menuRef}
-                    className="bg-white/80 backdrop-blur-md shadow-lg absolute flex flex-col top-16 right-2 rounded-xl px-6 py-4 gap-5 justify-between overflow-hidden transition-all duration-300 "
+                    className="bg-white/80 backdrop-blur-md shadow-lg absolute flex flex-col top-16 right-2 rounded-xl px-4 py-4 gap-5 justify-between overflow-hidden transition-all duration-300 "
                   >
                     <a
                       href="/artist-dashboard"
-                      className="duration-200 px-4 py-2 font-bold w-32 hover:bg-light-green hover:rounded-lg text-center"
+                      className="duration-200 px-4 py-2 font-bold hover:bg-light-green hover:rounded-lg text-center"
                     >
                       {'Account'}
                     </a>
                     <div className="duration-200 border-b border-gray-3"></div>
                     <a
-                      href="#"
-                      className="duration-200 px-4 py-2 hover:bg-light-green hover:rounded-lg"
+                      href="/sample-cart"
+                      className="flex duration-200 items-center justify-start gap-2 px-4 py-2 hover:bg-light-green hover:rounded-lg"
                     >
-                      Help
+                      <ShoppingBag size="26" color="gray" />
+                      SampleCart
                     </a>
                     <a
-                      href="#"
-                      className="duration-200 px-4 py-2 hover:bg-light-green hover:rounded-lg"
+                      href="/artist-dashboard #wishlist"
+                      className="flex items-center gap-2 duration-200 px-4 py-2 hover:bg-light-green hover:rounded-lg"
                     >
+                      <IconHeart />
+                      Wishlist
+                    </a>
+                    <div className="duration-200 border-b border-gray-3"></div>
+                    <a
+                      href="/"
+                      className="flex gap-2 items-center duration-200 px-4 py-2 hover:bg-light-green hover:rounded-lg"
+                    >
+                      <InfoCircle size="26" color="gray" />
                       About
                     </a>
                     <div className="duration-200 border-b border-gray-3"></div>
                     <a
                       href="#"
-                      className="duration-200 px-4 py-2 hover:bg-red-300 hover:text-black hover:rounded-lg font-medium text-red-500"
+                      className="flex gap-2 items-center duration-200 px-4 py-2 hover:bg-red-300 hover:text-black hover:rounded-lg font-medium text-red-500"
                     >
+                      <Logout size="26" color="red" />
                       Log Out
                     </a>
                   </Transition>

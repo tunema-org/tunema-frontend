@@ -7,6 +7,12 @@ const Sidebar = () => {
     useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>
   const { events } = useDraggable(ref)
 
+  const hoverVariant = {
+    left: 'w-max duration-200 relative mt-auto mb-auto hover:text-dark-green hover:before:scale-x-100 before:absolute before:origin-top-left before:block before:transition-transform before:duration-[0.3s] before:ease-[ease] before:scale-x-0 before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-[#9CB719]',
+    right:
+      'w-max duration-200 relative mt-auto mb-auto hover:text-dark-green hover:before:scale-x-100 before:absolute before:origin-top-right before:block before:transition-transform before:duration-[0.3s] before:ease-[ease] before:scale-x-0 before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-[#9CB719]',
+  }
+
   return (
     <>
       <div
@@ -26,25 +32,28 @@ const Sidebar = () => {
               <h1>User</h1>
             </button>
           </a>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col w-auto gap-3">
             <h3 className="font-medium text-[#ababa9]">Navigation</h3>
-            <a href="/home" className="hover:underline">
+            <a href="/home" className={hoverVariant.left}>
               Home
             </a>
-            <a href="/search" className="hover:underline">
+            <a href="/search" className={hoverVariant.left}>
               Search
             </a>
-            <a href="/library" className="hover:underline">
+            <a href="/library" className={hoverVariant.left}>
               Library
+            </a>
+            <a href="/library" className={hoverVariant.left}>
+              Wishlist
             </a>
           </div>
         </div>
         <div className="flex flex-col gap-3 pb-16">
           <h3 className="font-medium text-[#ababa9]">Tunema</h3>
-          <a href="" className="hover:underline">
+          <a href="" className={hoverVariant.left}>
             Help
           </a>
-          <a href="/" className="hover:underline">
+          <a href="/" className={hoverVariant.left}>
             About TUNEMA
           </a>
           <a href="" className="hover:underline text-red-400 font-medium">

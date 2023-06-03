@@ -6,13 +6,16 @@ import IconPlus from '../icons/icon-plus'
 import Info from '../popout/info'
 import React from 'react'
 import { InfoCircle, ProfileCircle, Trash } from 'iconsax-react'
+import Delete from '../popout/delete'
 
-const DropdownSort = () => {
+const DropdownOwned = () => {
   const [isInfo, setIsInfo] = useState(false)
+  const [isDelete, setIsDelete] = useState(false)
 
   return (
     <>
       <Info isInfo={isInfo} setIsInfo={setIsInfo} />
+      <Delete isDelete={isDelete} setIsDelete={setIsDelete} />
       <Menu as="div" className="relative inline-block text-left font-body">
         <Menu.Button
           as="button"
@@ -79,6 +82,20 @@ const DropdownSort = () => {
                 </button>
               )}
             </Menu.Item>
+            <div className="flex items-start border-b-[1px] my-3 border-gray-4"></div>
+            <Menu.Item>
+              {({ active }) => (
+                <button
+                  onClick={() => setIsDelete((prev) => !prev)}
+                  className={`${
+                    active && 'bg-red-300'
+                  } p-3 rounded-[10px] text-center flex items-center gap-3 w-full`}
+                >
+                  <Trash size="22" color="gray" />
+                  Remove
+                </button>
+              )}
+            </Menu.Item>
           </Menu.Items>
         </Transition.Root>
       </Menu>
@@ -86,4 +103,4 @@ const DropdownSort = () => {
   )
 }
 
-export default DropdownSort
+export default DropdownOwned

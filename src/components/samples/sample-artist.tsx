@@ -7,6 +7,7 @@ import IconPlus from '../icons/icon-plus'
 import IconPlay from '../icons/icon-play'
 import Dropdown from '../dropdown/dropdown-sample'
 import Waveform from '../waveform'
+import DropdownOwned from '../dropdown/dropdown-owned'
 
 type SampleProps = {
   src: string
@@ -72,7 +73,7 @@ const ArtistSample = (props: SampleProps) => {
             2022/10/01
           </div>
           <div className="text-gray-500">
-            <Dropdown />
+            <DropdownOwned />
           </div>
         </div>
         <div className="flex items-start border-b-[1px] border-gray-3"></div>

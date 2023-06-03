@@ -166,7 +166,7 @@ function ArtistDashboard() {
               </Tab.Panel>
 
               {/* Favorites */}
-              <Tab.Panel>
+              <Tab.Panel id="wishlist">
                 <Transition.Root appear show={true}>
                   <SampleTitle />
                   <TransitionFade>
