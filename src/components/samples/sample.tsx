@@ -12,6 +12,7 @@ type SampleProps = {
 
 const Sample = (props: SampleProps) => {
   const [playing, setPlaying] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
 
   const handlePlay = () => {
     setPlaying(!playing)
@@ -48,8 +49,20 @@ const Sample = (props: SampleProps) => {
         </button>
 
         <div className="col-span-2 flex flex-col">
-          <a className="font-medium hover:underline overflow-auto no-scrollbar cursor-pointer">
-            Gh0st_wave_Surround_Sound_125BPM_Am.wav
+          <a
+            className={`font-medium overflow-hidden cursor-pointer ${
+              isHovered ? 'hover:overflow-clip' : 'hover:overflow-hidden'
+            }`}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <span
+              className={`inline-block transition-all duration-300 ${
+                isHovered ? 'marquee' : ''
+              }`}
+            >
+              Gh0st_wave_Surround_Sound_125BPM_Am.wav
+            </span>
           </a>
           <div className="flex gap-3 text-gray-500 text-small">
             <button className="hover:underline">Electronic</button>

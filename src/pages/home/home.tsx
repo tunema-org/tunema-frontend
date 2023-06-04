@@ -32,12 +32,18 @@ const Genre = (props: GenreProps) => {
   const classState = props.isSelected
     ? 'grayscale-0 drop-shadow-[20px_20px_0px_#D1F812]'
     : 'transition duration-150 hover:grayscale-0 hover:drop-shadow-[20px_20px_0px_#D1F812]'
+
+  const handleDragStart = (event: React.DragEvent<HTMLImageElement>) => {
+    event.preventDefault()
+  }
   return (
     <button
       onClick={() => props.setSelectedGenre(props.label)}
       className={`flex flex-col max-w-[13rem] min-w-[11rem] filter grayscale ${classState}`}
     >
       <img
+        draggable={false}
+        onDragStart={handleDragStart}
         src={props.img}
         className="border-4 border-black rounded-[15px]"
         alt=""
@@ -49,8 +55,10 @@ const Genre = (props: GenreProps) => {
 
 function Home() {
   const [selectedGenre, setSelectedGenre] = useState(GenreEnum.ALL)
+
   const ref =
     useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>
+
   const { events } = useDraggable(ref)
   return (
     <>

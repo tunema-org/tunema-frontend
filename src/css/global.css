@@ -25,3 +25,17 @@ input:checked + div {
 input:checked + div svg {
   @apply block;
 }
+
+.marquee {
+  animation: marquee 5s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
