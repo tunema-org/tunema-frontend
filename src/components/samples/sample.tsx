@@ -84,7 +84,7 @@ const Sample = (props: SampleProps) => {
               {props.name}
             </span>
           </a>
-          <div className="flex gap-3 text-gray-500 text-small lg:min-w-[100rem] min-w-0">
+          <div className="flex gap-3 text-gray-500 text-small lg:min-w-max min-w-0">
             <button className="hover:underline">Electronic</button>
             <button className="hover:underline">Synth</button>
           </div>
