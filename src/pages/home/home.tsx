@@ -131,7 +131,18 @@ function Home() {
         <SampleTitle />
         <section>
           {' '}
-          <Sample src="/samples/1.wav" />
+          <Sample
+            img="/pic/components/player/alblumcover.png"
+            name="Gh0st_wave_Surround_Sound_125BPM_Am.wav"
+            artist="B.O.B"
+            src="/samples/1.wav"
+            time="3:45"
+            bpm={125}
+            keys="C#"
+            keyScale="major"
+            price={3.45}
+            upload="2022/01/16"
+          />
         </section>
       </Container>
 

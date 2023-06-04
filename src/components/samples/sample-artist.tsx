@@ -10,11 +10,26 @@ import Waveform from '../waveform'
 import DropdownOwned from '../dropdown/dropdown-owned'
 
 type SampleProps = {
+  img: string
+  name: string
+  artist: string
   src: string
+  time: string
+  bpm: number
+  keys: string
+  keyScale: string
+  price: number
+  upload: string
+  added: string
 }
 
 const ArtistSample = (props: SampleProps) => {
   const [playing, setPlaying] = useState(false)
+
+  const [isHovered, setIsHovered] = useState(false)
+  const handleClick = () => {
+    setIsHovered((prevIsHovered) => !prevIsHovered)
+  }
 
   const handlePlay = () => {
     setPlaying(!playing)
@@ -23,14 +38,20 @@ const ArtistSample = (props: SampleProps) => {
   const handleFinish = () => {
     setPlaying(false)
   }
+
+  const handleDragStart = (event: React.DragEvent<HTMLImageElement>) => {
+    event.preventDefault()
+  }
   return (
     <>
       <button onClick={handlePlay}>
         <div className="group grid sm:grid-cols-10 md:grid-cols-13 lg:grid-cols-13 grid-cols-6 items-center gap-10 hover:bg-slate-50 pr-2 font-body p-4">
           <img
             className="w-[4rem] min-w-[3rem]"
-            src="/pic/components/player/alblumcover.png"
-            alt=""
+            src={props.img}
+            draggable={false}
+            onDragStart={handleDragStart}
+            alt="Cover"
           />
           <button className="sm:group-hover:visible invisible flex justify-center w-[26px]">
             {!playing && <IconPlay />}
@@ -51,10 +72,23 @@ const ArtistSample = (props: SampleProps) => {
           </button>
 
           <div className="col-span-2 min-w-[100px] flex flex-col gap-3">
-            <a className="font-medium hover:underline overflow-auto no-scrollbar cursor-pointer">
-              Gh0st_wave_Surround_Sound_125BPM_Am.wav
+            <a
+              className={`font-medium flex justify-start overflow-hidden ${
+                isHovered ? 'hover:overflow-clip' : 'hover:overflow-hidden'
+              }`}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              onClick={handleClick}
+            >
+              <span
+                className={`inline-block transition-all duration-300 whitespace-nowrap ${
+                  isHovered ? 'marquee' : ''
+                }`}
+              >
+                {props.name}
+              </span>
             </a>
-            <div className="flex gap-5 text-gray-500 text-small">
+            <div className="flex gap-5 text-gray-500 text-small lg:min-w-[100rem] min-w-0">
               <button className="hover:underline">Electronic</button>
               <button className="hover:underline">Synth</button>
             </div>
@@ -66,14 +100,23 @@ const ArtistSample = (props: SampleProps) => {
               onFinished={handleFinish}
             />
           </div>
-          <p className="sm:flex justify-start hidden">3:45</p>
-          <p className="sm:flex justify-start hidden">125</p>
-          <p className="sm:flex justify-start hidden">C#</p>
+          <p className="sm:flex justify-start hidden">{props.time}</p>
+          <p className="sm:flex justify-start hidden">{props.bpm}</p>
+          <p className="sm:flex justify-start hidden">{props.keys}</p>
           <div className="justify-start gap-5 lg:col-span-2 md:col-span-1 col-span-2 sm:flex hidden">
-            2022/10/01
+            {props.added}
           </div>
           <div className="text-gray-500">
-            <DropdownOwned />
+            <DropdownOwned
+              name={props.name}
+              artist={props.artist}
+              time={props.time}
+              bpm={props.bpm}
+              keys={props.keys}
+              keyScale={props.keyScale}
+              price={props.price}
+              upload={props.upload}
+            />
           </div>
         </div>
         <div className="flex items-start border-b-[1px] border-gray-3"></div>

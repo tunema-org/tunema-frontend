@@ -37,9 +37,39 @@ function SampleCart() {
             </div>
             <div className="flex items-start border-b-[1px] border-gray-3"></div>
             <section>
-              <BuySample />
-              <BuySample />
-              <BuySample />
+              <BuySample
+                img="/pic/components/player/alblumcover.png"
+                name="Yoooooooo.mp3"
+                artist="B.O.B"
+                src="/samples/acimalaka2.mp3"
+                time="3:45"
+                bpm={125}
+                keys="C#"
+                keyScale="major"
+                price={3.45}
+              />
+              <BuySample
+                img="/pic/components/player/alblumcover.png"
+                name="Yoooooooo.mp3"
+                artist="B.O.B"
+                src="/samples/acimalaka2.mp3"
+                time="3:45"
+                bpm={125}
+                keys="C#"
+                keyScale="major"
+                price={3.45}
+              />
+              <BuySample
+                img="/pic/components/player/alblumcover.png"
+                name="Yooooooooaaaaaaaaaaaaaaaaaaaaaaaa.mp3"
+                artist="B.O.B"
+                src="/samples/acimalaka2.mp3"
+                time="3:45"
+                bpm={125}
+                keys="C#"
+                keyScale="major"
+                price={3.45}
+              />
             </section>
           </section>
 

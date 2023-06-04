@@ -175,10 +175,50 @@ function Checkout() {
                 </section>
 
                 <section className="overflow-y-auto max-h-[20rem]">
-                  <SampleCheckout></SampleCheckout>
-                  <SampleCheckout></SampleCheckout>
-                  <SampleCheckout></SampleCheckout>
-                  <SampleCheckout></SampleCheckout>
+                  <SampleCheckout
+                    img="/pic/components/player/alblumcover.png"
+                    name="Yoooooooo.mp3"
+                    artist="B.O.B"
+                    src="/samples/acimalaka2.mp3"
+                    time="3:45"
+                    bpm={125}
+                    keys="C#"
+                    keyScale="major"
+                    price={3.45}
+                  ></SampleCheckout>
+                  <SampleCheckout
+                    img="/pic/components/player/alblumcover.png"
+                    name="Yoooooooo.mp3"
+                    artist="B.O.B"
+                    src="/samples/acimalaka2.mp3"
+                    time="3:45"
+                    bpm={125}
+                    keys="C#"
+                    keyScale="major"
+                    price={3.45}
+                  ></SampleCheckout>
+                  <SampleCheckout
+                    img="/pic/components/player/alblumcover.png"
+                    name="Yooooooooaaaaaaaaaaaaaaaa.mp3"
+                    artist="B.O.B"
+                    src="/samples/acimalaka2.mp3"
+                    time="3:45"
+                    bpm={125}
+                    keys="C#"
+                    keyScale="major"
+                    price={3.45}
+                  ></SampleCheckout>
+                  <SampleCheckout
+                    img="/pic/components/player/alblumcover.png"
+                    name="Yoooooooo.mp3"
+                    artist="B.O.B"
+                    src="/samples/acimalaka2.mp3"
+                    time="3:45"
+                    bpm={125}
+                    keys="C#"
+                    keyScale="major"
+                    price={3.45}
+                  ></SampleCheckout>
                 </section>
               </Transition.Child>
               <Transition.Child

@@ -156,10 +156,19 @@ function ArtistDashboard() {
                   <TransitionFade>
                     <section className="md:pb-16">
                       {' '}
-                      <ArtistSample src="/samples/acimalaka2.mp3" />
-                      <ArtistSample src="/samples/1.wav" />
-                      <ArtistSample src="/samples/2.wav" />
-                      <ArtistSample src="/samples/3.wav" />
+                      <ArtistSample
+                        img="/pic/components/player/alblumcover.png"
+                        name="Aa.mp3"
+                        artist="B.O.B"
+                        src="/samples/acimalaka2.mp3"
+                        time="3:45"
+                        bpm={125}
+                        keys="C#"
+                        keyScale="major"
+                        price={3.45}
+                        upload="2022/01/16"
+                        added="2022/02/15"
+                      />
                     </section>
                   </TransitionFade>
                 </Transition.Root>
@@ -172,7 +181,18 @@ function ArtistDashboard() {
                   <TransitionFade>
                     <section className="md:pb-16">
                       {' '}
-                      <Sample src="/samples/acimalaka2.mp3" />
+                      <Sample
+                        img="/pic/components/player/alblumcover.png"
+                        name="Suara apa ini cok.wav"
+                        artist="B.O.B"
+                        src="/samples/1.wav"
+                        time="3:45"
+                        bpm={125}
+                        keys="C#"
+                        keyScale="major"
+                        price={3.45}
+                        upload="2022/01/16"
+                      />
                     </section>
                   </TransitionFade>
                 </Transition.Root>
@@ -184,8 +204,19 @@ function ArtistDashboard() {
                   <SampleArtistTitle />
                   <TransitionFade>
                     <section className="md:pb-16">
-                      <ArtistSample src="/samples/acimalaka2.mp3" />
-                      <ArtistSample src="/samples/1.wav" />
+                      <ArtistSample
+                        img="/pic/components/player/alblumcover.png"
+                        name="Yoooooooo.mp3"
+                        artist="B.O.B"
+                        src="/samples/acimalaka2.mp3"
+                        time="3:45"
+                        bpm={125}
+                        keys="C#"
+                        keyScale="major"
+                        price={3.45}
+                        upload="2022/01/16"
+                        added="2022/02/15"
+                      />
                     </section>
                   </TransitionFade>
                 </Transition.Root>

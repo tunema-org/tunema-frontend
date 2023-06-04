@@ -1,14 +1,23 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
+import React from 'react'
 
 type Information = {
   title: string
-  children: string
+  children: React.ReactNode
 }
 
 type InfoProps = {
   isInfo: boolean
   setIsInfo: React.Dispatch<React.SetStateAction<boolean>>
+  name: string
+  artist: string
+  time: string
+  bpm: number
+  keys: string
+  keyScale: string
+  price: number
+  upload: string
 }
 
 const InfoList = ({ title, children }: Information) => {
@@ -20,18 +29,21 @@ const InfoList = ({ title, children }: Information) => {
   )
 }
 
-export default function Info({ isInfo, setIsInfo }: InfoProps) {
+export default function Info(
+  props: InfoProps,
+  { isInfo, setIsInfo }: InfoProps,
+) {
   function closeModal() {
-    setIsInfo(false)
+    props.setIsInfo(false)
   }
 
   function openModal() {
-    setIsInfo(true)
+    props.setIsInfo(true)
   }
 
   return (
     <>
-      <Transition appear show={isInfo} as={Fragment}>
+      <Transition appear show={props.isInfo} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
@@ -84,15 +96,13 @@ export default function Info({ isInfo, setIsInfo }: InfoProps) {
                   <div className="flex flex-col font-body gap-6 sm:gap-4">
                     <h1 className="text-heading-03">Sample Info</h1>
                     <div className="border-b-[1px] border-gray-3 w-full my-2" />
-                    <InfoList title="Title">
-                      Gh0st_wave_Surround_Sound_125BPM_Am.wav
-                    </InfoList>
-                    <InfoList title="Artist">William</InfoList>
-                    <InfoList title="Genre">Hip-Hop</InfoList>
-                    <InfoList title="Type">Instrumental</InfoList>
-                    <InfoList title="Model">Electronic | Synth</InfoList>
-                    <InfoList title="Time">3:43</InfoList>
-                    <InfoList title="BPM">150</InfoList>
+                    <InfoList title="Title">{props.name}</InfoList>
+                    <InfoList title="Artist">{props.artist}</InfoList>
+                    <InfoList title="Time">{props.time}</InfoList>
+                    <InfoList title="BPM">{props.bpm}</InfoList>
+                    <InfoList title="Key">{props.keys}</InfoList>
+                    <InfoList title="Key Scale">{props.keys}</InfoList>
+                    <InfoList title="Uploaded">{props.upload}</InfoList>
                     <InfoList title="Sold">1947</InfoList>
                   </div>
                 </Dialog.Panel>

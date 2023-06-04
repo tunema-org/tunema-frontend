@@ -9,7 +9,7 @@ const SampleArtistTitle = () => {
           <p>Cover</p>
           <button className="sm:group-hover:visible invisible flex justify-center w-[26px]"></button>
 
-          <div className="col-span-2 min-w-[100px] flex flex-col gap-3">
+          <div className="col-span-2 w-max flex flex-col gap-3">
             <p>Title</p>
           </div>
           <div className="md:col-span-3 max-w-[22rem] md:block hidden">

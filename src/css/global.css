@@ -27,7 +27,7 @@ input:checked + div svg {
 }
 
 .marquee {
-  animation: marquee 5s linear infinite;
+  animation: marquee 7s linear infinite;
   white-space: nowrap;
 }
 

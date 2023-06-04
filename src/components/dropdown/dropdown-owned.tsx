@@ -8,13 +8,35 @@ import React from 'react'
 import { InfoCircle, ProfileCircle, Trash } from 'iconsax-react'
 import Delete from '../popout/delete'
 
-const DropdownOwned = () => {
+type InfoProps = {
+  name: string
+  artist: string
+  time: string
+  bpm: number
+  keys: string
+  keyScale: string
+  price: number
+  upload: string
+}
+
+const DropdownOwned = (props: InfoProps) => {
   const [isInfo, setIsInfo] = useState(false)
   const [isDelete, setIsDelete] = useState(false)
 
   return (
     <>
-      <Info isInfo={isInfo} setIsInfo={setIsInfo} />
+      <Info
+        name={props.name}
+        artist={props.artist}
+        time={props.time}
+        bpm={props.bpm}
+        keys={props.keys}
+        keyScale={props.keyScale}
+        price={props.price}
+        upload={props.upload}
+        isInfo={isInfo}
+        setIsInfo={setIsInfo}
+      />
       <Delete isDelete={isDelete} setIsDelete={setIsDelete} />
       <Menu as="div" className="relative inline-block text-left font-body">
         <Menu.Button
