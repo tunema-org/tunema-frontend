@@ -14,10 +14,9 @@ type SampleProps = {
 const BuySample = () => {
   return (
     <section className="flex flex-col">
-      <div className="flex items-start border-b-[1px] border-gray-3"></div>
-      <div className="grid md:grid-cols-6 grid-cols-5 items-center gap-10 pr-2 font-medium py-5 text-gray-4 px-4">
-        <div className="">
-          <IconDelete className="hover:visible invisible" />
+      <div className="grid md:grid-cols-6 grid-cols-5 items-center gap-10 pr-2 font-medium py-3 text-gray-4 px-2">
+        <div className="flex flex-col justify-center content-center">
+          <IconDelete />
         </div>
         <div className="flex flex-col">
           <img

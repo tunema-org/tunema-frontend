@@ -23,7 +23,7 @@ function SampleCart() {
             <p>Shopping cart.</p>
           </div>
         </section>
-        <section className="flex md:justify-between justify-normal gap-5 font-body xl:flex-row flex-col my-5 px-0 sm:px-51  ">
+        <section className="flex md:justify-between justify-normal items-center gap-5 sm:gap-10 md:gap-14 lg:gap-20 font-body xl:flex-row flex-col my-5 px-0 sm:px-51 pb-10">
           <section className="flex flex-col">
             <div className="flex items-start border-b-[1px] border-gray-3"></div>
             <div className="grid md:grid-cols-6 grid-cols-5 items-center gap-10 pr-2 font-medium py-5 text-gray-4 px-4">
@@ -38,11 +38,12 @@ function SampleCart() {
             <div className="flex items-start border-b-[1px] border-gray-3"></div>
             <section>
               <BuySample />
+              <BuySample />
+              <BuySample />
             </section>
           </section>
 
-          <section className="sm:shadow-[0px_4px_30px_rgba(0,0,0,0.08)] shadow-none rounded-[10px] w-[320px] sm:w-[430px] flex flex-col sm:p-8 p-0 items-center gap-5 font-body">
-            <div className="border-b-[1px] border-gray-3 w-full my-2 sm:hidden block"></div>
+          <section className="sm:shadow-[0px_4px_30px_rgba(0,0,0,0.08)] shadow-none rounded-[10px] w-[320px] sm:w-[650px] h-auto flex flex-col sm:p-8 p-0 gap-5 font-body">
             <div className="grid-cols-2 items-center min-w-auto grid w-full">
               <p className="flex justify-start">Total Product</p>
               <p className="flex justify-end text-dark-green font-medium">
