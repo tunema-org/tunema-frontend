@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRef, useState, useEffect } from 'react'
 import Container from '../../components/container'
 import DropdownSort from '../../components/dropdown/dropdown-sort'
 import DropdownType from '../../components/dropdown/dropdown-type'
@@ -10,8 +11,15 @@ import Sample from '../../components/samples/sample'
 import SearchBar from '../../components/searchbar'
 import Type from '../../components/type'
 import SampleTitle from '../../components/samples/title-primary'
+import api from '../../api'
+import { ListSamplesResponse } from '../../api/sounds/list-samples'
 
 function Search() {
+  const [samples, setSamples] = useState<ListSamplesResponse>()
+
+  useEffect(() => {
+    api.listSamples().then((data) => setSamples(data))
+  }, [])
   return (
     <>
       <Navbar />
@@ -46,42 +54,20 @@ function Search() {
           </section>
           <SampleTitle />
           <section>
-            <Sample
-              img="/pic/components/player/alblumcover.png"
-              name="Acimalaka.mp3"
-              artist="B.O.B"
-              src="/samples/acimalaka2.mp3"
-              time="3:45"
-              bpm={125}
-              keys="C#"
-              keyScale="major"
-              price={3.45}
-              upload="2022/01/16"
-            />
-            <Sample
-              img="/pic/components/player/alblumcover.png"
-              name="Brooooooooooooooooooooooooooo."
-              artist="B.O.B"
-              src="/samples/1.wav"
-              time="3:45"
-              bpm={125}
-              keys="C#"
-              keyScale="major"
-              price={3.45}
-              upload="2022/01/16"
-            />
-            <Sample
-              img="/pic/components/player/alblumcover.png"
-              name="Ambatukammmmmmmmmmmmmmmmmmmmm.wav"
-              artist="B.O.B"
-              src="/samples/2.wav"
-              time="3:45"
-              bpm={125}
-              keys="C#"
-              keyScale="major"
-              price={3.45}
-              upload="2022/01/16"
-            />
+            {samples?.items.map((sample) => (
+              <Sample
+                img={sample.data.cover_url}
+                name={sample.data.name}
+                artist={sample.artist_name}
+                src={sample.data.file_url}
+                time={sample.data.time}
+                bpm={sample.data.bpm}
+                keys={sample.data.key}
+                keyScale={sample.data.key_scale}
+                price={sample.data.price}
+                upload={sample.data.created_at}
+              />
+            ))}
           </section>
         </Container>
         <div className="md:block hidden">

@@ -11,7 +11,7 @@ type SampleProps = {
   name: string
   artist: string
   src: string
-  time: string
+  time: number
   bpm: number
   keys: string
   keyScale: string
@@ -43,7 +43,7 @@ const Sample = (props: SampleProps) => {
     <button onClick={handlePlay}>
       <div className="group grid sm:grid-cols-10 md:grid-cols-13 lg:grid-cols-13 grid-cols-8 items-center gap-10 hover:bg-slate-50 pr-2 font-body p-4">
         <img
-          className="w-[4rem] min-w-[3rem]"
+          className="object-cover w-[4rem] h-[4rem] min-h-[4rem] min-w-[4rem]"
           src={props.img}
           draggable={false}
           onDragStart={handleDragStart}

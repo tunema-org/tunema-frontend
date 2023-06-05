@@ -9,7 +9,7 @@ import Info from '../popout/info'
 type InfoProps = {
   name: string
   artist: string
-  time: string
+  time: number
   bpm: number
   keys: string
   keyScale: string

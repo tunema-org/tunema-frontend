@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useDraggable } from 'react-use-draggable-scroll'
 import Button from '../../components/button'
 import Container from '../../components/container'
@@ -12,6 +12,8 @@ import Navbar from '../../components/Navbar/navbar'
 import Sample from '../../components/samples/sample'
 import SearchBar from '../../components/searchbar'
 import SampleTitle from '../../components/samples/title-primary'
+import api from '../../api'
+import { ListSamplesResponse } from '../../api/sounds/list-samples'
 
 enum GenreEnum {
   ALL = 'Mixed',
@@ -55,11 +57,16 @@ const Genre = (props: GenreProps) => {
 
 function Home() {
   const [selectedGenre, setSelectedGenre] = useState(GenreEnum.ALL)
+  const [samples, setSamples] = useState<ListSamplesResponse>()
 
   const ref =
     useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>
 
   const { events } = useDraggable(ref)
+
+  useEffect(() => {
+    api.listSamples().then((data) => setSamples(data))
+  }, [])
   return (
     <>
       <Navbar />
@@ -130,19 +137,20 @@ function Home() {
         </section>
         <SampleTitle />
         <section>
-          {' '}
-          <Sample
-            img="/pic/components/player/alblumcover.png"
-            name="Gh0st_wave_Surround_Sound_125BPM_Am.wav"
-            artist="B.O.B"
-            src="/samples/1.wav"
-            time="3:45"
-            bpm={125}
-            keys="C#"
-            keyScale="major"
-            price={3.45}
-            upload="2022/01/16"
-          />
+          {samples?.items.map((sample) => (
+            <Sample
+              img={sample.data.cover_url}
+              name={sample.data.name}
+              artist={sample.artist_name}
+              src={sample.data.file_url}
+              time={sample.data.time}
+              bpm={sample.data.bpm}
+              keys={sample.data.key}
+              keyScale={sample.data.key_scale}
+              price={sample.data.price}
+              upload={sample.data.created_at}
+            />
+          ))}
         </section>
       </Container>
 
