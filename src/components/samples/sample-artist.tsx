@@ -45,7 +45,11 @@ const ArtistSample = (props: SampleProps) => {
   return (
     <>
       <button onClick={handlePlay}>
-        <div className="group grid sm:grid-cols-10 md:grid-cols-13 lg:grid-cols-13 grid-cols-6 items-center gap-10 hover:bg-slate-50 pr-2 font-body p-4">
+        <div
+          className={`group grid sm:grid-cols-10 md:grid-cols-13 lg:grid-cols-13 grid-cols-8 items-center hover:bg-primary-green/10 gap-10 pr-2 font-body p-4 ${
+            playing ? 'bg-primary-green/10' : 'bg-none'
+          }`}
+        >
           <img
             className="w-[4rem] min-w-[3rem]"
             src={props.img}

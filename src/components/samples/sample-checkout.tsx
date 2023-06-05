@@ -29,7 +29,7 @@ const SampleCheckout = (props: SampleProps) => {
   }
   return (
     <section className="w-auto max-w-[736px]">
-      <div className="group grid md:grid-cols-6 grid-cols-5 items-center gap-10 hover:bg-slate-50 pr-2 font-body p-4">
+      <div className="group grid md:grid-cols-6 grid-cols-5 items-center gap-10 hover:bg-primary-green/10 pr-2 font-body p-4">
         <img
           className="w-[4rem] min-w-[3rem]"
           src={props.img}

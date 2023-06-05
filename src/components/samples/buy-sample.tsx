@@ -31,7 +31,7 @@ const BuySample = (props: SampleProps) => {
 
   return (
     <section className="flex flex-col">
-      <div className="grid md:grid-cols-6 grid-cols-5 items-center gap-10 pr-2 font-medium py-3 text-gray-4 px-2">
+      <div className="grid md:grid-cols-6 grid-cols-5 items-center gap-10 pr-2 font-medium py-3 hover:bg-primary-green/10 text-gray-4 px-2">
         <div className="flex flex-col justify-center content-center cursor-pointer">
           <IconDelete />
         </div>
