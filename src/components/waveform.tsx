@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import WaveSurfer from 'wavesurfer.js'
 
 type WaveformProps = {
@@ -43,8 +43,8 @@ const Waveform = (props: WaveformProps) => {
   }, [props.src])
 
   useEffect(() => {
-    if (wavesurfer.current && props.playing) {
-      wavesurfer.current.playPause()
+    if (wavesurfer.current) {
+      props.playing ? wavesurfer.current.play() : wavesurfer.current.pause()
     }
   }, [props.playing])
 
