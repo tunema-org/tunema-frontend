@@ -26,7 +26,7 @@ function SampleCart() {
         <section className="flex md:justify-between justify-normal items-center gap-5 sm:gap-10 md:gap-14 lg:gap-20 font-body xl:flex-row flex-col my-5 px-0 sm:px-51 pb-10">
           <section className="flex flex-col">
             <div className="flex items-start border-b-[1px] border-gray-3"></div>
-            <div className="grid md:grid-cols-6 grid-cols-5 items-center gap-10 pr-2 font-medium py-5 text-gray-4 px-4">
+            <div className="grid md:grid-cols-6 grid-cols-5 items-center gap-10 pr-2 font-medium py-3 text-gray-4 px-2">
               <div className="col-auto"></div>
               <p>Cover</p>
               <div className="md:col-span-2 col-auto min-w-[100px]">
@@ -47,7 +47,7 @@ function SampleCart() {
                 keys="C#"
                 keyScale="major"
                 price={3.45}
-              />
+              ></BuySample>
               <BuySample
                 img="/pic/components/player/alblumcover.png"
                 name="Yoooooooo.mp3"
@@ -58,10 +58,10 @@ function SampleCart() {
                 keys="C#"
                 keyScale="major"
                 price={3.45}
-              />
+              ></BuySample>
               <BuySample
                 img="/pic/components/player/alblumcover.png"
-                name="Yooooooooaaaaaaaaaaaaaaaaaaaaaaaa.mp3"
+                name="Yooooooooaaaaaaaaaaaaaaaa.mp3"
                 artist="B.O.B"
                 src="/samples/acimalaka2.mp3"
                 time="3:45"
@@ -69,7 +69,18 @@ function SampleCart() {
                 keys="C#"
                 keyScale="major"
                 price={3.45}
-              />
+              ></BuySample>
+              <BuySample
+                img="/pic/components/player/alblumcover.png"
+                name="Yoooooooo.mp3"
+                artist="B.O.B"
+                src="/samples/acimalaka2.mp3"
+                time="3:45"
+                bpm={125}
+                keys="C#"
+                keyScale="major"
+                price={3.45}
+              ></BuySample>
             </section>
           </section>
 

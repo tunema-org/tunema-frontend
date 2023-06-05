@@ -134,7 +134,7 @@ function Checkout() {
                   onClick={() => setIsCheckout((prev) => !prev)}
                   className="duration-200 bg-primary-green hover:bg-dark-green w-full font-medium py-2 px-8 rounded-full overflow-clip"
                 >
-                  Procced
+                  Proceed
                 </button>
               </section>
             </section>
