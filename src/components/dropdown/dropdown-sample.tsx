@@ -1,11 +1,10 @@
 import { Menu, Transition } from '@headlessui/react'
+import { InfoCircle, ProfileCircle } from 'iconsax-react'
 import { useState } from 'react'
 import IconDropdown from '../icons/icon-dropdown'
 import IconHeart from '../icons/icon-heart'
 import IconPlus from '../icons/icon-plus'
 import Info from '../popout/info'
-import React from 'react'
-import { InfoCircle, ProfileCircle, Trash } from 'iconsax-react'
 
 type InfoProps = {
   name: string
@@ -39,6 +38,7 @@ const DropdownSort = (props: InfoProps) => {
         <Menu.Button
           as="button"
           className="z-0 md:text-heading-06 text-small font-medium flex items-center md:w-auto px-5 h-[36px] rounded-[10px] justify-center gap-3"
+          onClick={(e) => e.stopPropagation()}
         >
           <IconDropdown></IconDropdown>
         </Menu.Button>

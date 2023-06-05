@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Dropdown from '../dropdown/dropdown-sample'
 import IconHeart from '../icons/icon-heart'
 import IconPlay from '../icons/icon-play'
@@ -103,10 +102,16 @@ const Sample = (props: SampleProps) => {
           {props.price}
         </button>
         <div className="grid grid-cols-3 items-center justify-start gap-5 col-span-2">
-          <button className="lg:flex justify-center w-[26px] hidden">
+          <button
+            onClick={(e) => e.stopPropagation()}
+            className="lg:flex justify-center w-[26px] hidden"
+          >
             <IconHeart></IconHeart>
           </button>
-          <button className="lg:flex justify-center w-[26px] hidden">
+          <button
+            onClick={(e) => e.stopPropagation()}
+            className="lg:flex justify-center w-[26px] hidden"
+          >
             <IconPlus></IconPlus>
           </button>
           <button className="visible sm:group-hover:visible">
