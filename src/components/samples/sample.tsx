@@ -75,6 +75,7 @@ const Sample = (props: SampleProps) => {
             }`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            onClick={handleClick}
           >
             <span
               className={`inline-block transition-all duration-300 whitespace-nowrap ${

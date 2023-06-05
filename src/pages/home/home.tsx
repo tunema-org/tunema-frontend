@@ -88,7 +88,7 @@ function Home() {
               setSelectedGenre={setSelectedGenre}
             />
             <Genre
-              img="/pic/home/genres/hiphop.png"
+              img="/pic/home/genres/hiphop2.jpg"
               label={GenreEnum.HIPHOP}
               isSelected={selectedGenre === GenreEnum.HIPHOP}
               setSelectedGenre={setSelectedGenre}
