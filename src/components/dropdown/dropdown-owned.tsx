@@ -38,9 +38,14 @@ const DropdownOwned = (props: InfoProps) => {
         setIsInfo={setIsInfo}
       />
       <Delete isDelete={isDelete} setIsDelete={setIsDelete} />
-      <Menu as="div" className="relative inline-block text-left font-body">
+      <Menu
+        as="div"
+        onClick={(e) => e.stopPropagation()}
+        className="relative inline-block text-left font-body"
+      >
         <Menu.Button
           as="button"
+          onClick={(e) => e.stopPropagation()}
           className="z-0 md:text-heading-06 text-small font-medium flex items-center md:w-auto px-5 h-[36px] rounded-[10px] justify-center gap-3"
         >
           <IconDropdown></IconDropdown>
@@ -59,6 +64,7 @@ const DropdownOwned = (props: InfoProps) => {
             <Menu.Item>
               {({ active }) => (
                 <button
+                  onClick={(e) => e.stopPropagation()}
                   className={`${
                     active && 'bg-light-green'
                   } p-3 rounded-[10px] text-center flex items-center gap-3 w-full`}
@@ -70,6 +76,7 @@ const DropdownOwned = (props: InfoProps) => {
             <Menu.Item>
               {({ active }) => (
                 <button
+                  onClick={(e) => e.stopPropagation()}
                   className={`${
                     active && 'bg-light-green'
                   } p-3 rounded-[10px] text-center flex items-center gap-3 w-full`}
@@ -82,6 +89,7 @@ const DropdownOwned = (props: InfoProps) => {
             <Menu.Item>
               {({ active }) => (
                 <button
+                  onClick={(e) => e.stopPropagation()}
                   className={`${
                     active && 'bg-light-green'
                   } p-3 rounded-[10px] text-center flex items-center gap-3 w-full`}
@@ -94,7 +102,10 @@ const DropdownOwned = (props: InfoProps) => {
             <Menu.Item>
               {({ active }) => (
                 <button
-                  onClick={() => setIsInfo((prev) => !prev)}
+                  onClick={(e) => {
+                    setIsInfo((prev) => !prev)
+                    e.stopPropagation()
+                  }}
                   className={`${
                     active && 'bg-light-green'
                   } p-3 rounded-[10px] text-center flex items-center gap-3 w-full`}
@@ -108,7 +119,10 @@ const DropdownOwned = (props: InfoProps) => {
             <Menu.Item>
               {({ active }) => (
                 <button
-                  onClick={() => setIsDelete((prev) => !prev)}
+                  onClick={(e) => {
+                    setIsDelete((prev) => !prev)
+                    e.stopPropagation()
+                  }}
                   className={`${
                     active && 'bg-red-300'
                   } p-3 rounded-[10px] text-center flex items-center gap-3 w-full`}

@@ -56,6 +56,7 @@ const DropdownSort = (props: InfoProps) => {
             <Menu.Item>
               {({ active }) => (
                 <button
+                  onClick={(e) => e.stopPropagation()}
                   className={`${
                     active && 'bg-light-green'
                   } p-3 rounded-[10px] text-center flex items-center gap-3 w-full`}
@@ -67,6 +68,7 @@ const DropdownSort = (props: InfoProps) => {
             <Menu.Item>
               {({ active }) => (
                 <button
+                  onClick={(e) => e.stopPropagation()}
                   className={`${
                     active && 'bg-light-green'
                   } p-3 rounded-[10px] text-center flex items-center gap-3 w-full`}
@@ -79,6 +81,7 @@ const DropdownSort = (props: InfoProps) => {
             <Menu.Item>
               {({ active }) => (
                 <button
+                  onClick={(e) => e.stopPropagation()}
                   className={`${
                     active && 'bg-light-green'
                   } p-3 rounded-[10px] text-center flex items-center gap-3 w-full`}
@@ -91,7 +94,10 @@ const DropdownSort = (props: InfoProps) => {
             <Menu.Item>
               {({ active }) => (
                 <button
-                  onClick={() => setIsInfo((prev) => !prev)}
+                  onClick={(e) => {
+                    setIsInfo((prev) => !prev)
+                    e.stopPropagation()
+                  }}
                   className={`${
                     active && 'bg-light-green'
                   } p-3 rounded-[10px] text-center flex items-center gap-3 w-full`}

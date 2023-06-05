@@ -99,7 +99,10 @@ const Sample = (props: SampleProps) => {
         <p className="text-left sm:visible invisible">{props.time}</p>
         <p className="text-left sm:block hidden">{props.bpm}</p>
         <p className="text-left sm:block hidden">{props.keys}</p>
-        <button className="flex flex-col font-medium text-dark-green hover:underline justify-start items-start">
+        <button
+          onClick={(e) => e.stopPropagation()}
+          className="flex flex-col font-medium text-dark-green hover:underline justify-start items-start"
+        >
           {props.price}
         </button>
         <div className="grid grid-cols-3 items-center justify-start gap-5 col-span-2">
