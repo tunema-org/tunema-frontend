@@ -97,7 +97,7 @@ const ArtistSample = (props: SampleProps) => {
               <button className="hover:underline">Synth</button>
             </div>
           </div>
-          <div className="md:col-span-3 max-w-[22rem] md:block hidden">
+          <div className="md:col-span-3 max-w-[22rem] md:block hidden no-scrollbar">
             <Waveform
               src={props.src}
               playing={playing}

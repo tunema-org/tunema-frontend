@@ -39,6 +39,14 @@ const Sample = (props: SampleProps) => {
     event.preventDefault()
   }
 
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60)
+    const remainingSeconds = seconds % 60
+    const formattedMinutes = String(minutes).padStart(2, '0')
+    const formattedSeconds = String(remainingSeconds).padStart(2, '0')
+    return `${formattedMinutes}:${formattedSeconds}`
+  }
+
   return (
     <button onClick={handlePlay}>
       <div
@@ -93,14 +101,16 @@ const Sample = (props: SampleProps) => {
             <button className="hover:underline">Synth</button>
           </div>
         </div>
-        <div className="md:col-span-3 max-w-[22rem] md:block hidden">
+        <div className="md:col-span-3 max-w-[22rem] md:block hidden no-scrollbar">
           <Waveform
             src={props.src}
             playing={playing}
             onFinished={handleFinish}
           />
         </div>
-        <p className="text-left sm:visible invisible">{props.time}</p>
+        <p className="text-left sm:visible invisible">
+          {formatTime(props.time)}
+        </p>
         <p className="text-left sm:block hidden">{props.bpm}</p>
         <p className="text-left sm:block hidden">{props.keys}</p>
         <button

@@ -5,6 +5,7 @@ import IconDropdown from '../icons/icon-dropdown'
 import IconHeart from '../icons/icon-heart'
 import IconPlus from '../icons/icon-plus'
 import Info from '../popout/info'
+import * as dayjs from 'dayjs'
 
 type InfoProps = {
   name: string
@@ -20,17 +21,25 @@ type InfoProps = {
 const DropdownSort = (props: InfoProps) => {
   const [isInfo, setIsInfo] = useState(false)
 
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60)
+    const remainingSeconds = seconds % 60
+    const formattedMinutes = String(minutes).padStart(2, '0')
+    const formattedSeconds = String(remainingSeconds).padStart(2, '0')
+    return `${formattedMinutes}:${formattedSeconds}`
+  }
+
   return (
     <>
       <Info
         name={props.name}
         artist={props.artist}
-        time={props.time}
+        time={formatTime(props.time)}
         bpm={props.bpm}
         keys={props.keys}
         keyScale={props.keyScale}
         price={props.price}
-        upload={props.upload}
+        upload={dayjs(props.upload).format('MM/DD/YYYY h:mm:ss A')}
         isInfo={isInfo}
         setIsInfo={setIsInfo}
       />
