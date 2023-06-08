@@ -1,17 +1,14 @@
-import React from 'react'
-import { useState, ReactNode } from 'react'
-import Navbar from '../../components/Navbar/navbar'
+import { Tab, Transition } from '@headlessui/react'
+import { Edit } from 'iconsax-react'
+import { ReactNode, useState } from 'react'
 import Container from '../../components/container'
 import Footer from '../../components/footer'
 import FooterMobile from '../../components/footer-mobile'
+import Navbar from '../../components/Navbar/navbar'
 import ArtistSample from '../../components/samples/sample-artist'
 import SampleArtistTitle from '../../components/samples/title-artist'
-import { Edit, ToggleOn } from 'iconsax-react'
-import ProfileEdit from './profile-edit'
-import { Tab } from '@headlessui/react'
-import Sample from '../../components/samples/sample'
 import SampleTitle from '../../components/samples/title-primary'
-import { Transition } from '@headlessui/react'
+import ProfileEdit from './profile-edit'
 
 type Props = {
   title: string
@@ -180,19 +177,7 @@ function ArtistDashboard() {
                   <SampleTitle />
                   <TransitionFade>
                     <section className="md:pb-16">
-                      {' '}
-                      <Sample
-                        img="/pic/components/player/alblumcover.png"
-                        name="Suara apa ini cok.wav"
-                        artist="B.O.B"
-                        src="/samples/1.wav"
-                        time="3:45"
-                        bpm={125}
-                        keys="C#"
-                        keyScale="major"
-                        price={3.45}
-                        upload="2022/01/16"
-                      />
+                      {/* TODO: integrate with backend to list profile samples */}
                     </section>
                   </TransitionFade>
                 </Transition.Root>
