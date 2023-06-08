@@ -12,7 +12,7 @@ type InfoProps = {
   setIsInfo: React.Dispatch<React.SetStateAction<boolean>>
   name: string
   artist: string
-  time: number
+  time: string
   bpm: number
   keys: string
   keyScale: string
