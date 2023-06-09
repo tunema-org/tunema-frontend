@@ -1,11 +1,8 @@
-import React from 'react'
-import Navbar from '../../components/Navbar/navbar'
-import styled from 'styled-components'
 import Container from '../../components/container'
-import Sample from '../../components/samples/sample'
-import IconPlay from '../../components/icons/icon-play'
 import Footer from '../../components/footer'
 import FooterMobile from '../../components/footer-mobile'
+import IconPlay from '../../components/icons/icon-play'
+import Navbar from '../../components/Navbar/navbar'
 
 function Profile() {
   return (
@@ -67,12 +64,7 @@ function Profile() {
             <div className="flex items-start border-b-[1px] border-gray-3"></div>
           </section>
           <section className="md:pb-16">
-            {' '}
-            <Sample src="/samples/acimalaka2.mp3" />
-            <Sample src="/samples/1.wav" />
-            <Sample src="/samples/2.wav" />
-            <Sample src="/samples/3.wav" />
-            <Sample src="/samples/4.wav" />
+            {/* TODO: integrate with backend to list profile samples */}
           </section>
         </Container>
       </main>
