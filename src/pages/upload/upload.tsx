@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import Button from '../../components/button'
@@ -13,6 +14,7 @@ type MyModalProps = {
 
 export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
   const isUploaded = false
+
   function closeModal() {
     setIsUpload(false)
   }
@@ -20,6 +22,27 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
   function openModal() {
     setIsUpload(true)
   }
+
+  const [image, setImage] = useState('')
+  const [audio, setAudio] = useState('')
+
+  function handleImage(e: any) {
+    console.log(e.target.files)
+    setImage(e.target.files[0])
+  }
+
+  function handleAudio(e: any) {
+    console.log(e.target.files)
+    setAudio(e.target.files[1])
+  }
+
+  // function handleAPI() {
+  //   const formData = new FormData()
+  //   formData.append('image', image)
+  //   axios.post('url', formData).then((res) => {
+  //     console.log(res)
+  //   })
+  // }
 
   return (
     <>
@@ -109,7 +132,8 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
                           <input
                             type="file"
                             className="hidden"
-                            accept=".mpeg, .wav, .wave, .aac, .ogg"
+                            accept=".mpeg, .wav, .wave, .aac, .ogg, .mp3, .m4a"
+                            onChange={handleAudio}
                           />
                         </label>
                       </div>
@@ -133,6 +157,7 @@ export default function MyModal({ isUpload, setIsUpload }: MyModalProps) {
                               type="file"
                               className="hidden"
                               accept=".jepg, .jpg, .png, .webp"
+                              onChange={handleImage}
                             />
                           </label>
                         </div>

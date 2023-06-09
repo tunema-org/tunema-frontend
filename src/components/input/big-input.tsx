@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 interface props {
   label: string
   type: 'required' | 'primary'
@@ -7,6 +9,13 @@ const BigInput = ({ label, type }: props) => {
   const Variant = {
     required: 'text-red-400',
     primary: 'hidden',
+  }
+
+  const [input, setInput] = useState('')
+
+  function handleInput(e: any) {
+    setInput(e.target.value)
+    console.log(e.target.value)
   }
 
   return (
@@ -20,6 +29,7 @@ const BigInput = ({ label, type }: props) => {
           rows={4}
           cols={40}
           className="w-full bg-transparent focus:outline-none font-body pr-5 py-3"
+          onChange={handleInput}
         />
       </div>
     </div>
