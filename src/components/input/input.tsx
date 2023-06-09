@@ -7,11 +7,10 @@ interface props {
 
 const Input = ({ label, type }: props) => {
   const [input, setInput] = useState('')
-  // const [audio, setAudio] = useState(1)
 
   function handleInput(e: any) {
     setInput(e.target.value)
-    console.log(e.target.value)
+    // console.log(e.target.value)
   }
 
   const Variant = {

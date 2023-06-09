@@ -15,7 +15,7 @@ const BigInput = ({ label, type }: props) => {
 
   function handleInput(e: any) {
     setInput(e.target.value)
-    console.log(e.target.value)
+    // console.log(e.target.value)
   }
 
   return (
