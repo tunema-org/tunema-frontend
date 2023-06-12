@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet'
 import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from '../../components/button'
@@ -6,7 +7,6 @@ import IconGoogle from '../../components/icons/icon-google'
 import IconSoundcloud from '../../components/icons/icon-soundcloud'
 import Navbar from '../../components/Navbar/navbar'
 import { useAuthStore } from '../../store/useAuthStore'
-import { Helmet } from 'react-helmet'
 
 type RegisterFormData = {
   username: string
@@ -154,7 +154,9 @@ function Register() {
                 {registrationError}
               </span>
               <div className="flex flex-col pt-5 w-full">
-                <Button type="primary">Register</Button>
+                <Button type="primary" submit>
+                  Register
+                </Button>
               </div>
             </form>
             <div className="flex flex-row w-full justify-center pt-5 pb-10 font-medium text-small text-gray-3">
