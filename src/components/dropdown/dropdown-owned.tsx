@@ -5,7 +5,12 @@ import IconHeart from '../icons/icon-heart'
 import IconPlus from '../icons/icon-plus'
 import Info from '../popout/info'
 import React from 'react'
-import { InfoCircle, ProfileCircle, Trash } from 'iconsax-react'
+import {
+  InfoCircle,
+  ProfileCircle,
+  Trash,
+  ArrowCircleDown2,
+} from 'iconsax-react'
 import Delete from '../popout/delete'
 
 type InfoProps = {
@@ -112,6 +117,19 @@ const DropdownOwned = (props: InfoProps) => {
                 >
                   <InfoCircle size="22" color="gray" />
                   Info
+                </button>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <button
+                  onClick={(e) => e.stopPropagation()}
+                  className={`${
+                    active && 'bg-light-green'
+                  } p-3 rounded-[10px] text-center flex items-center gap-3 w-full`}
+                >
+                  <ArrowCircleDown2 size="22" color="gray" />
+                  Download
                 </button>
               )}
             </Menu.Item>
