@@ -23,8 +23,12 @@ type InfoProps = {
 const InfoList = ({ title, children }: Information) => {
   return (
     <div className="grid-cols-1 sm:gap-0 gap-1 sm:grid-cols-2 items-center min-w-auto grid w-full">
-      <p className="flex justify-start font-medium">{title}</p>
-      <p className="flex justify-start sm:justify-end truncate">{children}</p>
+      <p className="flex justify-start font-medium max-w-xs">{title}</p>
+      <p className="flex justify-start sm:justify-end truncate overflow-hidden">
+        <span className="inline-block overflow-hidden overflow-ellipsis">
+          {children}
+        </span>
+      </p>
     </div>
   )
 }
