@@ -39,3 +39,17 @@ input:checked + div svg {
     transform: translateX(-100%);
   }
 }
+
+.marquee2 {
+  animation: marquee 3s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes marquee2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

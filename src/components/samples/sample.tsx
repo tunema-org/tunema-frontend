@@ -96,11 +96,24 @@ const Sample = (props: SampleProps) => {
               {props.name}
             </span>
           </a>
-          <div className="flex gap-3 text-gray-500 text-small lg:min-w-max min-w-0">
+          <a
+            className={`text-gray-500 text-small flex gap-3 justify-start overflow-clip cursor-pointer ${
+              isHovered ? 'hover:overflow-clip' : 'hover:overflow-hidden'
+            }`}
+            // className="flex gap-3 justify-start text-gray-500 text-small lg:min-w-max min-w-0"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             {props.tags.map((tag) => (
-              <button className="hover:underline">{tag}</button>
+              <button
+                className={`inline-block transition-all duration-300 whitespace-nowrap ${
+                  isHovered ? 'marquee2' : ''
+                }`}
+              >
+                {tag}
+              </button>
             ))}
-          </div>
+          </a>
         </div>
         <div className="md:col-span-3 max-w-[22rem] md:block hidden no-scrollbar">
           <Waveform
