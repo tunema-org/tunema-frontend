@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 import { listSamples } from './sounds/list-samples'
-import { login } from './users'
+import { login, me, register } from './users'
 
 export const userApiClient = axios.create({
   baseURL: import.meta.env.VITE_DEV_TUNEMA_API_USER,
@@ -23,5 +23,7 @@ export default {
   userApiClient,
   soundApiClient,
   login,
+  register,
+  me,
   listSamples,
 }

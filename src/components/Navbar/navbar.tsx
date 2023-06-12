@@ -135,7 +135,7 @@ const Navbar = () => {
                       href="/artist-dashboard"
                       className="duration-200 px-4 py-2 font-bold hover:bg-light-green hover:rounded-lg text-center"
                     >
-                      {'Account'}
+                      {auth.user.username}
                     </a>
                     <div className="duration-200 border-b border-gray-3"></div>
                     <a
