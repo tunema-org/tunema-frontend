@@ -41,7 +41,9 @@ function Register() {
       username: data.username,
       email: data.email,
       password: data.password,
-      profile_img_url: 'https://i.pravatar.cc/300',
+      profile_img_url:
+        'https://hostedboringavatars.vercel.app/api/beam?colors=EAF89B,141414&name=' +
+        data.username,
     })
   })
 
