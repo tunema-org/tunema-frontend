@@ -1,4 +1,4 @@
-import { httpClient } from '..'
+import { soundApiClient } from '..'
 
 type Sample = {
   id: number
@@ -28,6 +28,6 @@ export type ListSamplesResponse = {
 }
 
 export async function listSamples(): Promise<ListSamplesResponse> {
-  const response = await httpClient.get<ListSamplesResponse>('/sounds')
+  const response = await soundApiClient.get<ListSamplesResponse>('/sounds')
   return response.data
 }

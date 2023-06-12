@@ -1,10 +1,18 @@
 import axios from 'axios'
 
 import { listSamples } from './sounds/list-samples'
-import { login } from './users/login'
+import { login } from './users'
 
-export const httpClient = axios.create({
-  baseURL: import.meta.env.VITE_DEV_TUNEMA_API_BASE_URL,
+export const userApiClient = axios.create({
+  baseURL: import.meta.env.VITE_DEV_TUNEMA_API_USER,
+  // baseURL: import.meta.env.VITE_STAGING_TUNEMA_API_BASE_URL,
+  headers: {
+    Accept: 'application/json',
+  },
+})
+
+export const soundApiClient = axios.create({
+  baseURL: import.meta.env.VITE_DEV_TUNEMA_API_SOUND,
   // baseURL: import.meta.env.VITE_STAGING_TUNEMA_API_BASE_URL,
   headers: {
     Accept: 'application/json',
@@ -12,6 +20,8 @@ export const httpClient = axios.create({
 })
 
 export default {
+  userApiClient,
+  soundApiClient,
   login,
   listSamples,
 }
