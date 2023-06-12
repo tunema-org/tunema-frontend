@@ -1,20 +1,15 @@
-import React from 'react'
-import { useState } from 'react'
-import Container from '../container'
-import IconDropdown from '../icons/icon-dropdown'
-import IconHeart from '../icons/icon-heart'
-import IconPlus from '../icons/icon-plus'
-import IconPlay from '../icons/icon-play'
-import Dropdown from '../dropdown/dropdown-sample'
-import Waveform from '../waveform'
+import dayjs from 'dayjs'
+import React, { useState } from 'react'
 import DropdownOwned from '../dropdown/dropdown-owned'
+import IconPlay from '../icons/icon-play'
+import Waveform from '../waveform'
 
 type SampleProps = {
   img: string
   name: string
   artist: string
   src: string
-  time: string
+  time: number
   bpm: number
   keys: string
   keyScale: string
@@ -42,6 +37,14 @@ const ArtistSample = (props: SampleProps) => {
   const handleDragStart = (event: React.DragEvent<HTMLImageElement>) => {
     event.preventDefault()
   }
+
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60)
+    const remainingSeconds = seconds % 60
+    const formattedSeconds = String(remainingSeconds).padStart(2, '0')
+    return `${minutes}:${formattedSeconds}`
+  }
+
   return (
     <>
       <button onClick={handlePlay}>
@@ -104,17 +107,19 @@ const ArtistSample = (props: SampleProps) => {
               onFinished={handleFinish}
             />
           </div>
-          <p className="sm:flex justify-start hidden">{props.time}</p>
+          <p className="sm:flex justify-start hidden">
+            {formatTime(props.time)}
+          </p>
           <p className="sm:flex justify-start hidden">{props.bpm}</p>
           <p className="sm:flex justify-start hidden">{props.keys}</p>
           <div className="justify-start gap-5 lg:col-span-2 md:col-span-1 col-span-2 sm:flex hidden">
-            {props.added}
+            {dayjs(props.upload).format('MM/DD/YYYY')}
           </div>
           <div className="text-gray-500">
             <DropdownOwned
               name={props.name}
               artist={props.artist}
-              time={props.time}
+              time={formatTime(props.time)}
               bpm={props.bpm}
               keys={props.keys}
               keyScale={props.keyScale}

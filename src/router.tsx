@@ -20,7 +20,7 @@ export function Router() {
         <Route path="/library" element={<Library />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/:profileId" element={<Profile />} />
         <Route path="/search" element={<Search />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/artist-dashboard" element={<ArtistDashboard />} />

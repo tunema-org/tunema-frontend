@@ -1,6 +1,6 @@
 import { soundApiClient } from '..'
 
-type ListSampleItem = {
+type UserSampleItem = {
   data: {
     id: number
     user_id: number
@@ -19,13 +19,17 @@ type ListSampleItem = {
   sold: number
 }
 
-export type ListSamplesResponse = {
-  items: ListSampleItem[]
+export type ListUserSamplesResponse = {
+  items: UserSampleItem[]
   message: string
   total_items: number
 }
 
-export async function listSamples(): Promise<ListSamplesResponse> {
-  const response = await soundApiClient.get<ListSamplesResponse>('/sounds')
+export async function listUserSamples(
+  userId: number,
+): Promise<ListUserSamplesResponse> {
+  const response = await soundApiClient.get<ListUserSamplesResponse>(
+    `/sounds/users/${userId}`,
+  )
   return response.data
 }

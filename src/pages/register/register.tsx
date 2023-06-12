@@ -24,9 +24,17 @@ function Register() {
 
   const navigate = useNavigate()
 
-  const [register, isAuthenticated, registrationError] = useAuthStore(
-    (state) => [state.register, state.isAuthenticated, state.error],
-  )
+  const [register, registrationError] = useAuthStore((state) => [
+    state.register,
+    state.error,
+  ])
+
+  useAuthStore.subscribe((state) => {
+    if (state.isAuthenticated) {
+      navigate('/home')
+    }
+  })
+
   const onSubmit = handleSubmit(async (data) => {
     await register({
       username: data.username,
@@ -34,8 +42,6 @@ function Register() {
       password: data.password,
       profile_img_url: 'https://i.pravatar.cc/300',
     })
-
-    return isAuthenticated ? navigate('/home') : null
   })
 
   return (

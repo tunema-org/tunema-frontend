@@ -1,17 +1,17 @@
 import { Menu, Transition } from '@headlessui/react'
+import dayjs from 'dayjs'
+import {
+  ArrowCircleDown2,
+  InfoCircle,
+  ProfileCircle,
+  Trash,
+} from 'iconsax-react'
 import { useState } from 'react'
 import IconDropdown from '../icons/icon-dropdown'
 import IconHeart from '../icons/icon-heart'
 import IconPlus from '../icons/icon-plus'
-import Info from '../popout/info'
-import React from 'react'
-import {
-  InfoCircle,
-  ProfileCircle,
-  Trash,
-  ArrowCircleDown2,
-} from 'iconsax-react'
 import Delete from '../popout/delete'
+import Info from '../popout/info'
 
 type InfoProps = {
   name: string
@@ -38,7 +38,7 @@ const DropdownOwned = (props: InfoProps) => {
         keys={props.keys}
         keyScale={props.keyScale}
         price={props.price}
-        upload={props.upload}
+        upload={dayjs(props.upload).format('MM/DD/YYYY h:mm:ss A')}
         isInfo={isInfo}
         setIsInfo={setIsInfo}
       />

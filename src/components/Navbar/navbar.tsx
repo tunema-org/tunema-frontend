@@ -2,7 +2,7 @@ import { Transition } from '@headlessui/react'
 import { Pivot as Hamburger } from 'hamburger-react'
 import { InfoCircle, Logout, ShoppingBag } from 'iconsax-react'
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import MyModal from '../../pages/upload/upload'
 import { useAuthStore } from '../../store/useAuthStore'
 import IconHeart from '../icons/icon-heart'
@@ -95,7 +95,13 @@ const Navbar = () => {
           <div className="flex-row items-center gap-10 sm:flex hidden sm:w-auto w-0">
             <li>
               <button
-                onClick={() => setIsUpload((prev) => !prev)}
+                onClick={() => {
+                  if (!auth.isAuthenticated) {
+                    navigate('/login')
+                  } else {
+                    setIsUpload((prev) => !prev)
+                  }
+                }}
                 className="relative items-center justify-start flex py-2 px-5 overflow-hidden font-medium transition-all bg-primary-green rounded-full hover:bg-dark-green hover:text-white group"
               >
                 <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-dark-green rounded-full"></span>
@@ -131,12 +137,12 @@ const Navbar = () => {
                     ref={menuRef}
                     className="bg-white/80 backdrop-blur-md shadow-lg absolute flex flex-col top-16 right-2 rounded-xl px-4 py-4 gap-5 justify-between overflow-hidden transition-all duration-300 "
                   >
-                    <a
-                      href="/artist-dashboard"
+                    <Link
+                      to="/artist-dashboard"
                       className="duration-200 px-4 py-2 font-bold hover:bg-light-green hover:rounded-lg text-center"
                     >
                       {auth.user.username}
-                    </a>
+                    </Link>
                     <div className="duration-200 border-b border-gray-3"></div>
                     <a
                       href="/sample-cart"

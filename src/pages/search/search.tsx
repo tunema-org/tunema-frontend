@@ -1,18 +1,16 @@
-import React from 'react'
-import { useRef, useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import api from '../../api'
+import { ListSamplesResponse } from '../../api/sounds/list-samples'
 import Container from '../../components/container'
 import DropdownSort from '../../components/dropdown/dropdown-sort'
 import DropdownType from '../../components/dropdown/dropdown-type'
 import Footer from '../../components/footer'
 import FooterMobile from '../../components/footer-mobile'
-import IconPlay from '../../components/icons/icon-play'
 import Navbar from '../../components/Navbar/navbar'
 import Sample from '../../components/samples/sample'
+import SampleTitle from '../../components/samples/title-primary'
 import SearchBar from '../../components/searchbar'
 import Type from '../../components/type'
-import SampleTitle from '../../components/samples/title-primary'
-import api from '../../api'
-import { ListSamplesResponse } from '../../api/sounds/list-samples'
 
 function Search() {
   const [samples, setSamples] = useState<ListSamplesResponse>()

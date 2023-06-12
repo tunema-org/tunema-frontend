@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 import { listSamples } from './sounds/list-samples'
+import { listUserSamples } from './sounds/list-user-samples'
 import { login, me, register } from './users'
 
 export const userApiClient = axios.create({
@@ -26,4 +27,5 @@ export default {
   register,
   me,
   listSamples,
+  listUserSamples,
 }

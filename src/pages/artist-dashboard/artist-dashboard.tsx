@@ -1,6 +1,9 @@
 import { Tab, Transition } from '@headlessui/react'
 import { Edit } from 'iconsax-react'
-import { ReactNode, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
+import { redirect } from 'react-router-dom'
+import api from '../../api'
+import { ListUserSamplesResponse } from '../../api/sounds/list-user-samples'
 import Container from '../../components/container'
 import Footer from '../../components/footer'
 import FooterMobile from '../../components/footer-mobile'
@@ -8,6 +11,7 @@ import Navbar from '../../components/Navbar/navbar'
 import ArtistSample from '../../components/samples/sample-artist'
 import SampleArtistTitle from '../../components/samples/title-artist'
 import SampleTitle from '../../components/samples/title-primary'
+import { useAuthStore } from '../../store/useAuthStore'
 import ProfileEdit from './profile-edit'
 
 type Props = {
@@ -50,6 +54,19 @@ const TransitionFade = ({ children }: TransitionProp) => {
 
 function ArtistDashboard() {
   const [isEdit, setIsEdit] = useState(false)
+  const [userSamples, setUserSamples] = useState<ListUserSamplesResponse>()
+  const auth = useAuthStore()
+
+  useEffect(() => {
+    if (!auth.isAuthenticated) {
+      redirect('/login')
+      return
+    }
+
+    auth.user.id &&
+      api.listUserSamples(auth.user.id).then((data) => setUserSamples(data))
+  }, [])
+
   return (
     <>
       <Navbar />
@@ -61,16 +78,16 @@ function ArtistDashboard() {
               <div className="flex w-full justify-left">
                 <img
                   className="flex object-contain w-32 h-32 md:w-40 md:h-40 lg:w-56 lg:h-56 rounded-full"
-                  src="/pic/navbar/dummy_2.png"
+                  src={auth.user.profileImageUrl}
                   alt="Profile image profile page"
                 />
                 <div className="flex flex-col font-medium sm:gap-0 gap-3 pl-5 sm:pl-10 justify-end pb-2">
                   <div className="flex w-full text-white font-medium text-heading-03 md:text-heading-02 lg:text-heading-01">
-                    Mar Hansen
+                    {auth.user.username}
                   </div>
                   <div className="flex sm:flex-row flex-col w-full gap-0 sm:gap-10 text-white font-medium text-heading-06 md:text-heading-06 lg:text-heading-05">
                     <p>30 Owned Sample</p>
-                    <p>30 Uploaded Sample</p>
+                    <p>{userSamples?.total_items} Uploaded Sample</p>
                   </div>
                 </div>
               </div>
@@ -153,7 +170,7 @@ function ArtistDashboard() {
                   <TransitionFade>
                     <section className="md:pb-16">
                       {' '}
-                      <ArtistSample
+                      {/* <ArtistSample
                         img="/pic/components/player/alblumcover.png"
                         name="Aa.mp3"
                         artist="B.O.B"
@@ -165,7 +182,7 @@ function ArtistDashboard() {
                         price={3.45}
                         upload="2022/01/16"
                         added="2022/02/15"
-                      />
+                      /> */}
                     </section>
                   </TransitionFade>
                 </Transition.Root>
@@ -189,19 +206,23 @@ function ArtistDashboard() {
                   <SampleArtistTitle />
                   <TransitionFade>
                     <section className="md:pb-16">
-                      <ArtistSample
-                        img="/pic/components/player/alblumcover.png"
-                        name="Yoooooooo.mp3"
-                        artist="B.O.B"
-                        src="/samples/acimalaka2.mp3"
-                        time="3:45"
-                        bpm={125}
-                        keys="C#"
-                        keyScale="major"
-                        price={3.45}
-                        upload="2022/01/16"
-                        added="2022/02/15"
-                      />
+                      {userSamples &&
+                        userSamples.items &&
+                        userSamples.items.map((sample) => (
+                          <ArtistSample
+                            img={sample.data.cover_url}
+                            name={sample.data.name}
+                            artist={sample.artist_name}
+                            src={sample.data.file_url}
+                            time={sample.data.time}
+                            bpm={sample.data.bpm}
+                            keys={sample.data.key}
+                            keyScale={sample.data.key_scale}
+                            price={sample.data.price}
+                            upload={sample.data.created_at}
+                            added={sample.data.created_at}
+                          />
+                        ))}
                     </section>
                   </TransitionFade>
                 </Transition.Root>

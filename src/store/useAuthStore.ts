@@ -28,28 +28,38 @@ export const useAuthStore = create<AuthState & AuthAction>()(
       error: '',
       user: {},
       async login(email: string, password: string) {
-        const { data, status } = await api.login(email, password)
+        try {
+          const { data, status } = await api.login(email, password)
 
-        if (status === 401) {
+          if (status === 401) {
+            set((state) => ({
+              ...state,
+              error: data['message'],
+            }))
+            return
+          }
+
           set((state) => ({
             ...state,
-            error: data['message'],
+            isAuthenticated: true,
+            accessToken: data['access_token'],
+            user: {
+              id: data['user']['id'],
+              username: data['user']['username'],
+              email: data['user']['email'],
+              profileImageUrl: data['user']['profile_img_url'],
+            },
+            error: '',
           }))
-          return
+        } catch (error) {
+          if (error instanceof AxiosError) {
+            const errMessage = error.response?.data['message']
+            set((state) => ({
+              ...state,
+              error: errMessage,
+            }))
+          }
         }
-
-        set((state) => ({
-          ...state,
-          isAuthenticated: true,
-          accessToken: data['access_token'],
-          user: {
-            id: data['user']['id'],
-            username: data['user']['username'],
-            email: data['user']['email'],
-            profileImageUrl: data['user']['profile_img_url'],
-          },
-          error: '',
-        }))
       },
       async register(params: RegisterRequest) {
         try {

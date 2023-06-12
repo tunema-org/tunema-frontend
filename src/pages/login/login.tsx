@@ -38,15 +38,16 @@ const LoginWithEmail = () => {
 
   const navigate = useNavigate()
 
-  const [login, isAuthenticated] = useAuthStore((state) => [
-    state.login,
-    state.isAuthenticated,
-  ])
+  const login = useAuthStore((state) => state.login)
+
+  useAuthStore.subscribe((state) => {
+    if (state.isAuthenticated) {
+      navigate('/home')
+    }
+  })
 
   const onSubmit = handleSubmit(async (data) => {
     await login(data.email, data.password)
-
-    return isAuthenticated ? navigate('/home') : null
   })
 
   return (
