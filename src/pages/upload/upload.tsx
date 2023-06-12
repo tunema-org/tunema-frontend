@@ -6,6 +6,8 @@ import Button from '../../components/button'
 import DropdownKey, { Key } from './upload-dropdown-keys'
 import { Tag, TagsAutoComplete } from './upload-tags-autocomplete'
 
+import { useNavigate } from 'react-router-dom'
+import RotateLoader from '../../components/loader/rotate-loader'
 import { UploadInput } from './upload-input'
 
 type UploadModalProps = {
@@ -36,6 +38,8 @@ export default function UploadModal({
   const [key, setKey] = useState<Key['name']>('C')
   const [keyScale, setKeyScale] = useState<'major' | 'minor'>('major')
 
+  const navigate = useNavigate()
+
   const {
     register,
     handleSubmit,
@@ -62,6 +66,7 @@ export default function UploadModal({
     setImage(null)
     setImagePreview('')
     setAudio(null)
+    navigate('/artist-dashboard')
   }
 
   function openModal() {
@@ -69,6 +74,7 @@ export default function UploadModal({
   }
 
   const onSubmit = handleSubmit(async (data) => {
+    setLoading(true)
     await uploadSample({
       name: data.title,
       bpm: data.bpm,
@@ -78,6 +84,10 @@ export default function UploadModal({
       audioFile: audio,
       coverFile: image,
       tagIds: selectedTags?.map((tag) => tag.id) || [],
+    }).then((res) => {
+      console.log(res)
+      setLoading(false)
+      closeModal()
     })
   })
 
@@ -303,7 +313,14 @@ export default function UploadModal({
                                 Cancel
                               </button>
                               <Button type="primary" submit>
-                                Upload
+                                {loading && (
+                                  <RotateLoader
+                                    margin="1px"
+                                    size="10px"
+                                    color="#FAF9F6"
+                                  />
+                                )}
+                                {!loading && 'Upload'}
                               </Button>
                             </div>
                           </div>

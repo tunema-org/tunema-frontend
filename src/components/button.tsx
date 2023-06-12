@@ -1,12 +1,15 @@
-//for footer navigation
-
-interface props {
-  children: string
+import { ReactNode } from 'react'
+type ButtonProps = {
+  children: ReactNode
   type: 'primary' | 'landing'
   submit?: boolean
 }
 
-const Button = ({ children, type, submit }: props) => {
+const Button: React.FunctionComponent<ButtonProps> = ({
+  children,
+  type,
+  submit,
+}) => {
   const buttonVariant = {
     primary:
       'duration-200 bg-primary-green hover:bg-dark-green font-bold py-3 px-8 rounded-full overflow-clip',
