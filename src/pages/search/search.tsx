@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet'
 import api from '../../api'
 import { ListSamplesResponse } from '../../api/sounds/list-samples'
 import Container from '../../components/container'
@@ -11,7 +12,6 @@ import Sample from '../../components/samples/sample'
 import SampleTitle from '../../components/samples/title-primary'
 import SearchBar from '../../components/searchbar'
 import Type from '../../components/type'
-import { Helmet } from 'react-helmet'
 
 function Search() {
   const [samples, setSamples] = useState<ListSamplesResponse>()
@@ -70,6 +70,7 @@ function Search() {
                 keyScale={sample.data.key_scale}
                 price={sample.data.price}
                 upload={sample.data.created_at}
+                tags={sample.tags}
               />
             ))}
           </section>

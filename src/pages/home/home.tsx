@@ -1,20 +1,18 @@
-import React from 'react'
-import { useRef, useState, useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { Helmet } from 'react-helmet'
 import { useDraggable } from 'react-use-draggable-scroll'
+import api from '../../api'
+import { ListSamplesResponse } from '../../api/sounds/list-samples'
 import Button from '../../components/button'
 import Container from '../../components/container'
 import DropdownSort from '../../components/dropdown/dropdown-sort'
 import DropdownType from '../../components/dropdown/dropdown-type'
 import Footer from '../../components/footer'
 import FooterMobile from '../../components/footer-mobile'
-import IconPlay from '../../components/icons/icon-play'
 import Navbar from '../../components/Navbar/navbar'
 import Sample from '../../components/samples/sample'
-import SearchBar from '../../components/searchbar'
 import SampleTitle from '../../components/samples/title-primary'
-import api from '../../api'
-import { ListSamplesResponse } from '../../api/sounds/list-samples'
-import { Helmet } from 'react-helmet'
+import SearchBar from '../../components/searchbar'
 
 enum GenreEnum {
   ALL = 'Mixed',
@@ -155,6 +153,7 @@ function Home() {
               keyScale={sample.data.key_scale}
               price={sample.data.price}
               upload={sample.data.created_at}
+              tags={sample.tags}
             />
           ))}
         </section>

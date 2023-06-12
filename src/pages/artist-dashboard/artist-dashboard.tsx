@@ -221,6 +221,7 @@ function ArtistDashboard() {
                             price={sample.data.price}
                             upload={sample.data.created_at}
                             added={sample.data.created_at}
+                            tags={sample.tags}
                           />
                         ))}
                     </section>

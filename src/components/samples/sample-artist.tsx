@@ -16,6 +16,7 @@ type SampleProps = {
   price: number
   upload: string
   added: string
+  tags: string[]
 }
 
 const ArtistSample = (props: SampleProps) => {
@@ -96,8 +97,9 @@ const ArtistSample = (props: SampleProps) => {
               </span>
             </a>
             <div className="flex gap-5 text-gray-500 text-small lg:min-w-max min-w-0">
-              <button className="hover:underline">Electronic</button>
-              <button className="hover:underline">Synth</button>
+              {props.tags.map((tag) => (
+                <button className="hover:underline">{tag}</button>
+              ))}
             </div>
           </div>
           <div className="md:col-span-3 max-w-[22rem] md:block hidden no-scrollbar">
