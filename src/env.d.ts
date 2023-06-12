@@ -1,6 +1,7 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
+  readonly VITE_API_ENV_OPTION: string
   readonly VITE_STAGING_TUNEMA_API_BASE_URL: string
   readonly VITE_DEV_TUNEMA_API_BASE_URL: string
   // more env variables...

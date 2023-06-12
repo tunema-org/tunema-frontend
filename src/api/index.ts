@@ -5,16 +5,20 @@ import { listUserSamples } from './sounds/list-user-samples'
 import { login, me, register } from './users'
 
 export const userApiClient = axios.create({
-  baseURL: import.meta.env.VITE_DEV_TUNEMA_API_USER,
-  // baseURL: import.meta.env.VITE_STAGING_TUNEMA_API_BASE_URL,
+  baseURL:
+    import.meta.env.VITE_API_ENV_OPTION === 'dev'
+      ? import.meta.env.VITE_DEV_TUNEMA_API_USER
+      : import.meta.env.VITE_STAGING_TUNEMA_API_BASE_URL,
   headers: {
     Accept: 'application/json',
   },
 })
 
 export const soundApiClient = axios.create({
-  baseURL: import.meta.env.VITE_DEV_TUNEMA_API_SOUND,
-  // baseURL: import.meta.env.VITE_STAGING_TUNEMA_API_BASE_URL,
+  baseURL:
+    import.meta.env.VITE_API_ENV_OPTION === 'dev'
+      ? import.meta.env.VITE_DEV_TUNEMA_API_SOUND
+      : import.meta.env.VITE_STAGING_TUNEMA_API_BASE_URL,
   headers: {
     Accept: 'application/json',
   },
