@@ -2,6 +2,7 @@ import axios from 'axios'
 
 import { listSamples } from './sounds/list-samples'
 import { listUserSamples } from './sounds/list-user-samples'
+import { listTagsAndCategories } from './sounds/tags'
 import { login, me, register } from './users'
 
 export const userApiClient = axios.create({
@@ -32,4 +33,5 @@ export default {
   me,
   listSamples,
   listUserSamples,
+  listTagsAndCategories,
 }

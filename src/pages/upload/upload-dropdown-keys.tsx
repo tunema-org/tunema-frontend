@@ -1,7 +1,7 @@
-import { Fragment, useState } from 'react'
 import { Combobox, Transition } from '@headlessui/react'
+import { Fragment, useState } from 'react'
 
-type Key = {
+export type Key = {
   id: number
   name: string
 }
@@ -26,7 +26,11 @@ const keyList: Key[] = [
   { id: 17, name: 'B' },
 ]
 
-export default function DropdownKey() {
+type DropdownKeyProps = {
+  onChange: (key: Key) => void
+}
+
+export default function DropdownKey({ onChange }: DropdownKeyProps) {
   const [selected, setSelected] = useState(keyList[0])
   const [query, setQuery] = useState('')
 
@@ -41,11 +45,17 @@ export default function DropdownKey() {
         )
 
   return (
-    <div className="flex flex-col w-auto gap-3 justify-center font-bodym">
+    <div className="flex flex-col w-auto gap-3 justify-center font-body">
       <label htmlFor="" className="font-medium">
         Key <span className="text-red-400"> *</span>
       </label>
-      <Combobox value={selected} onChange={setSelected}>
+      <Combobox
+        value={selected}
+        onChange={() => {
+          onChange(selected)
+          setSelected(selected)
+        }}
+      >
         <div className="relative mt-1">
           <div className="relative w-full cursor-default overflow-hidden rounded-[7px] bg-[#ededea] text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ededea] focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-green">
             <Combobox.Input
