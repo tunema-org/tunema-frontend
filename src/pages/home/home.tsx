@@ -14,6 +14,7 @@ import SearchBar from '../../components/searchbar'
 import SampleTitle from '../../components/samples/title-primary'
 import api from '../../api'
 import { ListSamplesResponse } from '../../api/sounds/list-samples'
+import { Helmet } from 'react-helmet'
 
 enum GenreEnum {
   ALL = 'Mixed',
@@ -70,6 +71,11 @@ function Home() {
   return (
     <>
       <Navbar />
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>TUNEMA // Home</title>
+        <link rel="icon" type="image/x-icon" href="/pic/favicon/favicon.ico" />
+      </Helmet>
       <section className="h-[21rem] bg-[url('/pic/home/home-header.png')] bg-cover bg-center"></section>
       <Container>
         {' '}

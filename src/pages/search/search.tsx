@@ -11,6 +11,7 @@ import Sample from '../../components/samples/sample'
 import SampleTitle from '../../components/samples/title-primary'
 import SearchBar from '../../components/searchbar'
 import Type from '../../components/type'
+import { Helmet } from 'react-helmet'
 
 function Search() {
   const [samples, setSamples] = useState<ListSamplesResponse>()
@@ -21,6 +22,11 @@ function Search() {
   return (
     <>
       <Navbar />
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>// Search</title>
+        <link rel="icon" type="image/x-icon" href="/pic/favicon/favicon.ico" />
+      </Helmet>
       <main className="sm:min-h-0 min-h-screen">
         <section className="h-[21rem] bg-[url('/pic/search/search_header.png')] bg-cover bg-center"></section>
         <Container>
