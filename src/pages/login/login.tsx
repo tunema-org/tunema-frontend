@@ -6,6 +6,7 @@ import IconGoogle from '../../components/icons/icon-google'
 import IconSoundcloud from '../../components/icons/icon-soundcloud'
 import Navbar from '../../components/Navbar/navbar'
 import { useAuthStore } from '../../store/useAuthStore'
+import { Helmet } from 'react-helmet'
 
 const LoginWith3rdParty = () => (
   <>
@@ -122,6 +123,11 @@ function Login() {
   return (
     <>
       <Navbar />
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>// Login</title>
+        <link rel="icon" type="image/x-icon" href="/pic/favicon/favicon.ico" />
+      </Helmet>
       <main>
         <section className="flex h-full w-full bg-white justify-center">
           <div className="flex md:bg-[url('/pic/login/login.png')] md:w-full md:bg-cover"></div>

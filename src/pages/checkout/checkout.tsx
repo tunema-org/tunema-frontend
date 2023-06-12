@@ -15,6 +15,7 @@ import { Label } from '@headlessui/react/dist/components/label/label'
 import Button from '../../components/button'
 import SampleCheckout from '../../components/samples/sample-checkout'
 import { Transition } from '@headlessui/react'
+import { Helmet } from 'react-helmet'
 
 type PaymentProp = {
   img: string
@@ -42,6 +43,11 @@ function Checkout() {
   return (
     <>
       <Navbar />
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>// Checkout</title>
+        <link rel="icon" type="image/x-icon" href="/pic/favicon/favicon.ico" />
+      </Helmet>
       <section className="h-[21rem] bg-[url('/pic/checkout/checkout-header.png')] bg-cover bg-center"></section>
       <Container>
         {' '}

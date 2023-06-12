@@ -9,11 +9,17 @@ import Sample from '../../components/samples/sample'
 import IconPlay from '../../components/icons/icon-play'
 import DropdownSort from '../../components/dropdown/dropdown-sort'
 import FooterMobile from '../../components/footer-mobile'
+import { Helmet } from 'react-helmet'
 
 function Library() {
   return (
     <>
       <Navbar />
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>// Library</title>
+        <link rel="icon" type="image/x-icon" href="/pic/favicon/favicon.ico" />
+      </Helmet>
       <section className="h-[21rem] bg-[url('/pic/library/library-header.png')] bg-cover bg-center"></section>
       <Container>
         {' '}

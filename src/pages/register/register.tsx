@@ -1,11 +1,12 @@
 import { useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Button from '../../components/button'
 import Container from '../../components/container'
 import IconGoogle from '../../components/icons/icon-google'
 import IconSoundcloud from '../../components/icons/icon-soundcloud'
 import Navbar from '../../components/Navbar/navbar'
 import { useAuthStore } from '../../store/useAuthStore'
+import { Helmet } from 'react-helmet'
 
 type RegisterFormData = {
   username: string
@@ -47,6 +48,11 @@ function Register() {
   return (
     <>
       <Navbar />
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>// Register</title>
+        <link rel="icon" type="image/x-icon" href="/pic/favicon/favicon.ico" />
+      </Helmet>
       <main>
         <section className="flex h-full w-full bg-white justify-center">
           <div className="flex md:bg-[url('/pic/login/login.png')] md:w-full md:bg-cover"></div>
@@ -153,9 +159,12 @@ function Register() {
             </form>
             <div className="flex flex-row w-full justify-center pt-5 pb-10 font-medium text-small text-gray-3">
               Already have an account?
-              <u className="indent-1 text-dark-green hover:text-primary-green bg-white">
+              <Link
+                to="/login"
+                className="indent-1 text-dark-green hover:text-primary-green bg-white"
+              >
                 Login
-              </u>
+              </Link>
             </div>
           </Container>
         </section>

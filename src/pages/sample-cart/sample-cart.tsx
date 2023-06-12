@@ -9,11 +9,17 @@ import Sample from '../../components/samples/sample'
 import SearchBar from '../../components/searchbar'
 import Type from '../../components/type'
 import BuySample from '../../components/samples/buy-sample'
+import { Helmet } from 'react-helmet'
 
 function SampleCart() {
   return (
     <>
       <Navbar />
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>// Sample-Cart</title>
+        <link rel="icon" type="image/x-icon" href="/pic/favicon/favicon.ico" />
+      </Helmet>
       <section className="h-[21rem] bg-[url('/pic/samplecart/samplecart-header.png')] bg-cover bg-center"></section>
       <Container>
         {' '}

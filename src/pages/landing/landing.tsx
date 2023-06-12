@@ -6,6 +6,7 @@ import Footer from '../../components/footer'
 import AOS from 'aos'
 import React, { useEffect } from 'react'
 import 'aos/dist/aos.css'
+import { Helmet } from 'react-helmet'
 
 function LandingPage() {
   useEffect(() => {
@@ -16,6 +17,15 @@ function LandingPage() {
     <>
       <main className="">
         <Navbar />
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>TUNEMA</title>
+          <link
+            rel="icon"
+            type="image/x-icon"
+            href="/pic/favicon/favicon.ico"
+          />
+        </Helmet>
         <section className="h-screen overflow-clip flex bg-[url('/pic/landing/landing_1.png')] bg-cover bg-center">
           <Container>
             <div className="h-screen max-w-[50%] flex flex-col justify-center text-white font-body gap-5 md:p-0 p-5">
