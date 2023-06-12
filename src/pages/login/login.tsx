@@ -1,11 +1,11 @@
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
-import api from '../../api'
+import { Link, useNavigate } from 'react-router-dom'
 import Button from '../../components/button'
 import Container from '../../components/container'
 import IconGoogle from '../../components/icons/icon-google'
 import IconSoundcloud from '../../components/icons/icon-soundcloud'
 import Navbar from '../../components/Navbar/navbar'
+import { useAuthStore } from '../../store/useAuthStore'
 
 const LoginWith3rdParty = () => (
   <>
@@ -36,13 +36,14 @@ const LoginWithEmail = () => {
     formState: { errors },
   } = useForm<LoginWithEmailFormData>()
 
-  const onSubmit = handleSubmit(async (data) => {
-    const response = await api.login(data.email, data.password)
+  const navigate = useNavigate()
 
-    // TODO: Handle response
-    console.log(response)
-    console.log(response['message'])
-    console.log(response['access_token'])
+  const { login, isAuthenticated } = useAuthStore()
+
+  const onSubmit = handleSubmit(async (data) => {
+    await login(data.email, data.password)
+
+    return isAuthenticated ? navigate('/home') : null
   })
 
   return (

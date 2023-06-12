@@ -1,16 +1,19 @@
-import { ShoppingBag, InfoCircle, Logout } from 'iconsax-react'
-import { useState, useEffect, useRef, Fragment } from 'react'
-import React from 'react'
+import { Transition } from '@headlessui/react'
 import { Pivot as Hamburger } from 'hamburger-react'
-import Sidebar from './sidebar'
+import { InfoCircle, Logout, ShoppingBag } from 'iconsax-react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import MyModal from '../../pages/upload/upload'
-import { Dialog, Transition } from '@headlessui/react'
+import { useAuthStore } from '../../store/useAuthStore'
 import IconHeart from '../icons/icon-heart'
+import Sidebar from './sidebar'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [isUpload, setIsUpload] = useState(false)
+  const auth = useAuthStore()
+  const navigate = useNavigate()
 
   const imgRef = React.useRef<HTMLImageElement>(null)
   const menuRef = React.useRef<HTMLInputElement>(null)
@@ -28,8 +31,6 @@ const Navbar = () => {
   const handleDragStart = (event: React.DragEvent<HTMLImageElement>) => {
     event.preventDefault()
   }
-
-  const isLogin = true
 
   const hoverVariant = {
     left: 'duration-200 relative mt-auto mb-auto hover:text-dark-green hover:before:scale-x-100 before:absolute before:origin-top-left before:block before:transition-transform before:duration-[0.3s] before:ease-[ease] before:scale-x-0 before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-[#9CB719]',
@@ -104,7 +105,7 @@ const Navbar = () => {
               </button>
             </li>
 
-            {isLogin && (
+            {auth.isAuthenticated && (
               <div className="relative flex flex-col align-middle ">
                 <button
                   onClick={() => setIsOpen((prev) => !prev)}
@@ -115,7 +116,7 @@ const Navbar = () => {
                     draggable={false}
                     onDragStart={handleDragStart}
                     className="rounded-full"
-                    src={'/pic/navbar/dummy_profile.jpg'}
+                    src={auth.user.profileImageUrl}
                     alt=""
                   />
                 </button>
@@ -160,18 +161,21 @@ const Navbar = () => {
                       About
                     </a>
                     <div className="duration-200 border-b border-gray-3"></div>
-                    <a
-                      href="#"
+                    <button
                       className="flex gap-2 items-center duration-200 px-4 py-2 hover:bg-red-300 hover:text-black hover:rounded-lg font-medium text-red-500"
+                      onClick={() => {
+                        auth.logout()
+                        return navigate('/login')
+                      }}
                     >
                       <Logout size="26" color="red" />
                       Log Out
-                    </a>
+                    </button>
                   </Transition>
                 )}
               </div>
             )}
-            {!isLogin && (
+            {!auth.isAuthenticated && (
               <li>
                 <a href="/login" className={hoverVariant.right}>
                   Login
