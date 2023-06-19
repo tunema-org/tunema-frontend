@@ -7,7 +7,7 @@ import DropdownKey, { Key } from './upload-dropdown-keys'
 import { Tag, TagsAutoComplete } from './upload-tags-autocomplete'
 
 import { useNavigate } from 'react-router-dom'
-import RotateLoader from '../../components/loader/rotate-loader'
+import LoadingIndicator from '../../components/loader/loading-indicator'
 import { UploadInput } from './upload-input'
 
 type UploadModalProps = {
@@ -314,7 +314,7 @@ export default function UploadModal({
                               </button>
                               <Button type="primary" submit>
                                 {loading && (
-                                  <RotateLoader
+                                  <LoadingIndicator
                                     margin="1px"
                                     size="10px"
                                     color="#FAF9F6"

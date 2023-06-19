@@ -1,7 +1,21 @@
-const SearchBar = () => {
+import { useState } from 'react'
+
+type SearchBarProps = {
+  onSubmit: (search: string) => void
+  disabled: boolean
+}
+
+const SearchBar = ({ onSubmit, disabled }: SearchBarProps) => {
+  const [search, setSearch] = useState('')
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    onSubmit(search)
+  }
+
   return (
     <>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <div className="flex w-full bg-[#ededea] border rounded-[34px] h-auto pl-7 items-center gap-3">
           <svg
             width="23"
@@ -37,8 +51,13 @@ const SearchBar = () => {
 
           <input
             type="search"
-            placeholder="Search"
-            className="w-full h-[46px] bg-transparent focus:outline-none font-body pr-5"
+            placeholder={disabled ? 'Loading...' : 'Search'}
+            className={`w-full h-[46px] bg-transparent focus:outline-none font-body pr-5 ${
+              disabled ? 'cursor-not-allowed' : 'cursor-text'
+            }`}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            disabled={disabled}
           />
         </div>
       </form>

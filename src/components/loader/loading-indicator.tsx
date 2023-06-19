@@ -105,14 +105,14 @@ export function parseLengthAndUnit(size: number | string): LengthObject {
 }
 
 const sync = createAnimation(
-  'SyncLoader',
+  'LoadingIndicator',
   `33% {transform: translateY(10px)}
     66% {transform: translateY(-10px)}
     100% {transform: translateY(0)}`,
   'sync',
 )
 
-function SyncLoader({
+function LoadingIndicator({
   loading = true,
   color = '#000000',
   speedMultiplier = 1,
@@ -154,4 +154,4 @@ function SyncLoader({
   )
 }
 
-export default SyncLoader
+export default LoadingIndicator
