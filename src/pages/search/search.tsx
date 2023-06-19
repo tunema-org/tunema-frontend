@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
+import { useSearchParams } from 'react-router-dom'
 import api from '../../api'
 import { ListSamplesResponse } from '../../api/sounds/list-samples'
 import Container from '../../components/container'
@@ -45,10 +46,17 @@ function Search() {
     })
   }
 
+  const [searchParams, setSearchParams] = useSearchParams()
+
   useEffect(() => {
-    if (query.get('q')) {
-      setSearch(query.get('q') ?? '')
-      handleSearch()
+    if (searchParams.has('q')) {
+      const query = searchParams.get('q')
+      if (query) {
+        searchParams.delete('q')
+        setSearch(searchParams.toString())
+        setSearchParams(searchParams)
+        handleSearch()
+      }
     } else {
       fetchSamples()
     }
@@ -121,7 +129,7 @@ function Search() {
             </div>
 
             <div className="flex justify-between items-center">
-              <p>500.350 Results</p>
+              <p>{samples?.total_items} Results</p>
               <DropdownSort />
             </div>
           </section>
