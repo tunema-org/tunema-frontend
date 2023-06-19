@@ -39,6 +39,7 @@ export const TagsAutoComplete = ({
       <label htmlFor="" className="font-medium">
         Tags <span className="text-red-400"> *</span>
       </label>
+      {/* @ts-ignore */}
       <Combobox value={selectedTags} onChange={setSelectedTags} multiple>
         <div className="relative mt-1">
           <div className="relative w-full cursor-default overflow-hidden rounded-[7px] bg-[#ededea] text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ededea] focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-green">
