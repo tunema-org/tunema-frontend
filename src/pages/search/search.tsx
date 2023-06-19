@@ -17,6 +17,7 @@ import Type from '../../components/type'
 function Search() {
   const [samples, setSamples] = useState<ListSamplesResponse>()
   const [isLoading, setIsLoading] = useState(false)
+  const [noResults, setNoResults] = useState(false)
 
   useEffect(() => {
     api.listSamples().then((data) => setSamples(data))
@@ -24,10 +25,15 @@ function Search() {
 
   const handleSearch = (search: string) => {
     setIsLoading(true)
+    setNoResults(false)
     api
       .searchSamples({ name: search })
       .then((data) => {
-        if (data['total_items'] === 0) return
+        if (data['total_items'] === 0) {
+          setNoResults(true)
+          return
+        }
+
         setSamples(data)
       })
       .finally(() => setIsLoading(false))
@@ -72,12 +78,13 @@ function Search() {
           </section>
           <SampleTitle />
           <section>
-            {isLoading && (
+            {isLoading && !noResults && (
               <div className="flex justify-center items-center mt-12">
                 <LoadingIndicator margin="1px" size="24px" color="#D1F812" />
               </div>
             )}
             {!isLoading &&
+              !noResults &&
               samples?.items.map((sample) => (
                 <Sample
                   img={sample.data.cover_url}
@@ -93,6 +100,13 @@ function Search() {
                   tags={sample.tags}
                 />
               ))}
+            {!isLoading && noResults && (
+              <div className="flex justify-center items-center mt-12">
+                <p className="text-heading-04 text-gray-3">
+                  No results found 😔
+                </p>
+              </div>
+            )}
           </section>
         </Container>
         <div className="md:block hidden">
