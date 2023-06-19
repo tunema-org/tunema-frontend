@@ -13,21 +13,60 @@ import Sample from '../../components/samples/sample'
 import SampleTitle from '../../components/samples/title-primary'
 import SearchBar from '../../components/searchbar'
 import Type from '../../components/type'
+import useQuery from '../../hooks/useQuery'
 
 function Search() {
+  const query = useQuery()
+
   const [samples, setSamples] = useState<ListSamplesResponse>()
+  const [tags, setTags] = useState<
+    {
+      id: number
+      name: string
+    }[]
+  >()
+  const [activeTags, setActiveTags] = useState<number[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [noResults, setNoResults] = useState(false)
+  const [search, setSearch] = useState(query.get('q') ?? '')
+
+  const fetchSamples = async () => {
+    const samples = await api.listSamples()
+    setSamples(samples)
+  }
+
+  const fetchTags = async () => {
+    const tagsAndCategories = await api.listTagsAndCategories()
+
+    tagsAndCategories.items.forEach((item) => {
+      item.tags.forEach((tag) => {
+        setTags((tags) => [...(tags ?? []), tag])
+      })
+    })
+  }
 
   useEffect(() => {
-    api.listSamples().then((data) => setSamples(data))
+    if (query.get('q')) {
+      setSearch(query.get('q') ?? '')
+      handleSearch()
+    } else {
+      fetchSamples()
+    }
+    fetchTags()
   }, [])
 
-  const handleSearch = (search: string) => {
+  useEffect(() => {
+    handleSearch()
+  }, [activeTags])
+
+  const handleSearch = () => {
     setIsLoading(true)
     setNoResults(false)
     api
-      .searchSamples({ name: search })
+      .searchSamples({
+        name: search === '' ? undefined : search,
+        tags: activeTags.length ? activeTags : undefined,
+      })
       .then((data) => {
         if (data['total_items'] === 0) {
           setNoResults(true)
@@ -50,25 +89,35 @@ function Search() {
       <main className="sm:min-h-0 min-h-screen">
         <section className="h-[21rem] bg-[url('/pic/search/search_header.png')] bg-cover bg-center"></section>
         <Container>
-          {' '}
           <section className="h-auto font-body flex items-center py-3">
             <div className="flex flex-col">
-              <h1 className="text-heading-01 ">Search</h1>
+              <h1 className="text-heading-01">Search</h1>
               <p>Looking for samples?</p>
             </div>
           </section>
           <section className="my-6 flex flex-col gap-6 font-body">
-            <SearchBar onSubmit={handleSearch} disabled={isLoading} />
+            <SearchBar
+              onSubmit={handleSearch}
+              onChange={setSearch}
+              disabled={isLoading}
+            />
             <DropdownType />
 
-            <div className="flex gap-3 overflow-x-scroll no-scrollbar">
-              <Type>Drums</Type>
-              <Type>Synth</Type>
-              <Type>Keys</Type>
-              <Type>Bass</Type>
-              <Type>Percussion</Type>
-              <Type>Vocals</Type>
-              <Type>Guitar</Type>
+            <div className="flex flex-wrap gap-3 overflow-x-scroll no-scrollbar">
+              {tags?.map((tag) => (
+                <Type
+                  onActive={() => {
+                    setActiveTags((activeTags) => [...activeTags, tag.id])
+                  }}
+                  onInactive={() => {
+                    setActiveTags((activeTags) =>
+                      activeTags.filter((activeTag) => activeTag !== tag.id),
+                    )
+                  }}
+                >
+                  {tag.name}
+                </Type>
+              ))}
             </div>
 
             <div className="flex justify-between items-center">

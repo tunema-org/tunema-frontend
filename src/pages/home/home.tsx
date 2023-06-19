@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet'
+import { useNavigate } from 'react-router-dom'
 import { useDraggable } from 'react-use-draggable-scroll'
 import api from '../../api'
 import { ListSamplesResponse } from '../../api/sounds/list-samples'
@@ -57,6 +58,8 @@ const Genre = (props: GenreProps) => {
 function Home() {
   const [selectedGenre, setSelectedGenre] = useState(GenreEnum.ALL)
   const [samples, setSamples] = useState<ListSamplesResponse>()
+  const [search, setSearch] = useState('')
+  const navigate = useNavigate()
 
   const ref =
     useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>
@@ -66,6 +69,11 @@ function Home() {
   useEffect(() => {
     api.listSamples().then((data) => setSamples(data))
   }, [])
+
+  const handleSearch = () => {
+    navigate(`/search?q=${search}`)
+  }
+
   return (
     <>
       <Navbar />
@@ -132,7 +140,7 @@ function Home() {
           <div className="flex items-start border-b-[1px] border-gray-3"></div>
         </section>
         <section className="my-6 flex flex-col gap-6 font-body">
-          <SearchBar></SearchBar>
+          <SearchBar onSubmit={handleSearch} onChange={setSearch} />
           <DropdownType />
           <div className="flex justify-between items-center">
             <p>500.350 Results</p>

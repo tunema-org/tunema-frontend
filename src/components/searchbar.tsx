@@ -1,16 +1,17 @@
 import { useState } from 'react'
 
 type SearchBarProps = {
-  onSubmit: (search: string) => void
-  disabled: boolean
+  onSubmit?: () => void
+  onChange?: (search: string) => void
+  disabled?: boolean
 }
 
-const SearchBar = ({ onSubmit, disabled }: SearchBarProps) => {
+const SearchBar = ({ onSubmit, onChange, disabled }: SearchBarProps) => {
   const [search, setSearch] = useState('')
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    onSubmit(search)
+    onSubmit?.()
   }
 
   return (
@@ -56,7 +57,10 @@ const SearchBar = ({ onSubmit, disabled }: SearchBarProps) => {
               disabled ? 'cursor-not-allowed' : 'cursor-text'
             }`}
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => {
+              setSearch(e.target.value)
+              onChange?.(e.target.value)
+            }}
             disabled={disabled}
           />
         </div>

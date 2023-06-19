@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import api from './api'
 import './css/global.css'
@@ -10,11 +9,7 @@ function Application() {
   api.userApiClient.defaults.headers['Authorization'] = `Bearer ${accessToken}`
   api.soundApiClient.defaults.headers['Authorization'] = `Bearer ${accessToken}`
 
-  return (
-    <React.StrictMode>
-      <Router />
-    </React.StrictMode>
-  )
+  return <Router />
 }
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

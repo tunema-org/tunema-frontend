@@ -1,22 +1,30 @@
-import React from 'react'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 
 type TypeText = {
   children: string
+  onActive?: () => void
+  onInactive?: () => void
 }
 
 const Type = (props: TypeText) => {
-  const [isClicked, setIsClicked] = useState(false)
+  const [isActive, setIsActive] = useState(false)
 
   const handleClick = () => {
-    setIsClicked(!isClicked)
+    setIsActive(!isActive)
+    if (isActive) {
+      props.onInactive && props.onInactive()
+    }
+
+    if (!isActive) {
+      props.onActive && props.onActive()
+    }
   }
 
   return (
     <>
       <button
         className={`border border-black bg-none rounded-[10px] w-auto py-1 px-3 hover:bg-light-green hover:border-dark-green ${
-          isClicked
+          isActive
             ? 'transition ease-out duration-150 border-dark-green bg-light-green'
             : 'transition ease-out duration-150 border-black bg-none'
         }`}

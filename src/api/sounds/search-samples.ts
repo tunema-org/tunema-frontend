@@ -27,7 +27,7 @@ export type SearchSamplesResponse = {
 
 type SearchSamplesParams = {
   name?: string
-  tags?: string[]
+  tags?: number[]
   order_by?: 'created_at' | 'price' | 'sold'
 }
 
