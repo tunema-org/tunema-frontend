@@ -1,11 +1,11 @@
 import { Menu, Transition } from '@headlessui/react'
+import dayjs from 'dayjs'
 import { InfoCircle, ProfileCircle } from 'iconsax-react'
 import { useState } from 'react'
 import IconDropdown from '../icons/icon-dropdown'
 import IconHeart from '../icons/icon-heart'
 import IconPlus from '../icons/icon-plus'
 import Info from '../popout/info'
-import * as dayjs from 'dayjs'
 
 type InfoProps = {
   name: string
