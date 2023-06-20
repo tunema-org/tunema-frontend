@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Dropdown from '../dropdown/dropdown-sample'
 import IconHeart from '../icons/icon-heart'
 import IconPlay from '../icons/icon-play'
@@ -21,6 +22,7 @@ type SampleProps = {
 }
 
 const Sample = (props: SampleProps) => {
+  const navigate = useNavigate()
   const [playing, setPlaying] = useState(false)
 
   const [isHovered, setIsHovered] = useState(false)
@@ -128,7 +130,10 @@ const Sample = (props: SampleProps) => {
         <p className="text-left sm:block hidden">{props.bpm}</p>
         <p className="text-left sm:block hidden">{props.keys}</p>
         <button
-          onClick={(e) => e.stopPropagation()}
+          onClick={(e) => {
+            e.stopPropagation()
+            navigate('/checkout')
+          }}
           className="flex flex-col font-medium text-dark-green hover:underline justify-start items-start"
         >
           {props.price}
@@ -141,7 +146,10 @@ const Sample = (props: SampleProps) => {
             <IconHeart></IconHeart>
           </button>
           <button
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation()
+              navigate('/sample-cart')
+            }}
             className="lg:flex justify-center w-[26px] hidden"
           >
             <IconPlus></IconPlus>
